@@ -55,4 +55,4 @@ Thank you to Andrew Miller for extemely helpful guidance and helping us evolve t
 
 # License
 
-This project is [MIT licensed](License). 
+This project is [MIT licensed](LICENSE). 
