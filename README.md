@@ -9,7 +9,7 @@ In order to tease out the impact of the arithmetization on various metrics of a 
 
 We picked  FFT programs to illustrate the idea that the verification time for an AIR proof grows linearly in the number of distinct constraints known as transition constraints. R1CS verification is independent of the structure of the program and found that as expected, optimized R1CS performs better than AIR.We picked fibonacci to test if repeated structure in a program provides significant benefits when proving it in an AIR-based prover. So far, we haven’t even been able to run very large instances in R1CS because it runs out of memory. 
 
-Note that the R1CS code still has some bugs at certain programs and for certain program sizes it fails to run due to running out of memory. These improvements for our implementation are a work in progress.
+Note that the R1CS code still has some bugs at certain programs and for certain program sizes it fails to run due to running out of memory. These improvements for our implementation are a **work in progress**.
 
 # TOOLING 
 * We have implemented [Fractal](https://eprint.iacr.org/2019/1076.pdf) which is a highly optimized, FRI-based R1CS proof system, in Rust, based on the backend from the Winterfell Rust crates. See [this branch](https://github.com/Jasleen1/winter_fractal/tree/incomplete_reorg).

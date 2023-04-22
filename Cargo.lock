@@ -35,7 +35,8 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-utils 0.4.2",
  "winterfell 0.4.2",
 ]
@@ -229,8 +230,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "fractal-math"
+version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
+dependencies = [
+ "winter-math 0.4.2",
+ "winter-rand-utils 0.4.2",
+ "winter-utils 0.4.2",
+]
+
+[[package]]
 name = "fractal_accumulator"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
@@ -244,7 +256,7 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-rand-utils 0.4.2",
  "winter-utils 0.4.2",
 ]
@@ -252,6 +264,7 @@ dependencies = [
 [[package]]
 name = "fractal_accumulator_verifier"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
@@ -266,13 +279,14 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-utils 0.4.2",
 ]
 
 [[package]]
 name = "fractal_examples2"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "fractal_indexer",
@@ -288,18 +302,19 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-utils 0.4.2",
 ]
 
 [[package]]
 name = "fractal_indexer"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
  "flamer",
- "fractal-math",
+ "fractal-math 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "fractal_accumulator",
  "fractal_utils",
  "lazy_static 1.4.0",
@@ -311,7 +326,7 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-rand-utils 0.4.2",
  "winter-utils 0.4.2",
 ]
@@ -319,6 +334,7 @@ dependencies = [
 [[package]]
 name = "fractal_proofs"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "fractal_utils",
@@ -334,6 +350,7 @@ dependencies = [
 [[package]]
 name = "fractal_prover"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
@@ -349,7 +366,7 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-rand-utils 0.4.2",
  "winter-utils 0.4.2",
 ]
@@ -357,11 +374,12 @@ dependencies = [
 [[package]]
 name = "fractal_utils"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
  "flamer",
- "fractal-math",
+ "fractal-math 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "log",
  "serde",
  "thiserror",
@@ -374,6 +392,7 @@ dependencies = [
 [[package]]
 name = "fractal_verifier"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
@@ -392,7 +411,7 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-utils 0.4.2",
 ]
 
@@ -477,6 +496,7 @@ dependencies = [
 [[package]]
 name = "low_degree_prover"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
@@ -489,7 +509,7 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-rand-utils 0.4.2",
  "winter-utils 0.4.2",
 ]
@@ -497,6 +517,7 @@ dependencies = [
 [[package]]
 name = "low_degree_verifier"
 version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
 dependencies = [
  "displaydoc",
  "flame",
@@ -511,7 +532,7 @@ dependencies = [
  "winter-crypto 0.4.2",
  "winter-fri 0.4.2",
  "winter-math 0.4.2",
- "winter-models",
+ "winter-models 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "winter-utils 0.4.2",
 ]
 
@@ -979,7 +1000,25 @@ name = "winter-models"
 version = "0.1.0"
 dependencies = [
  "displaydoc",
- "fractal-math",
+ "fractal-math 0.1.0",
+ "lazy_static 1.4.0",
+ "log",
+ "regex",
+ "serde",
+ "sscanf",
+ "thiserror",
+ "winter-crypto 0.4.2",
+ "winter-math 0.4.2",
+ "winter-utils 0.4.2",
+]
+
+[[package]]
+name = "winter-models"
+version = "0.1.0"
+source = "git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg#6ea8b20b9978ebf31e010772d3851096cf1bc927"
+dependencies = [
+ "displaydoc",
+ "fractal-math 0.1.0 (git+https://github.com/Jasleen1/winter_fractal?branch=incomplete_reorg)",
  "lazy_static 1.4.0",
  "log",
  "regex",

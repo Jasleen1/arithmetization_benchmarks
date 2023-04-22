@@ -13,7 +13,7 @@ use fractal_prover::LayeredProver;
 use fractal_prover::{prover::FractalProver, LayeredSubProver};
 use fractal_utils::FractalOptions;
 use fractal_verifier::verifier::verify_layered_fractal_proof_from_top;
-use models::r1cs::Matrix;
+use winter_models::r1cs::Matrix;
 use winter_fri::FriOptions;
 
 use structopt::StructOpt;
@@ -24,8 +24,8 @@ use fractal_indexer::{
     snark_keys::*,
 };
 
-use models::jsnark_arith_parser::JsnarkArithReaderParser;
-use models::jsnark_wire_parser::JsnarkWireReaderParser;
+use winter_models::jsnark_arith_parser::JsnarkArithReaderParser;
+use winter_models::jsnark_wire_parser::JsnarkWireReaderParser;
 
 use winter_crypto::hashers::{Blake3_256, Rp64_256};
 use winter_crypto::ElementHasher;
