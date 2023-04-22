@@ -1,8 +1,6 @@
 use log::debug;
-use std::io::Write;
 use std::time::Instant;
 use structopt::StructOpt;
-use winter_air::proof::StarkProof;
 
 use examples::{fast_fourier_transform, fibonacci, ExampleOptions, ExampleType};
 #[cfg(feature = "std")]
@@ -36,10 +34,6 @@ fn main() {
         "---------------------\nProof generated in {} ms",
         now.elapsed().as_millis()
     );
-
-    let proof_bytes = proof.to_bytes();
-    println!("Proof size: {:.1} KB", proof_bytes.len() as f64 / 1024f64);
-    println!("Proof security: {} bits", proof.security_level(true));
 
     // verify the proof
     println!("---------------------");
