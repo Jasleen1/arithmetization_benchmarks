@@ -46,8 +46,12 @@ To benchmark AIR programs the commands are similar the program types are `fft` o
 
 Note that in this case, your program size needs to be specified exactly, i.e. if you want to see an FFT of size 32 in the STARK context, you enter 32, as opposed to 5, which you would have entered in the R1CS case.
 
-# Acknowledgement 
+# Acknowledgements 
 Many thanks to Don Beaver for writing the parser from jsnark's R1CS representation to our implementation's R1CS matrices, as well as greately beautifying our code. 
+
+We are also very grateful to Bobbin Threadbare for help with implementing the examples for Winterfell as well as general support while building on the Winterfell repository. 
+
+Thank you to Andrew Miller for extemely helpful guidance and helping us evolve the ideas for this work. 
 
 # License
 
