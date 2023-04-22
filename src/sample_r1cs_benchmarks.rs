@@ -55,20 +55,17 @@ fn main() {
     let mut supported_sizes = 5u64..10u64;
     if options.program.to_string() == _fft_str {
         prog_name.push_str("src/jsnark_outputs/fftexample_")
+    } else if options.program.to_string() == _fib_str {
+        prog_name.push_str("src/jsnark_outputs/fibonacciexample_");
+        supported_sizes = 5u64..15u64;
+    } else {
+        println!("Unsupported program type");
+        return;
     }
-    else if options.program.to_string() == _fib_str {
-            prog_name.push_str("src/jsnark_outputs/fibonacciexample_");
-            supported_sizes = 5u64..15u64;
-    }
-    else {
-            println!("Unsupported program type");
-            return;
-    }
-    
+
     if supported_sizes.contains(&options.size) {
         prog_name.push_str(&options.size.to_string());
-    }
-    else {
+    } else {
         println!("Unsupported program size");
     }
     let mut arith_file = prog_name.clone();
