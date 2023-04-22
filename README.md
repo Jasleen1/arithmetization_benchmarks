@@ -89,7 +89,7 @@ proves and verifies the same size of Fibonacci as
 ```cargo run --release --package arithmetization_benchmarks --bin stark-orchestrator fib -n=1048576```
 that is, computing the 2^21st Fibonacci number. 
 
-
+|         |    |    |    |      |     |       |      |       |
 |---------|----|----|----|------|-----|-------|------|-------|
 | **R1CS**| 5  |  6 | 7  | 8    | ... |  i    |  ... |  20   |
 | **AIR** | 32 | 64| 128 |  256 | ... |   2^i |  ... |  1048576 |
