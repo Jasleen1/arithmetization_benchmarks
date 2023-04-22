@@ -61,6 +61,14 @@ In our R1CS implementation, for larger instances, we end up running out of memor
 One immediate next step, therefore, is to memory profile the Fractal code and optimize memory usage. 
 ### FFT
 
+The table below provides equivalent parameters for running FFT programs in R1CS or AIR. For example, running 
+
+```cargo run --release --package arithmetization_benchmarks --bin fractal-orchestrator -- -p=fft -s=7```
+
+proves and verifies the same size of FFT as 
+
+```cargo run --release --package arithmetization_benchmarks --bin stark-orchestrator fft -n=128```
+
 |      |    |    |    |    |    |    | 
 |------|----|----|----|----|----|----|
 | **R1CS**| 5  |  6 | 7  | 8  | 9  | 10  |
@@ -72,8 +80,16 @@ The verifier time for the R1CS verifier was 7ms and that for AIR was 5.6ms.
 For an FFT of size 2^10, our R1CS prover currently runs in 208938ms and the verifier in 40ms. 
 
 ### Fibonacci
+Similarly to the previous subsection, the table below provides equivalent parameters for Fibonacci in R1CS or AIR. For example, running 
 
-|         |    |    |    |      |     |       |      |       |
+```cargo run --release --package arithmetization_benchmarks --bin fractal-orchestrator -- -p=fib -s=20```
+
+proves and verifies the same size of Fibonacci as 
+
+```cargo run --release --package arithmetization_benchmarks --bin stark-orchestrator fib -n=1048576```
+that is, computing the 2^21st Fibonacci number. 
+
+
 |---------|----|----|----|------|-----|-------|------|-------|
 | **R1CS**| 5  |  6 | 7  | 8    | ... |  i    |  ... |  20   |
 | **AIR** | 32 | 64| 128 |  256 | ... |   2^i |  ... |  1048576 |
