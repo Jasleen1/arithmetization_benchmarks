@@ -7,14 +7,14 @@ use core::num;
 use std::cmp::max;
 use std::time::Instant;
 
-use fractal_indexer::index::get_max_degree;
+// use fractal_indexer::index::get_max_degree;
 use fractal_proofs::{fft, FractalProverOptions, Serializable};
 use fractal_prover::LayeredProver;
 use fractal_prover::{prover::FractalProver, LayeredSubProver};
 use fractal_utils::FractalOptions;
 use fractal_verifier::verifier::verify_layered_fractal_proof_from_top;
-use winter_models::r1cs::Matrix;
 use winter_fri::FriOptions;
+use winter_models::r1cs::Matrix;
 
 use structopt::StructOpt;
 
@@ -52,12 +52,12 @@ fn main() {
     let mut prog_name = "".to_string();
     let _fft_str = "fft".to_string();
     let _fib_str = "fib".to_string();
-    let mut supported_sizes = 5u64..10u64;
+    let mut supported_sizes = 5u64..15u64;
     if options.program.to_string() == _fft_str {
         prog_name.push_str("src/jsnark_outputs/fftexample_")
     } else if options.program.to_string() == _fib_str {
         prog_name.push_str("src/jsnark_outputs/fibonacciexample_");
-        supported_sizes = 5u64..15u64;
+        supported_sizes = 5u64..21u64;
     } else {
         println!("Unsupported program type");
         return;
@@ -67,6 +67,7 @@ fn main() {
         prog_name.push_str(&options.size.to_string());
     } else {
         println!("Unsupported program size");
+        return;
     }
     let mut arith_file = prog_name.clone();
     arith_file.push_str(".arith");
@@ -119,7 +120,11 @@ pub(crate) fn orchestrate_r1cs_example<
     let num_non_zero = r1cs.max_num_nonzero().next_power_of_two();
     let num_constraints =
         max(max(r1cs.A.num_rows(), r1cs.B.num_rows()), r1cs.C.num_rows()).next_power_of_two();
-    let max_degree = get_max_degree(num_input_variables, num_non_zero, num_constraints);
+    let max_degree = FractalProver::<B, E, H>::get_max_degree_constraint(
+        num_input_variables,
+        num_non_zero,
+        num_constraints,
+    );
     // TODO: make the calculation of eta automated
     let eta = B::GENERATOR.exp(B::PositiveInteger::from(2 * B::TWO_ADICITY));
     let eta_k = B::GENERATOR.exp(B::PositiveInteger::from(1337 * B::TWO_ADICITY));

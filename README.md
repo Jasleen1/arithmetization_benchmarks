@@ -46,6 +46,43 @@ To benchmark AIR programs the commands are similar the program types are `fft` o
 
 Note that in this case, your program size needs to be specified exactly, i.e. if you want to see an FFT of size 32 in the STARK context, you enter 32, as opposed to 5, which you would have entered in the R1CS case.
 
+## Currently supported parameters 
+Note that our current Fractal implementation isn't fully optimized as much as Winterfell, and that explains some of the discrepancies here. Below we provide preliminary example numbers based on a run of these benchmarks on an M1 Macbook Pro with 32GB of RAM. 
+
+For R1CS instances, if you would like to check larger instances than the ones provided here, please generate the appropriately renamed `.wires` and `.arith` files using our  [jsnark](https://github.com/Jasleen1/jsnark/tree/gen-arith) code for the desired sizes of instances. 
+
+## Causes for limitations
+The current Winterfell codebase is limited in how wide the AIR can be, upper bounded at 511. Further, there is a factor called "blowup factor", which determines the size of the Reed-Solomon encodings, and needs to depend on the instance size. We found this parameter to be a limiting factor so far, in particular for the FFT implementation and plan to modify the implementation to deal with this in the near future. 
+
+In our R1CS implementation, for larger instances, we end up running out of memory and the program fail-stops when this happens. Note that we are fairly confident that this is the cause because of the following observations:
+* When we optimized the program to remove many instances of cloning of structs, we found that we were able to run larger programs.
+* We have observed this behaviour in other SNARK implementations where moving the proof generation to a much larger VM on the cloud has permitted much larger programs to run. 
+
+One immediate next step, therefore, is to memory profile the Fractal code and optimize memory usage. 
+### FFT
+
+|      |    |    |    |    |    |    | 
+|------|----|----|----|----|----|----|
+| **R1CS**| 5  |  6 | 7  | 8  | 9  | 10  |
+| **AIR**  | 32 | 64 | 128|  Not yet supported |    Not yet supported |    Not yet supported |  
+
+For an FFT of size 2^7 elements, proof time for R1CS was 2306ms and that for AIR was 204ms.
+The verifier time for the R1CS verifier was 7ms and that for AIR was 5.6ms.
+
+For an FFT of size 2^10, our R1CS prover currently runs in 208938ms and the verifier in 40ms. 
+
+### Fibonacci
+
+|         |    |    |    |      |     |       |      |       |
+|---------|----|----|----|------|-----|-------|------|-------|
+| **R1CS**| 5  |  6 | 7  | 8    | ... |  i    |  ... |  20   |
+| **AIR** | 32 | 64| 128 |  256 | ... |   2^i |  ... |  1048576 |
+
+
+At the number of iterations 2^20, proof time for R1CS was 217118ms and that for AIR was 8362ms.
+
+The verifier time for the R1CS verifier was 39ms and that for AIR was 2.5ms.
+
 # Acknowledgements 
 Many thanks to Don Beaver for writing the parser from jsnark's R1CS representation to our implementation's R1CS matrices, as well as greately beautifying our code. 
 
