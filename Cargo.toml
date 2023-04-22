@@ -1,0 +1,38 @@
+[package]
+name = "arithmetization_benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "fractal-orchestrator"
+path = "src/sample_r1cs_proof.rs"
+bench = false
+doc = false
+debug = 1
+
+
+[features]
+default = ["flame_it"]
+flame_it = ["flame", "flamer", "fractal_utils/flame_it", "fractal_indexer/flame_it", "fractal_prover/flame_it", "fractal_verifier/flame_it"]
+
+[dependencies]
+displaydoc = "0.1.7"
+flame = { version = "0.2", optional = true }
+flamer = { version = "0.3", optional = true }
+fractal_utils = { path = "../winter_fractal/fractal_utils" }
+fractal_proofs = {path = "../winter_fractal/fractal_proofs" }
+fractal_indexer = {path = "../winter_fractal/fractal_indexer" }
+fractal_prover = {path = "../winter_fractal/fractal_prover" }
+fractal_verifier = {path = "../winter_fractal/fractal_verifier" }
+lazy_static = "1.4.0"
+log = { version = "0.4", default-features = false }
+models = { version = "0.1.0", path = "../winter_fractal/models", package = "winter-models", default-features = false }
+regex = "1"
+serde = { version = "1.0.117", features = ["derive"] }
+sscanf = "0.1.4"
+structopt = { version = "0.3", default-features = false }
+thiserror = "1.0.22"
+winter-crypto = "0.4.0"
+winter-fri = "0.4.0"
+winter-math = "0.4.0"
+winter-utils = "0.4.0"
