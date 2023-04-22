@@ -26,7 +26,7 @@ Here we have provided a blueprint for comparing two kinds of proof systems on tw
 
 Once you have generated the examples themselves, to get them working, you will need to modify the `sample_air_benchmarks.rs` and `sample_r1cs_benchmarks.rs` files. 
 
-
+Note that we suggest you try to transcribe your algorithms as closely as possible in each framework, in order to get an accurate idea of how the structure of your program impacts the performance of the proof system. 
 # USAGE
 
 ### R1CS
