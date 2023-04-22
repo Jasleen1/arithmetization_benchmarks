@@ -5,11 +5,17 @@ edition = "2021"
 
 [[bin]]
 name = "fractal-orchestrator"
-path = "src/sample_r1cs_proof.rs"
+path = "src/sample_r1cs_benchmarks.rs"
 bench = false
 doc = false
 debug = 1
 
+[[bin]]
+name = "stark-orchestrator"
+path = "src/sample_air_benchmarks.rs"
+bench = false
+doc = false
+debug = 1
 
 [features]
 default = ["flame_it"]
@@ -36,3 +42,6 @@ winter-crypto = "0.4.0"
 winter-fri = "0.4.0"
 winter-math = "0.4.0"
 winter-utils = "0.4.0"
+winter-air = "0.4.0"
+winterfell = "0.4.0"
+examples = {git = "https://github.com/Jasleen1/winterfell", branch = "fft"}

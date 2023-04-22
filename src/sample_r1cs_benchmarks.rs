@@ -32,9 +32,9 @@ use winter_crypto::ElementHasher;
 
 use winter_math::fields::f64::BaseElement;
 use winter_math::fields::QuadExtension;
-use winter_math::*;
 use winter_math::FieldElement;
 use winter_math::StarkField;
+use winter_math::*;
 
 #[cfg(feature = "flame_it")]
 extern crate flame;
@@ -47,17 +47,32 @@ fn main() {
     let mut options = ExampleOptions::from_args();
     options.verbose = false;
     if options.verbose {
-        println!(
-            "Arith file {}, wire value  file {}",
-            options.arith_file, options.wires_file
-        );
+        println!("Program {}, size {}", options.program, options.size);
     }
-
+    let mut prog_name = "".to_string();
+    let _fft_str = "fft".to_string();
+    let _fib_str = "fib".to_string();
+    match options.program.to_string() {
+        _fft_str => prog_name.push_str("src/jsnark_outputs/fftexample_"),
+        _fib_str => prog_name.push_str("src/jsnark_outputs/fibonacciexample_"),
+        _ => {
+            println!("Unsupported program type");
+            return;
+        }
+    }
+    let supported_sizes = 5u64..10u64;
+    if supported_sizes.contains(&options.size) {
+        prog_name.push_str(&options.size.to_string());
+    }
+    let mut arith_file = prog_name.clone();
+    arith_file.push_str(".arith");
+    let mut wires_file = prog_name;
+    wires_file.push_str(".wires");
     // call orchestrate_r1cs_example
     //orchestrate_r1cs_example::<BaseElement, QuadExtension<BaseElement>, Rp64_256, 1>(
     orchestrate_r1cs_example::<BaseElement, BaseElement, Blake3_256<BaseElement>, 1>(
-        &options.arith_file,
-        &options.wires_file,
+        &arith_file,
+        &wires_file,
         options.verbose,
     );
 
@@ -76,16 +91,20 @@ pub(crate) fn orchestrate_r1cs_example<
     wire_file: &str,
     verbose: bool,
 ) {
+    println!("============================================================");
+    println!("Getting setup");
+    println!("Step 1: Parse jsnark files");
     let mut arith_parser = JsnarkArithReaderParser::<B>::new().unwrap();
     arith_parser.parse_arith_file(&arith_file, verbose);
     println!("Parsed the arith file");
     let mut r1cs = arith_parser.r1cs_instance;
 
     let mut wires_parser = JsnarkWireReaderParser::<B>::new().unwrap();
-    println!("Got the wire parser");
     wires_parser.parse_wire_file(&wire_file, true);
+    println!("Parsed the wire file");
     let wires = wires_parser.wires;
-    println!("Len wires = {}", wires.len());
+    println!("---------------------");
+    println!("Step 2: Computing the various parameters");
     // 0. Compute num_non_zero by counting max(number of non-zero elts across A, B, C).
 
     // let num_input_variables = r1cs.clone().num_cols();
@@ -112,19 +131,27 @@ pub(crate) fn orchestrate_r1cs_example<
         eta_k,
     };
 
-    let degree_fs = r1cs.num_cols();
+    let now_prep = Instant::now();
 
+    let degree_fs = r1cs.num_cols();
+    println!("---------------------");
+    println!("Step 3: Building Index Domains");
     let index_domains = build_index_domains::<B, E>(index_params.clone());
     println!("built index domains");
+    println!("---------------------");
+    println!("Step 3: Building Indexes");
+    let now = Instant::now();
     let indexed_a = index_matrix::<B, E>(&r1cs.A, &index_domains);
     r1cs.A = Matrix::new("dummy A", Vec::<Vec<B>>::new()).unwrap();
-    println!("indexed matrix a");
+    println!("Indexed A in {} ms", now.elapsed().as_millis());
+    let now = Instant::now();
     let indexed_b = index_matrix::<B, E>(&r1cs.B, &index_domains);
     r1cs.B = Matrix::new("dummy B", Vec::<Vec<B>>::new()).unwrap();
-    println!("indexed matrix b");
+    println!("Indexed B in {} ms", now.elapsed().as_millis());
+    let now = Instant::now();
     let indexed_c = index_matrix::<B, E>(&r1cs.C, &index_domains);
     r1cs.C = Matrix::new("dummy C", Vec::<Vec<B>>::new()).unwrap();
-    println!("indexed matrices");
+    println!("Indexed C in {} ms", now.elapsed().as_millis());
     // This is the index i.e. the pre-processed data for this r1cs
     let index = Index::new(index_params.clone(), indexed_a, indexed_b, indexed_c);
 
@@ -133,8 +160,7 @@ pub(crate) fn orchestrate_r1cs_example<
     let size_subgroup_h = index_domains.h_field.len().next_power_of_two();
     let size_subgroup_k = index_domains.k_field.len().next_power_of_two();
 
-    let evaluation_domain =
-        get_power_series(index_domains.l_field_base, index_domains.l_field_len);
+    let evaluation_domain = get_power_series(index_domains.l_field_base, index_domains.l_field_len);
 
     let summing_domain = index_domains.k_field;
 
@@ -184,6 +210,7 @@ pub(crate) fn orchestrate_r1cs_example<
     let (prover_key, verifier_key) =
         generate_prover_and_verifier_keys::<B, E, H>(index, &options).unwrap();
     println!("Prover and verifier keys generated");
+    println!("Total prep time {} ms", now_prep.elapsed().as_millis());
     let pub_inputs_bytes = vec![0u8, 1u8, 2u8];
     //let pub_inputs_bytes = vec![];
     let mut prover =
@@ -223,7 +250,7 @@ struct ExampleOptions {
     #[structopt(
         short = "a",
         long = "arith_file",
-        default_value = "fractal_examples/jsnark_outputs/fftexample_10.arith"
+        default_value = "src/jsnark_outputs/fftexample.arith"
     )]
     arith_file: String,
 
@@ -231,11 +258,19 @@ struct ExampleOptions {
     #[structopt(
         short = "w",
         long = "wire_file",
-        default_value = "fractal_examples/jsnark_outputs/fftexample_10.wires"
+        default_value = "src/jsnark_outputs/fftexample.wires"
     )]
     wires_file: String,
 
     /// Verbose logging and reporting.
     #[structopt(short = "v", long = "verbose")]
     verbose: bool,
+
+    /// Which program to run.
+    #[structopt(short = "p", long = "program", default_value = "fft")]
+    program: String,
+
+    /// Size of the program instance
+    #[structopt(short = "s", long = "size", default_value = "5")]
+    size: u64,
 }
