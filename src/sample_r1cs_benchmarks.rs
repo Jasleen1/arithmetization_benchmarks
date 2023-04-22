@@ -52,17 +52,24 @@ fn main() {
     let mut prog_name = "".to_string();
     let _fft_str = "fft".to_string();
     let _fib_str = "fib".to_string();
-    match options.program.to_string() {
-        _fft_str => prog_name.push_str("src/jsnark_outputs/fftexample_"),
-        _fib_str => prog_name.push_str("src/jsnark_outputs/fibonacciexample_"),
-        _ => {
+    let mut supported_sizes = 5u64..10u64;
+    if options.program.to_string() == _fft_str {
+        prog_name.push_str("src/jsnark_outputs/fftexample_")
+    }
+    else if options.program.to_string() == _fib_str {
+            prog_name.push_str("src/jsnark_outputs/fibonacciexample_");
+            supported_sizes = 5u64..15u64;
+    }
+    else {
             println!("Unsupported program type");
             return;
-        }
     }
-    let supported_sizes = 5u64..10u64;
+    
     if supported_sizes.contains(&options.size) {
         prog_name.push_str(&options.size.to_string());
+    }
+    else {
+        println!("Unsupported program size");
     }
     let mut arith_file = prog_name.clone();
     arith_file.push_str(".arith");
@@ -95,12 +102,12 @@ pub(crate) fn orchestrate_r1cs_example<
     println!("Getting setup");
     println!("Step 1: Parse jsnark files");
     let mut arith_parser = JsnarkArithReaderParser::<B>::new().unwrap();
-    arith_parser.parse_arith_file(&arith_file, verbose);
+    arith_parser.parse_arith_file(&arith_file, false);
     println!("Parsed the arith file");
     let mut r1cs = arith_parser.r1cs_instance;
 
     let mut wires_parser = JsnarkWireReaderParser::<B>::new().unwrap();
-    wires_parser.parse_wire_file(&wire_file, true);
+    wires_parser.parse_wire_file(&wire_file, false);
     println!("Parsed the wire file");
     let wires = wires_parser.wires;
     println!("---------------------");
