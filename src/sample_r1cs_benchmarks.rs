@@ -1,5 +1,5 @@
-// Copyright (c) Facebook, Inc. and its affiliates.
-//
+// Initial Copyright (c) Facebook, Inc. and its affiliates.
+// Copyright (c) Jasleen Malvai, Tom Yurek and Don Beaver.
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 
@@ -145,18 +145,18 @@ pub(crate) fn orchestrate_r1cs_example<
     let degree_fs = r1cs.num_cols();
     println!("---------------------");
     println!("Step 3: Building Index Domains");
-    let index_domains = build_index_domains::<B>(index_params.clone());
+    let index_domains = build_index_domains::<B, E>(index_params.clone());
     println!("built index domains");
     println!("---------------------");
     println!("Step 3: Building Indexes");
     let now = Instant::now();
-    let indexed_a = index_matrix::<B>(&mut r1cs.A, &index_domains);
+    let indexed_a = index_matrix::<B, E>(&mut r1cs.A, &index_domains);
     println!("Indexed A in {} ms", now.elapsed().as_millis());
     let now = Instant::now();
-    let indexed_b = index_matrix::<B>(&mut r1cs.B, &index_domains);
+    let indexed_b = index_matrix::<B, E>(&mut r1cs.B, &index_domains);
     println!("Indexed B in {} ms", now.elapsed().as_millis());
     let now = Instant::now();
-    let indexed_c = index_matrix::<B>(&mut r1cs.C, &index_domains);
+    let indexed_c = index_matrix::<B, E>(&mut r1cs.C, &index_domains);
     println!("Indexed C in {} ms", now.elapsed().as_millis());
     // This is the index i.e. the pre-processed data for this r1cs
     let index = Index::new(index_params.clone(), indexed_a, indexed_b, indexed_c);
