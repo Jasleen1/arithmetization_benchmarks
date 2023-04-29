@@ -1,13 +1,13 @@
 # Introduction 
 When using SNARK tools for practical applications, there exist heuristics to determine which arithmetization is best suited to a certain kind of computation. 
 
-For example, it is known that it’s very difficult to implement hash tables in R1CS, due to the difficulty of random accesses. Usually random accesses end up requiring looping over an entire array, since the overhead of implementing a RAM-like solution is too high for reasonably sized circuits. For such an application, AIR with permutations would be a good fit. However, are there quantifiable properties of this computation that can tell you what to use?
+For example, it is known that it’s very difficult to implement hash tables in R1CS, due to the difficulty of random accesses. Usually random accesses end up requiring looping over an entire array, since the overhead of implementing a RAM-like solution is too high for reasonably sized circuits. While an implementation of RAM, such as TinyRAM helps asymptotically with R1CS, for a practical RAM-model application, AIR with permutations would be a good fit. However, are there quantifiable properties of computations that can differentiate between different arithmetizations?
 
 Our goal with this project was to answer the following: Can we, in a principled way, categorize which arithmetization is best suited to which kind of computation?
 
-In order to tease out the impact of the arithmetization on various metrics of a proof system, we need to build proof systems which are close to identical in every respect but the arithmetization. What this means is that the cryptographic assumptions and underlying polynomial commitments should be identical for the construction based on each arithmetization. To this end we would like to have (at minimum) R1CS and AIR-based implementations on top of the Rust Winterfell library’s existing poly-commit infrastructure. Then we wanted to test, experimentally, what applications yield better performance on what system. Ideally, we would also include a theoretical classification and proofs of this classification, for example, "how can this application be quantified in terms of its memory access patterns?" and we would have examples that fit the bill for each classification. 
+In order to tease out the impact of the arithmetization on various metrics of a proof system, we need to build proof systems which are close to identical in every respect but the arithmetization. What this means is that the cryptographic assumptions and underlying polynomial commitments should be identical for the construction based on each arithmetization. To this end, so far we have built an R1CS-based proof system using the Rust Winterfell library’s existing poly-commit infrastructure. The Winterfell library already came with a highly optimized AIR-based implementation for us to compare with.  To test, experimentally, what applications yield better performance on what system we have implemented two applications so far (1) FFTs and (2) Fibonacci sequences, as we discuss below. Ideally, we would also include a theoretical classification and proofs of this classification, for example, "how can this application be quantified in terms of its memory access patterns?" and we would have examples that fit the bill for each classification. 
 
-We picked  FFT programs to illustrate the idea that the verification time for an AIR proof grows linearly in the number of distinct constraints known as transition constraints. R1CS verification is independent of the structure of the program and found that as expected, optimized R1CS performs better than AIR.We picked fibonacci to test if repeated structure in a program provides significant benefits when proving it in an AIR-based prover. So far, we haven’t even been able to run very large instances in R1CS because it runs out of memory. 
+We picked  FFT programs to illustrate the idea that the verification time for an AIR proof grows linearly in the number of distinct constraints known as transition constraints. R1CS verification is independent of the structure of the program and found that as expected, optimized R1CS performs better than AIR. We picked fibonacci to test if repeated structure in a program provides significant benefits when proving it in an AIR-based prover. So far, we haven’t even been able to run very large instances in R1CS because it runs out of memory. 
 
 Note that the R1CS code still has some bugs at certain programs and for certain program sizes it fails to run due to running out of memory. These improvements for our implementation are a **work in progress**.
 
@@ -74,10 +74,12 @@ proves and verifies the same size of FFT as
 | **R1CS**| 5  |  6 | 7  | 8  | 9  | 10  |
 | **AIR**  | 32 | 64 | 128|  Not yet supported |    Not yet supported |    Not yet supported |  
 
-For an FFT of size 2^7 elements, proof time for R1CS was 2306ms and that for AIR was 204ms.
+For an FFT of size 2^7 elements, proof time for R1CS was 486ms and that for AIR was 204ms.
 The verifier time for the R1CS verifier was 7ms and that for AIR was 5.6ms.
 
-For an FFT of size 2^10, our R1CS prover currently runs in 208938ms and the verifier in 40ms. 
+For an FFT of size 2^10, our R1CS prover currently runs in 28368ms and the verifier in 38ms. 
+
+We were not able to get the AIR-based implementation to support such a large FFT instance, since it would require committing to a very large number of polynomials. As such, even if we tried to reduce the number of distinct registers, would would need to introduce a corresponding set of selector bits and have more in number as well as more complex transition constraints. We defer further investigation of this intuition for now. 
 
 ### Fibonacci
 Similarly to the previous subsection, the table below provides equivalent parameters for Fibonacci in R1CS or AIR. For example, running 
@@ -87,7 +89,7 @@ Similarly to the previous subsection, the table below provides equivalent parame
 proves and verifies the same size of Fibonacci as 
 
 ```cargo run --release --package arithmetization_benchmarks --bin stark-orchestrator fib -n=1048576```
-that is, computing the 2^21st Fibonacci number. 
+that is, both programs prove correct computation of the the 2^21st Fibonacci number. 
 
 |         |    |    |    |      |     |       |      |       |
 |---------|----|----|----|------|-----|-------|------|-------|
@@ -98,6 +100,23 @@ that is, computing the 2^21st Fibonacci number.
 At the number of iterations 2^20, proof time for R1CS was 217118ms and that for AIR was 8362ms.
 
 The verifier time for the R1CS verifier was 39ms and that for AIR was 2.5ms.
+
+# Work in Progress
+## R1CS Implementation vs AIR Implementation
+One obvious question to ask is, how we know that the numbers generated here are actually comparable across the two arithmetizations. What if our R1CS implementation is, for example, just *bad*? 
+
+Several kinds of optimizations still need to be applied to the `winter_fractal` implementation and this work is ongoing. 
+
+From a qualitative stand-point, the Winterfell repository has had a lot more effort put into its optimizations. Our R1CS repository, called `winter_fractal` which was made public at the initial submission to the Berkeley RDI hackathon, compared to the winterfell repository that his been public and open source for several years. [Winterfell](https://github.com/facebook/winterfell) has 14 contributers and our repository, [`winter_fractal`](https://github.com/Jasleen1/winter_fractal) has only 3. Similarly, as of this writing, Winterfell as significatly more commits than the branch of `winter_fractal` we are building on. That said, our code now largely avoids any extraneous polynomial or field element evaluations and all but one polynomial interpolation/evaluation operation is done using the same FFT operations used by `Winterfell` code. We also batch polynomial commitments for IOP layers as much as possible, and are able to exploit this when querying IOPs later. 
+
+## Applications
+Our applications have been highly optimized and are logically equivalent to the algorithm specifications for both AIR and R1CS. A few caveats:
+1. The application implementations for R1CS have been done in jsnark, as mentioned above and the corresponding files are read into the R1CS code. This means that for larger instances, very large files need to be processed. This uses up a lot of RAM making it hard to run larger experiments and finding a better way would be nice.
+2. A more difficult goal is to formally verify the implementations of our applications against the algorithm spec, a notoriously hard problem. One tool to do this for circom outputs is [Ecne](https://0xparc.org/blog/ecne) and it might be helpful to try and apply it to the jsnark output used here. There is also some work on formal verification of AIR, but no tool exists which can take a spec and check both implementations. This is a cool open problem. 
+3. It would be good to further confirm our results with more applications, such as hash chains.
+
+## RAM Model
+[Winterfell](https://github.com/facebook/winterfell) already has an implementation of an AIR with RAM proving, using a technique called Randomized AIR with Preprocessing ([RAPs](https://hackmd.io/@aztec-network/plonk-arithmetiization-air#RAPs---PAIRs-with-interjected-verifier-randomness)). We are yet to apply the RAM model to `winter_fractal`, such as using TinyRAM. Once this is complete, it would also be good to have examples to illustrate the usefulness of RAM models and when RAM models' efficiency surpasses naive solutions.  
 
 # Acknowledgements 
 Many thanks to Don Beaver for writing the parser from jsnark's R1CS representation to our implementation's R1CS matrices, as well as greately beautifying our code. 
