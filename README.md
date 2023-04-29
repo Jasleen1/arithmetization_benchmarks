@@ -7,7 +7,7 @@ Our goal with this project was to answer the following: Can we, in a principled 
 
 In order to tease out the impact of the arithmetization on various metrics of a proof system, we need to build proof systems which are close to identical in every respect but the arithmetization. What this means is that the cryptographic assumptions and underlying polynomial commitments should be identical for the construction based on each arithmetization. To this end, so far we have built an R1CS-based proof system using the Rust Winterfell library’s existing poly-commit infrastructure. The Winterfell library already came with a highly optimized AIR-based implementation for us to compare with.  To test, experimentally, what applications yield better performance on what system we have implemented two applications so far (1) FFTs and (2) Fibonacci sequences, as we discuss below. Ideally, we would also include a theoretical classification and proofs of this classification, for example, "how can this application be quantified in terms of its memory access patterns?" and we would have examples that fit the bill for each classification. 
 
-We picked  FFT programs to illustrate the idea that the verification time for an AIR proof grows linearly in the number of distinct constraints known as transition constraints. R1CS verification is independent of the structure of the program and found that as expected, optimized R1CS performs better than AIR. We picked fibonacci to test if repeated structure in a program provides significant benefits when proving it in an AIR-based prover. So far, we haven’t even been able to run very large instances in R1CS because it runs out of memory. 
+We picked  FFT programs to illustrate the idea that the verification time for an AIR proof grows linearly in the number of distinct constraints known as transition constraints. R1CS verification is independent of the structure of the program and found that as expected, optimized R1CS performs better than AIR. We picked the multiplicative Fibonacci program to test if repeated structure in a program provides significant benefits when proving it in an AIR-based prover. So far, we haven’t even been able to run very large instances in R1CS because it runs out of memory. 
 
 Note that the R1CS code still has some bugs at certain programs and for certain program sizes it fails to run due to running out of memory. These improvements for our implementation are a **work in progress**.
 
@@ -28,11 +28,11 @@ Once you have generated the examples themselves, to get them working, you will n
 
 Note that we suggest you try to transcribe your algorithms as closely as possible in each framework, in order to get an accurate idea of how the structure of your program impacts the performance of the proof system. 
 # Usage
-
+So far, we have the implementation of an iterative FFT computation in both AIR and R1CS and an implementation of multiplicative Fibonacci in both as well. 
 ### R1CS
 To benchmark an R1CS program, you have the following options: 
 * Program type `-p` which can be set to `fft` or `fib`
-* Program size `-s` which can be set to a value between 5 and 10. Note that currently some of these values are causing crashes. We recommend trying 5 and 9 to get a sense of how things go. This runs the programs in the following way: if your size is `x`, and your program is `fib` you will see results for the fibonacci proof for the 2^x th fibonacci number. 
+* Program size `-s` which can be set to a value between 5 and 10. Note that currently some of these values are causing crashes. We recommend trying 5 and 9 to get a sense of how things go. This runs the programs in the following way: if your size is `x`, and your program is `fib` you will see results for the fibonacci proof for the 2^{x+1} th multiplicative fibonacci number. 
 
 Run the following command to see the benchmarks:
 
@@ -44,7 +44,7 @@ To benchmark AIR programs the commands are similar the program types are `fft` o
 
 `cargo run --release --package arithmetization_benchmarks --bin stark-orchestrator fft -n=32`
 
-Note that in this case, your program size needs to be specified exactly, i.e. if you want to see an FFT of size 32 in the STARK context, you enter 32, as opposed to 5, which you would have entered in the R1CS case.
+Note that in this case, your program size needs to be specified exactly, i.e. if you want to see an FFT of size 32 in the STARK context, you enter 32, as opposed to 5, which you would have entered in the R1CS case. 
 
 ## Currently supported parameters 
 Note that our current Fractal implementation isn't fully optimized as much as Winterfell, and that explains some of the discrepancies here. Below we provide preliminary example numbers based on a run of these benchmarks on an M1 Macbook Pro with 32GB of RAM. 
