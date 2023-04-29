@@ -18,7 +18,7 @@ fn main() {
     // instantiate and prepare the example
     let example = match options.example {
         ExampleType::Fib { sequence_length } => {
-            fibonacci::fib2::get_example(options, sequence_length)
+            fibonacci::mulfib2::get_example(options, sequence_length)
         }
         ExampleType::FFT { degree } => fast_fourier_transform::get_example(options, degree),
         _ => {

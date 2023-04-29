@@ -25,15 +25,15 @@ flame_it = ["flame", "flamer", "fractal_utils/flame_it", "fractal_indexer/flame_
 displaydoc = "0.1.7"
 flame = { version = "0.2", optional = true }
 flamer = { version = "0.3", optional = true }
-fractal_utils = { git = "https://github.com/Jasleen1/winter_fractal", branch = "incomplete_reorg" }
-fractal_proofs = { git = "https://github.com/Jasleen1/winter_fractal", branch = "incomplete_reorg" }
-fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch = "incomplete_reorg" }
-fractal_prover = { git = "https://github.com/Jasleen1/winter_fractal", branch = "incomplete_reorg" }
-fractal_verifier = { git = "https://github.com/Jasleen1/winter_fractal", branch = "incomplete_reorg" }
-winter-models = { git = "https://github.com/Jasleen1/winter_fractal", branch = "incomplete_reorg" }
+fractal_utils = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
+fractal_proofs = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
+fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
+fractal_prover = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
+fractal_verifier = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
+winter-models = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
 lazy_static = "1.4.0"
 log = { version = "0.4", default-features = false }
-models = { version = "0.1.0", path = "../winter_fractal/models", package = "winter-models", default-features = false }
+#models = { version = "0.1.0", path = "../winter_fractal/models", package = "winter-models", default-features = false }
 regex = "1"
 serde = { version = "1.0.117", features = ["derive"] }
 sscanf = "0.1.4"

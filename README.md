@@ -1,5 +1,5 @@
 # Introduction 
-When using SNARK tools for practical applications, there exist heuristics for which arithmetization is best suited to a certain kind of computation. 
+When using SNARK tools for practical applications, there exist heuristics to determine which arithmetization is best suited to a certain kind of computation. 
 
 For example, it is known that it’s very difficult to implement hash tables in R1CS, due to the difficulty of random accesses. Usually random accesses end up requiring looping over an entire array, since the overhead of implementing a RAM-like solution is too high for reasonably sized circuits. For such an application, AIR with permutations would be a good fit. However, are there quantifiable properties of this computation that can tell you what to use?
 
