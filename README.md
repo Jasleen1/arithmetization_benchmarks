@@ -11,7 +11,7 @@ We picked  FFT programs to illustrate the idea that the verification time for an
 
 Note that the R1CS code still has some bugs at certain programs and for certain program sizes it fails to run due to running out of memory. These improvements for our implementation are a **work in progress**.
 
-# TOOLING 
+# Tooling 
 * We have implemented [Fractal](https://eprint.iacr.org/2019/1076.pdf) which is a highly optimized, FRI-based R1CS proof system, in Rust, based on the backend from the Winterfell Rust crates. See [this branch](https://github.com/Jasleen1/winter_fractal/tree/incomplete_reorg).
 * We have implemented an example FFT program in [Winterfell](https://github.com/Jasleen1/winterfell/tree/fft) and Winterfell also already has example Fibonacci implementations. This was the AIR examples component of our code.
 * Next we optimized examples of Fibonacci and FFT implementations in [jsnark](https://github.com/Jasleen1/jsnark/tree/gen-arith).
@@ -27,7 +27,7 @@ Here we have provided a blueprint for comparing two kinds of proof systems on tw
 Once you have generated the examples themselves, to get them working, you will need to modify the `sample_air_benchmarks.rs` and `sample_r1cs_benchmarks.rs` files. 
 
 Note that we suggest you try to transcribe your algorithms as closely as possible in each framework, in order to get an accurate idea of how the structure of your program impacts the performance of the proof system. 
-# USAGE
+# Usage
 
 ### R1CS
 To benchmark an R1CS program, you have the following options: 
