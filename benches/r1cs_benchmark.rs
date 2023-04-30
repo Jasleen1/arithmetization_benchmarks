@@ -113,7 +113,10 @@ fn run_benchmarks<
     let pub_inputs_bytes = vec![0u8, 1u8, 2u8];
     let prover_key: Arc<ProverKey<B,E,H>> = prover_key_raw.into();
 
-    c.bench_function(&format!("R1CS prover for {program}"), |b| {
+    let mut prover_bench = c.benchmark_group("prover");
+    prover_bench.sample_size(10);
+
+    prover_bench.bench_function(&format!("R1CS prover for {program}"), |b| {
         b.iter(|| {
             let mut b_prover =
                 FractalProver::<B, E, H>::new(prover_key.clone(), vec![], wires.clone(), pub_inputs_bytes.clone());
@@ -122,6 +125,7 @@ fn run_benchmarks<
                 .unwrap()
         })
     });
+    prover_bench.finish();
 
     let mut prover =
         FractalProver::<B, E, H>::new(prover_key.clone(), vec![], wires, pub_inputs_bytes.clone());
@@ -129,9 +133,11 @@ fn run_benchmarks<
         .generate_proof(&None, pub_inputs_bytes.clone(), &prover_options)
         .unwrap();
 
-    c.bench_function(&format!("R1CS verifier for {program}"), |b| {
+    let mut verifier_bench = c.benchmark_group("verifier");
+    verifier_bench.bench_function(&format!("R1CS verifier for {program}"), |b| {
         b.iter(|| verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options).unwrap())
     });
+    verifier_bench.finish();
 }
 
 fn criterion_benchmark(c: &mut Criterion) {
