@@ -27,15 +27,20 @@ fn run_benchmarks(c: &mut Criterion, program: ExampleType){
         }
     };
 
-    c.bench_function(&format!("Air prover for {testname}"), |b| {
+    let mut prover_bench = c.benchmark_group("prover");
+    prover_bench.sample_size(10);
+    prover_bench.bench_function(&format!("Air prover for {testname}"), |b| {
         b.iter(|| example.prove())
     });
+    prover_bench.finish();
 
     let proof = example.prove();
 
-    c.bench_function(&format!("Air verifier for {testname}"), |b| {
+    let mut verifier_bench = c.benchmark_group("verifier");
+    verifier_bench.bench_function(&format!("Air verifier for {testname}"), |b| {
         b.iter(|| example.verify(proof.clone()))
     });
+    verifier_bench.finish();
 }
 fn criterion_benchmark(c: &mut Criterion) {
     run_benchmarks(c, ExampleType::Fib{sequence_length: 32});

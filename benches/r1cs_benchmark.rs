@@ -113,6 +113,7 @@ fn run_benchmarks<
     let pub_inputs_bytes = vec![0u8, 1u8, 2u8];
     let prover_key: Arc<ProverKey<B,E,H>> = prover_key_raw.into();
 
+    // create a benchmark group for the prover which runs fewer times
     let mut prover_bench = c.benchmark_group("prover");
     prover_bench.sample_size(10);
 
@@ -133,6 +134,7 @@ fn run_benchmarks<
         .generate_proof(&None, pub_inputs_bytes.clone(), &prover_options)
         .unwrap();
 
+    // (optional) create a verifier group 
     let mut verifier_bench = c.benchmark_group("verifier");
     verifier_bench.bench_function(&format!("R1CS verifier for {program}"), |b| {
         b.iter(|| verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options).unwrap())
