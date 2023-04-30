@@ -22,6 +22,7 @@ default = ["flame_it"]
 flame_it = ["flame", "flamer", "fractal_utils/flame_it", "fractal_indexer/flame_it", "fractal_prover/flame_it", "fractal_verifier/flame_it"]
 
 [dependencies]
+criterion = "0.3"
 displaydoc = "0.1.7"
 flame = { version = "0.2", optional = true }
 flamer = { version = "0.3", optional = true }
@@ -46,3 +47,11 @@ winter-utils = "0.4.0"
 winter-air = "0.4.0"
 winterfell = "0.4.0"
 examples = {git = "https://github.com/Jasleen1/winterfell", branch = "fft"}
+
+[[bench]]
+name = "r1cs_benchmark"
+harness = false
+
+[[bench]]
+name = "air_benchmark"
+harness = false
