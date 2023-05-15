@@ -18,13 +18,13 @@ fn run_benchmarks(c: &mut Criterion, program: ExampleType){
     let example = match options.example {
         ExampleType::Fib { sequence_length } => {
             testname = format!("Fib-{sequence_length}");
-            fibonacci::mulfib2::get_example(options, sequence_length)
+            fibonacci::mulfib2::get_example(&options, sequence_length).unwrap()
         }
         ExampleType::FFT { degree } =>{
             testname = format!("FFT-{degree}");
             let b = max(degree, 64);
             options.blowup_factor = Some(b);
-            fast_fourier_transform::get_example(options, degree)
+            fast_fourier_transform::get_example(&options, degree).unwrap()
         },
         _ => {
             println!("Example type for STARKs not supported");
