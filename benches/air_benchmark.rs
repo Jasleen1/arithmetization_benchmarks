@@ -1,8 +1,11 @@
+use std::cmp::max;
+
 use criterion::{Criterion, criterion_main, criterion_group};
 use examples::{fibonacci, ExampleType, ExampleOptions, fast_fourier_transform};
 
 fn run_benchmarks(c: &mut Criterion, program: ExampleType){
-    let options = ExampleOptions {
+    
+    let mut options = ExampleOptions {
         example: program,
         hash_fn: "blake3_256".to_string(),
         num_queries: Some(16),
@@ -19,6 +22,8 @@ fn run_benchmarks(c: &mut Criterion, program: ExampleType){
         }
         ExampleType::FFT { degree } =>{
             testname = format!("FFT-{degree}");
+            let b = max(degree, 64);
+            options.blowup_factor = Some(b);
             fast_fourier_transform::get_example(options, degree)
         },
         _ => {
@@ -43,8 +48,11 @@ fn run_benchmarks(c: &mut Criterion, program: ExampleType){
     verifier_bench.finish();
 }
 fn criterion_benchmark(c: &mut Criterion) {
-    run_benchmarks(c, ExampleType::Fib{sequence_length: 32});
-    run_benchmarks(c, ExampleType::Fib{sequence_length: 64});
+     // This is how you instantiate a benchmark for AIR
+    run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 15});
+    run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 20});
+    run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 25});
+    run_benchmarks(c, ExampleType::FFT{degree: 1 << 7});
 }
 
 criterion_group!(benches, criterion_benchmark);

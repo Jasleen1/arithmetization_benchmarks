@@ -143,10 +143,11 @@ fn run_benchmarks<
 }
 
 fn criterion_benchmark(c: &mut Criterion) {
-    run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fftexample_8");
+    // This is how you instantiate a benchmark for R1CS, make sure the corresponding .wires and .arith files exist in the ../src/jsnark_outputs directory.
+    run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fibonacciexample_15");
+    run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fibonacciexample_20");
+    run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fftexample_7");
     run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fftexample_10");
-    run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fibonacciexample_5");
-    run_benchmarks::<BaseElement, BaseElement, Blake3_256<BaseElement>>(c, "fibonacciexample_12");
 }
 
 criterion_group!(benches, criterion_benchmark);
