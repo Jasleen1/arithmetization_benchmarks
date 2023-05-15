@@ -18,9 +18,9 @@ fn main() {
     // instantiate and prepare the example
     let example = match options.example {
         ExampleType::Fib { sequence_length } => {
-            fibonacci::mulfib2::get_example(options, sequence_length)
+            fibonacci::mulfib2::get_example(&options, sequence_length).unwrap()
         }
-        ExampleType::FFT { degree } => fast_fourier_transform::get_example(options, degree),
+        ExampleType::FFT { degree } => fast_fourier_transform::get_example(&options, degree).unwrap(),
         _ => {
             println!("Example type for STARKs not supported");
             return;

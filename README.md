@@ -74,10 +74,10 @@ proves and verifies the same size of FFT as
 | **R1CS**| 5  |  6 | 7  | 8  | 9  | 10  |
 | **AIR**  | 32 | 64 | 128|  Not yet supported |    Not yet supported |    Not yet supported |  
 
-On an M1 Macbook Pro with 16GB of RAM, casually running the computations (not using a benchmarking library), we get the following numbers. For an FFT of size 2^7 elements, proof time for R1CS was 471ms and that for AIR was 204ms.
+On an M1 Macbook Pro with 16GB of RAM, casually running the computations (not using a benchmarking library), we get the following numbers. For an FFT of size 2^7 elements, proof time for R1CS was 285ms and that for AIR was 204ms.
 The verifier time for the R1CS verifier was 7ms and that for AIR was 5.6ms.
 
-For an FFT of size 2^10, our R1CS prover currently runs in 28808ms and the verifier in 37ms. 
+For an FFT of size 2^10, our R1CS prover currently runs in 2724ms and the verifier in 36ms. 
 
 We were not able to get the AIR-based implementation to support such a large FFT instance, since it would require committing to a very large number of polynomials. As such, even if we tried to reduce the number of distinct registers, would would need to introduce a corresponding set of selector bits and have more in number as well as more complex transition constraints. We defer further investigation of this intuition for now. 
 
