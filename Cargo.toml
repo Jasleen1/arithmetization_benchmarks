@@ -26,12 +26,13 @@ criterion = "0.3"
 displaydoc = "0.1.7"
 flame = { version = "0.2", optional = true }
 flamer = { version = "0.3", optional = true }
-fractal_utils = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
-fractal_proofs = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
-fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
-fractal_prover = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
-fractal_verifier = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
-winter-models = { git = "https://github.com/Jasleen1/winter_fractal", branch = "matrix_opt" }
+fractal_utils = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+fractal_proofs = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+fractal_prover = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+fractal_verifier = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+winter-models = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+
 lazy_static = "1.4.0"
 log = { version = "0.4", default-features = false }
 #models = { version = "0.1.0", path = "../winter_fractal/models", package = "winter-models", default-features = false }
@@ -44,6 +45,7 @@ winter-crypto = "0.4.0"
 winter-fri = "0.4.0"
 winter-math = "0.4.0"
 winter-utils = "0.4.0"
+winter-rand-utils = "0.4.0"
 winter-air = "0.4.0"
 winterfell = "0.4.0"
 examples = {git = "https://github.com/Jasleen1/winterfell", branch = "fft"}
@@ -54,4 +56,12 @@ harness = false
 
 [[bench]]
 name = "air_benchmark"
+harness = false
+
+[[bench]]
+name = "fft_single_benchmark"
+harness = false
+
+[[bench]]
+name = "merkle_tree_benchmark"
 harness = false

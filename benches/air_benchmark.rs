@@ -1,10 +1,9 @@
 use std::cmp::max;
 
-use criterion::{Criterion, criterion_main, criterion_group};
-use examples::{fibonacci, ExampleType, ExampleOptions, fast_fourier_transform};
+use criterion::{criterion_group, criterion_main, Criterion};
+use examples::{fast_fourier_transform, fibonacci, ExampleOptions, ExampleType};
 
-fn run_benchmarks(c: &mut Criterion, program: ExampleType){
-    
+fn run_benchmarks(c: &mut Criterion, program: ExampleType) {
     let mut options = ExampleOptions {
         example: program,
         hash_fn: "blake3_256".to_string(),
@@ -20,12 +19,12 @@ fn run_benchmarks(c: &mut Criterion, program: ExampleType){
             testname = format!("Fib-{sequence_length}");
             fibonacci::mulfib2::get_example(&options, sequence_length).unwrap()
         }
-        ExampleType::FFT { degree } =>{
+        ExampleType::FFT { degree } => {
             testname = format!("FFT-{degree}");
             let b = max(degree, 64);
             options.blowup_factor = Some(b);
             fast_fourier_transform::get_example(&options, degree).unwrap()
-        },
+        }
         _ => {
             println!("Example type for STARKs not supported");
             return;
@@ -48,11 +47,11 @@ fn run_benchmarks(c: &mut Criterion, program: ExampleType){
     verifier_bench.finish();
 }
 fn criterion_benchmark(c: &mut Criterion) {
-     // This is how you instantiate a benchmark for AIR
-    run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 15});
-    run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 20});
-    run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 25});
-    run_benchmarks(c, ExampleType::FFT{degree: 1 << 7});
+    // This is how you instantiate a benchmark for AIR
+    // run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 15});
+    // run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 20});
+    // run_benchmarks(c, ExampleType::Fib{sequence_length: 1 << 25});
+    run_benchmarks(c, ExampleType::FFT { degree: 1 << 7 });
 }
 
 criterion_group!(benches, criterion_benchmark);

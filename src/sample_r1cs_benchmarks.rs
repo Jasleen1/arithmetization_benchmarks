@@ -189,6 +189,9 @@ pub(crate) fn orchestrate_r1cs_example<
         num_queries,
     };
 
+    println!("Prover size subgroup h = {:?}", size_subgroup_h);
+    println!("Prover size subgroup h = {:?}", size_subgroup_k);
+
     let h_domain_twiddles = fft::get_twiddles(size_subgroup_h);
     let h_domain_inv_twiddles = fft::get_inv_twiddles(size_subgroup_h);
     let k_domain_twiddles = fft::get_twiddles(size_subgroup_k);
@@ -232,7 +235,8 @@ pub(crate) fn orchestrate_r1cs_example<
     );
 
     let now = Instant::now();
-    verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options).unwrap();
+    verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options)
+        .unwrap();
     println!(
         "---------------------\nProof verified in {} ms",
         now.elapsed().as_millis()
