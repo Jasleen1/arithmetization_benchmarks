@@ -6,6 +6,9 @@
 use core::num;
 use std::cmp::max;
 use std::time::Instant;
+use std::collections::HashMap;
+use std::hash::BuildHasherDefault;
+use nohash_hasher::NoHashHasher;
 
 // use fractal_indexer::index::get_max_degree;
 use fractal_proofs::{fft, FractalProverOptions, Serializable};
@@ -26,6 +29,8 @@ use fractal_indexer::{
 
 use winter_models::jsnark_arith_parser::JsnarkArithReaderParser;
 use winter_models::jsnark_wire_parser::JsnarkWireReaderParser;
+use winter_models::utils::{print_vec, print_vec_bits};
+
 
 use winter_crypto::hashers::{Blake3_256, Rp64_256};
 use winter_crypto::ElementHasher;
@@ -36,6 +41,10 @@ use winter_math::FieldElement;
 use winter_math::StarkField;
 use winter_math::*;
 
+macro_rules! println_if {
+    ($verbose:expr, $($x:tt)*) => { if $verbose { println!($($x)*) } }
+}
+
 #[cfg(feature = "flame_it")]
 extern crate flame;
 #[cfg(feature = "flame_it")]
@@ -45,35 +54,31 @@ extern crate flamer;
 #[cfg_attr(feature = "flame_it", flame("main"))]
 fn main() {
     let mut options = ExampleOptions::from_args();
-    options.verbose = false;
+    options.verbose = true;
     if options.verbose {
         println!("Program {}, size {}", options.program, options.size);
     }
-    let mut prog_name = "".to_string();
-    let _fft_str = "fft".to_string();
-    let _fib_str = "fib".to_string();
-    let mut supported_sizes = 5u64..15u64;
-    if options.program.to_string() == _fft_str {
-        prog_name.push_str("src/jsnark_outputs/fftexample_")
-    } else if options.program.to_string() == _fib_str {
-        prog_name.push_str("src/jsnark_outputs/fibonacciexample_");
-        supported_sizes = 5u64..21u64;
-    } else {
-        println!("Unsupported program type");
-        return;
-    }
 
-    if supported_sizes.contains(&options.size) {
-        prog_name.push_str(&options.size.to_string());
-    } else {
-        println!("Unsupported program size");
-        return;
-    }
-    let mut arith_file = prog_name.clone();
-    arith_file.push_str(".arith");
-    let mut wires_file = prog_name;
-    wires_file.push_str(".wires");
-    // call orchestrate_r1cs_example
+    let program_name = match options.program.as_str() {
+        "fft" | "fftexample" => "fftexample",
+        "fib" | "fibonacciexample" => "fibonacciexample",
+        "" | "default" | "sample" => "sample",
+        other => panic!("Unsupported program: {}", other)
+    };
+
+    let supported_sizes = match program_name {
+        "fftexample" => 5u64..15u64,
+        "fibonacciexample" => 5u64..21u64,
+        "sample" => 1u64..2u64,
+        other => panic!("Unsupported program: {}", other)
+    };
+    assert!(supported_sizes.contains(&options.size), "Unsupported program size: {}", &options.size);
+
+    let program_path = format!("src/jsnark_outputs/{program_name}_{}", options.size);
+
+    let arith_file = format!("{program_path}.arith");
+    let wires_file = format!("{program_path}.wires");
+
     //orchestrate_r1cs_example::<BaseElement, QuadExtension<BaseElement>, Rp64_256, 1>(
     orchestrate_r1cs_example::<BaseElement, BaseElement, Blake3_256<BaseElement>, 1>(
         &arith_file,
@@ -82,7 +87,37 @@ fn main() {
     );
 
     #[cfg(feature = "flame_it")]
-    flame::dump_html(&mut std::fs::File::create("stats/flame-graph.html").unwrap()).unwrap();
+    let stats_dirpath = "stats";
+    let graph_fname = "flame-graph.html";
+    std::fs::create_dir_all(stats_dirpath).unwrap_or_else(|e| eprintln!("! {:?}", e.kind()));
+    flame::dump_html(&mut std::fs::File::create(format!("{stats_dirpath}/{graph_fname}")).unwrap()).unwrap();
+}
+
+// Matrix debug printers
+pub fn matrix_debug_print<E: StarkField>(mat: Matrix<E>) {
+    println!("{}", mat.name);
+    for row in &mat.mat {
+        println!("{:?}", row);
+        println!("");
+    }
+}
+
+fn matrix_row_to_vec<E: StarkField>(
+    mat: &Matrix<E>,
+    row: &HashMap<usize, E, BuildHasherDefault<NoHashHasher<usize>>>,
+) -> Vec<E> {
+    let mut vec_form = vec![E::ZERO; mat.dims.1];
+    row.iter().for_each(|(&loc, val)| vec_form[loc] = *val);
+    //row.iter().map(|(&loc, val)| vec_form[loc] = *val);
+    vec_form
+}
+
+pub fn matrix_debug_print_bits<E: StarkField>(mat: &Matrix<E>) {
+    println!("{}", mat.name);
+    for row in &mat.mat {
+        print_vec_bits(&matrix_row_to_vec(&mat, &row));
+        println!("");
+    }
 }
 
 #[cfg_attr(feature = "flame_it", flame)]
@@ -96,21 +131,29 @@ pub(crate) fn orchestrate_r1cs_example<
     wire_file: &str,
     verbose: bool,
 ) {
-    println!("============================================================");
-    println!("Getting setup");
-    println!("Step 1: Parse jsnark files");
+    println_if!(verbose, "============================================================");
+    println_if!(verbose, "Getting setup");
+    println_if!(verbose, "Step 1: Parse jsnark files {}, {}", arith_file, wire_file);
+
     let now = Instant::now();
     let mut arith_parser = JsnarkArithReaderParser::<B>::new().unwrap();
-    arith_parser.parse_arith_file(&arith_file, false);
-    println!("Parsed the arith file in {} ms", now.elapsed().as_millis());
+    arith_parser.parse_arith_file(&arith_file, true);
+    println_if!(verbose, "Parsed arith file in {} ms", now.elapsed().as_millis());
     let mut r1cs = arith_parser.r1cs_instance;
+
+    println!("R1CS:");
+    r1cs.debug_print_bits();
+    //r1cs.debug_print();
+    matrix_debug_print_bits(&r1cs.A);
+
 
     let mut wires_parser = JsnarkWireReaderParser::<B>::new().unwrap();
     wires_parser.parse_wire_file(&wire_file, false);
-    println!("Parsed the wire file");
+    println_if!(verbose, "Parsed the wire file");
     let wires = wires_parser.wires;
-    println!("---------------------");
-    println!("Step 2: Computing the various parameters");
+    println_if!(verbose, "---------------------");
+    println_if!(verbose, "Step 2: Computing the various parameters");
+
     // 0. Compute num_non_zero by counting max(number of non-zero elts across A, B, C).
 
     // let num_input_variables = r1cs.clone().num_cols();
@@ -129,6 +172,10 @@ pub(crate) fn orchestrate_r1cs_example<
     // TODO: make the calculation of eta automated
     let eta = B::GENERATOR.exp(B::PositiveInteger::from(2 * B::TWO_ADICITY));
     let eta_k = B::GENERATOR.exp(B::PositiveInteger::from(1337 * B::TWO_ADICITY));
+    println!("ETA:   {eta:?}");
+    println!("ETA:   {:?}", eta.as_int());
+    println!("ETA_K: {eta_k:?}");
+    println!("ETA_K: {:?}", eta_k.as_int());
     // if num_non_zero <= num_vars {
     //     num_non_zero = num_non_zero * 2;
     // }
@@ -144,21 +191,22 @@ pub(crate) fn orchestrate_r1cs_example<
     let now_prep = Instant::now();
 
     let degree_fs = r1cs.num_cols();
-    println!("---------------------");
-    println!("Step 3: Building Index Domains");
+    println_if!(verbose, "---------------------");
+    println_if!(verbose, "Step 3: Building Index Domains");
     let index_domains = build_index_domains::<B>(index_params.clone());
-    println!("built index domains");
-    println!("---------------------");
-    println!("Step 3: Building Indexes");
+    println_if!(verbose, "built index domains");
+
+    println_if!(verbose, "---------------------");
+    println_if!(verbose, "Step 3: Building Indexes");
     let now = Instant::now();
     let indexed_a = index_matrix::<B>(&mut r1cs.A, &index_domains);
-    println!("Indexed A in {} ms", now.elapsed().as_millis());
+    println_if!(verbose, "Indexed A in {} ms", now.elapsed().as_millis());
     let now = Instant::now();
     let indexed_b = index_matrix::<B>(&mut r1cs.B, &index_domains);
-    println!("Indexed B in {} ms", now.elapsed().as_millis());
+    println_if!(verbose, "Indexed B in {} ms", now.elapsed().as_millis());
     let now = Instant::now();
     let indexed_c = index_matrix::<B>(&mut r1cs.C, &index_domains);
-    println!("Indexed C in {} ms", now.elapsed().as_millis());
+    println_if!(verbose, "Indexed C in {} ms", now.elapsed().as_millis());
     // This is the index i.e. the pre-processed data for this r1cs
     let index = Index::new(index_params.clone(), indexed_a, indexed_b, indexed_c);
 
@@ -235,9 +283,8 @@ pub(crate) fn orchestrate_r1cs_example<
     );
 
     let now = Instant::now();
-    verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options)
-        .unwrap();
-    println!(
+    verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options).unwrap();
+    println_if!(verbose,
         "---------------------\nProof verified in {} ms",
         now.elapsed().as_millis()
     );
