@@ -93,33 +93,6 @@ fn main() {
     flame::dump_html(&mut std::fs::File::create(format!("{stats_dirpath}/{graph_fname}")).unwrap()).unwrap();
 }
 
-// Matrix debug printers
-pub fn matrix_debug_print<E: StarkField>(mat: Matrix<E>) {
-    println!("{}", mat.name);
-    for row in &mat.mat {
-        println!("{:?}", row);
-        println!("");
-    }
-}
-
-fn matrix_row_to_vec<E: StarkField>(
-    mat: &Matrix<E>,
-    row: &HashMap<usize, E, BuildHasherDefault<NoHashHasher<usize>>>,
-) -> Vec<E> {
-    let mut vec_form = vec![E::ZERO; mat.dims.1];
-    row.iter().for_each(|(&loc, val)| vec_form[loc] = *val);
-    //row.iter().map(|(&loc, val)| vec_form[loc] = *val);
-    vec_form
-}
-
-pub fn matrix_debug_print_bits<E: StarkField>(mat: &Matrix<E>) {
-    println!("{}", mat.name);
-    for row in &mat.mat {
-        print_vec_bits(&matrix_row_to_vec(&mat, &row));
-        println!("");
-    }
-}
-
 #[cfg_attr(feature = "flame_it", flame)]
 pub(crate) fn orchestrate_r1cs_example<
     B: StarkField,
@@ -137,18 +110,17 @@ pub(crate) fn orchestrate_r1cs_example<
 
     let now = Instant::now();
     let mut arith_parser = JsnarkArithReaderParser::<B>::new().unwrap();
-    arith_parser.parse_arith_file(&arith_file, true);
+    arith_parser.parse_arith_file(&arith_file, false /* verbose */);
     println_if!(verbose, "Parsed arith file in {} ms", now.elapsed().as_millis());
     let mut r1cs = arith_parser.r1cs_instance;
 
-    println!("R1CS:");
-    r1cs.debug_print_bits();
-    //r1cs.debug_print();
-    matrix_debug_print_bits(&r1cs.A);
-
+    // if (verbose) {
+    //     println!("R1CS:");
+    //     r1cs.debug_print_bits();
+    // }
 
     let mut wires_parser = JsnarkWireReaderParser::<B>::new().unwrap();
-    wires_parser.parse_wire_file(&wire_file, false);
+    wires_parser.parse_wire_file(&wire_file, false /* verbose */);
     println_if!(verbose, "Parsed the wire file");
     let wires = wires_parser.wires;
     println_if!(verbose, "---------------------");
@@ -172,10 +144,6 @@ pub(crate) fn orchestrate_r1cs_example<
     // TODO: make the calculation of eta automated
     let eta = B::GENERATOR.exp(B::PositiveInteger::from(2 * B::TWO_ADICITY));
     let eta_k = B::GENERATOR.exp(B::PositiveInteger::from(1337 * B::TWO_ADICITY));
-    println!("ETA:   {eta:?}");
-    println!("ETA:   {:?}", eta.as_int());
-    println!("ETA_K: {eta_k:?}");
-    println!("ETA_K: {:?}", eta_k.as_int());
     // if num_non_zero <= num_vars {
     //     num_non_zero = num_non_zero * 2;
     // }
@@ -198,15 +166,19 @@ pub(crate) fn orchestrate_r1cs_example<
 
     println_if!(verbose, "---------------------");
     println_if!(verbose, "Step 3: Building Indexes");
+
     let now = Instant::now();
     let indexed_a = index_matrix::<B>(&mut r1cs.A, &index_domains);
     println_if!(verbose, "Indexed A in {} ms", now.elapsed().as_millis());
+
     let now = Instant::now();
     let indexed_b = index_matrix::<B>(&mut r1cs.B, &index_domains);
     println_if!(verbose, "Indexed B in {} ms", now.elapsed().as_millis());
+
     let now = Instant::now();
     let indexed_c = index_matrix::<B>(&mut r1cs.C, &index_domains);
     println_if!(verbose, "Indexed C in {} ms", now.elapsed().as_millis());
+
     // This is the index i.e. the pre-processed data for this r1cs
     let index = Index::new(index_params.clone(), indexed_a, indexed_b, indexed_c);
 
@@ -281,6 +253,9 @@ pub(crate) fn orchestrate_r1cs_example<
         "---------------------\nProof generated in {} ms",
         now.elapsed().as_millis()
     );
+
+    let proof_bytes = proof.to_bytes();
+    println_if!(verbose, "Proof size: {}", proof_bytes.len());
 
     let now = Instant::now();
     verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options).unwrap();
