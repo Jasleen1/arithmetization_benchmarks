@@ -32,6 +32,7 @@ fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch =
 fractal_prover = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_verifier = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 winter-models = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+reports = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 
 lazy_static = "1.4.0"
 log = { version = "0.4", default-features = false }
