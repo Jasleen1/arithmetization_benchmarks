@@ -22,7 +22,7 @@ default = ["flame_it"]
 flame_it = ["flame", "flamer", "fractal_utils/flame_it", "fractal_indexer/flame_it", "fractal_prover/flame_it", "fractal_verifier/flame_it"]
 
 [dependencies]
-criterion = "0.3"
+criterion = { version = "0.4", features = [ "html_reports" ] }
 displaydoc = "0.1.7"
 flame = { version = "0.2", optional = true }
 flamer = { version = "0.3", optional = true }

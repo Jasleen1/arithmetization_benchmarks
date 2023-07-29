@@ -87,12 +87,14 @@ fn main() {
     );
 
     #[cfg(feature = "flame_it")]
-    // let stats_dirpath = "stats";
-    // let graph_fname = "flame-graph.html";
-    // std::fs::create_dir_all(stats_dirpath).unwrap_or_else(|e| eprintln!("! {:?}", e.kind()));
-    // flame::dump_html(&mut std::fs::File::create(format!("{stats_dirpath}/{graph_fname}")).unwrap()).unwrap();
-    let report_name = format!("r1cs:{program_name}:{}", options.size);
-    generate_flame_report(None, report_name.as_str());
+    {
+        // let stats_dirpath = "stats";
+        // let graph_fname = "flame-graph.html";
+        // std::fs::create_dir_all(stats_dirpath).unwrap_or_else(|e| eprintln!("! {:?}", e.kind()));
+        // flame::dump_html(&mut std::fs::File::create(format!("{stats_dirpath}/{graph_fname}")).unwrap()).unwrap();
+        let report_name = format!("r1cs:{program_name}:{}", options.size);
+        generate_flame_report(Some("gen/rept200"), report_name.as_str());
+    }
 }
 
 #[cfg_attr(feature = "flame_it", flame)]
