@@ -22,20 +22,23 @@ default = ["flame_it"]
 flame_it = ["flame", "flamer", "fractal_utils/flame_it", "fractal_indexer/flame_it", "fractal_prover/flame_it", "fractal_verifier/flame_it"]
 
 [dependencies]
-criterion = "0.3"
+criterion = { version = "0.4", features = [ "html_reports" ] }
 displaydoc = "0.1.7"
 flame = { version = "0.2", optional = true }
 flamer = { version = "0.3", optional = true }
+fractal_examples = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_utils = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_proofs = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_prover = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_verifier = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 winter-models = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
+reports = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 
 lazy_static = "1.4.0"
 log = { version = "0.4", default-features = false }
 #models = { version = "0.1.0", path = "../winter_fractal/models", package = "winter-models", default-features = false }
+nohash-hasher = { version = "0.2" }
 regex = "1"
 serde = { version = "1.0.117", features = ["derive"] }
 sscanf = "0.1.4"
@@ -72,4 +75,8 @@ harness = false
 
 [[bench]]
 name = "merkle_proof_benchmark"
+harness = false
+
+[[bench]]
+name = "program_by_proof_system_benchmark"
 harness = false

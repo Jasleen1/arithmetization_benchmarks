@@ -103,6 +103,7 @@ The verifier time for the R1CS verifier was 39ms and that for AIR was 2.5ms.
 
 # Benchmarking
 We also have automated benchmarks implemented using Rust's `criterion` crate, to be found in `./benches`. 
+Benchmarking reports appear under `target/criteron/report/index.html`.`
 
 The AIR benchmarks have the FFT example for 2^7 implemented, as well as three examples of Fibonacci: 2^15, 2^20 and 2^25. These can be found (and modified) in the `./benches/air_benchmark.rs` file.
 
