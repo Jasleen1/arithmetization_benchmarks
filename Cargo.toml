@@ -26,6 +26,7 @@ criterion = { version = "0.4", features = [ "html_reports" ] }
 displaydoc = "0.1.7"
 flame = { version = "0.2", optional = true }
 flamer = { version = "0.3", optional = true }
+fractal_examples = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_utils = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_proofs = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
 fractal_indexer = { git = "https://github.com/Jasleen1/winter_fractal", branch = "linear_combination" }
@@ -66,4 +67,8 @@ harness = false
 
 [[bench]]
 name = "merkle_tree_benchmark"
+harness = false
+
+[[bench]]
+name = "program_by_proof_system_benchmark"
 harness = false
