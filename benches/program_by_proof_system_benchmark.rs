@@ -93,9 +93,9 @@ fn extract_setop_options() -> (bool, String, String, String) {
 
     let (verbose, program_list, system_list, instance_list) = (
         true,
-        "fft".to_string(),
-        "r1cs".to_string(),
-        "5,6,7".to_string()
+        "fft,fib".to_string(),
+        "r1cs,air".to_string(),
+        "5,6".to_string()
     );
     (verbose, program_list, system_list, instance_list)
 }
@@ -130,7 +130,7 @@ fn setup(verbose: bool, program_list: String, system_list: String, instance_list
 fn get_air_example(program_tag: &ProgramTag, instance_size: usize) -> Box<dyn Example> {
 
     let program = match program_tag {
-        ProgramTag::FFT => ExampleType::FFT { degree: instance_size },
+        ProgramTag::FFT => ExampleType::FFT { degree: 2 << instance_size },
         ProgramTag::Fibonacci => ExampleType::Fib { sequence_length:  2 << instance_size },
         other => panic!("Unsupported program type {:?}", program_tag),
     };
