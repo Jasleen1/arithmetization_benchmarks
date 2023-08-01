@@ -48,10 +48,10 @@ winter-crypto = "0.4.0"
 winter-fri = "0.4.0"
 winter-math = "0.4.0"
 winter-utils = "0.4.0"
-winter-rand-utils = "0.4.0"
-winter-air = "0.4.0"
-winterfell = "0.4.0"
-examples = {git = "https://github.com/Jasleen1/winterfell", branch = "fft"}
+winter-rand-utils = "0.4.0" 
+winter-air = "0.4.0" 
+winterfell = "0.4.0" 
+examples = {git = "https://github.com/Jasleen1/winterfell", branch = "pointer_chasing"}
 
 [[bench]]
 name = "r1cs_benchmark"
