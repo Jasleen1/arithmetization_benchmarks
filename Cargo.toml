@@ -63,5 +63,13 @@ name = "fft_single_benchmark"
 harness = false
 
 [[bench]]
+name = "fft_micro_benchmark"
+harness = false
+
+[[bench]]
 name = "merkle_tree_benchmark"
+harness = false
+
+[[bench]]
+name = "merkle_proof_benchmark"
 harness = false

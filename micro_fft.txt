@@ -1,0 +1,2787 @@
+WARNING: HTML report generation will become a non-default optional feature in Criterion.rs 0.4.0.
+This feature is being moved to cargo-criterion (https://github.com/bheisler/cargo-criterion) and will be optional in a future version of Criterion.rs. To silence this warning, either switch to cargo-criterion or enable the 'html_reports' feature in your Cargo.toml.
+
+Gnuplot not found, using plotters backend
+Benchmarking f62/fft_evaluate_poly/simple/2
+Benchmarking f62/fft_evaluate_poly/simple/2: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/2: Collecting 10 samples in estimated 10.000 s (62M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/2: Analyzing
+f62/fft_evaluate_poly/simple/2
+                        time:   [83.310 ns 83.811 ns 84.746 ns]
+                        change: [-3.1030% -1.4151% +0.2607%] (p = 0.15 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/4
+Benchmarking f62/fft_evaluate_poly/simple/4: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/4: Collecting 10 samples in estimated 10.000 s (51M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/4: Analyzing
+f62/fft_evaluate_poly/simple/4
+                        time:   [118.83 ns 119.30 ns 119.69 ns]
+                        change: [-0.7793% -0.1915% +0.3795%] (p = 0.53 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/8
+Benchmarking f62/fft_evaluate_poly/simple/8: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/8: Collecting 10 samples in estimated 10.000 s (36M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/8: Analyzing
+f62/fft_evaluate_poly/simple/8
+                        time:   [191.70 ns 192.40 ns 192.86 ns]
+                        change: [-0.8970% +0.1333% +1.2052%] (p = 0.81 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low severe
+  1 (10.00%) low mild
+Benchmarking f62/fft_evaluate_poly/simple/16
+Benchmarking f62/fft_evaluate_poly/simple/16: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/16: Collecting 10 samples in estimated 10.000 s (22M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/16: Analyzing
+f62/fft_evaluate_poly/simple/16
+                        time:   [363.65 ns 365.81 ns 367.28 ns]
+                        change: [-1.5253% -0.3708% +0.7545%] (p = 0.56 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/32
+Benchmarking f62/fft_evaluate_poly/simple/32: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/32: Collecting 10 samples in estimated 10.000 s (11M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/32: Analyzing
+f62/fft_evaluate_poly/simple/32
+                        time:   [788.43 ns 792.42 ns 794.75 ns]
+                        change: [-1.2543% -0.3129% +0.6859%] (p = 0.54 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/64
+Benchmarking f62/fft_evaluate_poly/simple/64: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/64: Collecting 10 samples in estimated 10.000 s (5.6M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/64: Analyzing
+f62/fft_evaluate_poly/simple/64
+                        time:   [1.5974 µs 1.6058 µs 1.6160 µs]
+                        change: [+0.0095% +0.8994% +1.8404%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking f62/fft_evaluate_poly/simple/128
+Benchmarking f62/fft_evaluate_poly/simple/128: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/128: Collecting 10 samples in estimated 10.000 s (2.7M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/128: Analyzing
+f62/fft_evaluate_poly/simple/128
+                        time:   [3.2154 µs 3.2453 µs 3.2633 µs]
+                        change: [-1.9285% -0.5859% +0.7721%] (p = 0.43 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/256
+Benchmarking f62/fft_evaluate_poly/simple/256: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/256: Collecting 10 samples in estimated 10.000 s (1.3M iterations)
+Benchmarking f62/fft_evaluate_poly/simple/256: Analyzing
+f62/fft_evaluate_poly/simple/256
+                        time:   [6.8731 µs 6.8976 µs 6.9227 µs]
+                        change: [-1.6777% -0.5303% +0.3964%] (p = 0.39 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/512
+Benchmarking f62/fft_evaluate_poly/simple/512: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/512: Collecting 10 samples in estimated 10.001 s (596k iterations)
+Benchmarking f62/fft_evaluate_poly/simple/512: Analyzing
+f62/fft_evaluate_poly/simple/512
+                        time:   [14.847 µs 14.917 µs 14.984 µs]
+                        change: [-0.4946% +0.0891% +0.6419%] (p = 0.76 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/1024
+Benchmarking f62/fft_evaluate_poly/simple/1024: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/1024: Collecting 10 samples in estimated 10.001 s (278k iterations)
+Benchmarking f62/fft_evaluate_poly/simple/1024: Analyzing
+f62/fft_evaluate_poly/simple/1024
+                        time:   [32.114 µs 32.243 µs 32.463 µs]
+                        change: [-0.9278% +0.0409% +1.1547%] (p = 0.96 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f62/fft_evaluate_poly/simple/2048
+Benchmarking f62/fft_evaluate_poly/simple/2048: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/2048: Collecting 10 samples in estimated 10.001 s (129k iterations)
+Benchmarking f62/fft_evaluate_poly/simple/2048: Analyzing
+f62/fft_evaluate_poly/simple/2048
+                        time:   [69.967 µs 70.782 µs 71.646 µs]
+                        change: [-0.2818% +0.7245% +1.8140%] (p = 0.22 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/4096
+Benchmarking f62/fft_evaluate_poly/simple/4096: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/4096: Collecting 10 samples in estimated 10.003 s (60k iterations)
+Benchmarking f62/fft_evaluate_poly/simple/4096: Analyzing
+f62/fft_evaluate_poly/simple/4096
+                        time:   [151.96 µs 152.87 µs 153.62 µs]
+                        change: [-1.8713% -0.4711% +0.9245%] (p = 0.54 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_evaluate_poly/simple/8192
+Benchmarking f62/fft_evaluate_poly/simple/8192: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/8192: Collecting 10 samples in estimated 10.005 s (28k iterations)
+Benchmarking f62/fft_evaluate_poly/simple/8192: Analyzing
+f62/fft_evaluate_poly/simple/8192
+                        time:   [344.34 µs 345.59 µs 346.33 µs]
+                        change: [-1.3522% -0.7647% -0.2546%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_evaluate_poly/simple/16384
+Benchmarking f62/fft_evaluate_poly/simple/16384: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/16384: Collecting 10 samples in estimated 10.013 s (13k iterations)
+Benchmarking f62/fft_evaluate_poly/simple/16384: Analyzing
+f62/fft_evaluate_poly/simple/16384
+                        time:   [742.96 µs 744.13 µs 744.88 µs]
+                        change: [-0.3578% +0.1375% +0.7680%] (p = 0.67 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 10 measurements (40.00%)
+  2 (20.00%) low severe
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f62/fft_evaluate_poly/simple/32768
+Benchmarking f62/fft_evaluate_poly/simple/32768: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/32768: Collecting 10 samples in estimated 10.049 s (6105 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/32768: Analyzing
+f62/fft_evaluate_poly/simple/32768
+                        time:   [1.6105 ms 1.6184 ms 1.6274 ms]
+                        change: [-0.8706% -0.0640% +0.7032%] (p = 0.88 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/65536
+Benchmarking f62/fft_evaluate_poly/simple/65536: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/65536: Collecting 10 samples in estimated 10.100 s (2860 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/65536: Analyzing
+f62/fft_evaluate_poly/simple/65536
+                        time:   [3.4546 ms 3.4653 ms 3.4823 ms]
+                        change: [+1.0673% +1.6234% +2.1684%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/simple/131072
+Benchmarking f62/fft_evaluate_poly/simple/131072: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/131072: Collecting 10 samples in estimated 10.200 s (1430 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/131072: Analyzing
+f62/fft_evaluate_poly/simple/131072
+                        time:   [6.8479 ms 6.8774 ms 6.9072 ms]
+                        change: [-1.0548% -0.3943% +0.1859%] (p = 0.26 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/262144
+Benchmarking f62/fft_evaluate_poly/simple/262144: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/262144: Collecting 10 samples in estimated 10.704 s (715 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/262144: Analyzing
+f62/fft_evaluate_poly/simple/262144
+                        time:   [14.446 ms 14.536 ms 14.601 ms]
+                        change: [-0.7560% -0.2587% +0.2518%] (p = 0.38 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_evaluate_poly/simple/524288
+Benchmarking f62/fft_evaluate_poly/simple/524288: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/524288: Collecting 10 samples in estimated 10.381 s (330 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/524288: Analyzing
+f62/fft_evaluate_poly/simple/524288
+                        time:   [30.219 ms 30.384 ms 30.532 ms]
+                        change: [-1.5304% -0.6935% +0.0674%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking f62/fft_evaluate_poly/simple/1048576
+Benchmarking f62/fft_evaluate_poly/simple/1048576: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/1048576: Collecting 10 samples in estimated 10.922 s (165 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/1048576: Analyzing
+f62/fft_evaluate_poly/simple/1048576
+                        time:   [64.025 ms 64.149 ms 64.328 ms]
+                        change: [-3.3883% -2.0912% -0.7898%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_evaluate_poly/simple/2097152
+Benchmarking f62/fft_evaluate_poly/simple/2097152: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/2097152: Collecting 10 samples in estimated 15.767 s (110 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/2097152: Analyzing
+f62/fft_evaluate_poly/simple/2097152
+                        time:   [138.25 ms 138.85 ms 139.38 ms]
+                        change: [-1.1309% -0.4841% +0.1663%] (p = 0.18 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/4194304
+Benchmarking f62/fft_evaluate_poly/simple/4194304: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 16.8s or enable flat sampling.
+Benchmarking f62/fft_evaluate_poly/simple/4194304: Collecting 10 samples in estimated 16.762 s (55 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/4194304: Analyzing
+f62/fft_evaluate_poly/simple/4194304
+                        time:   [296.06 ms 297.43 ms 298.77 ms]
+                        change: [-1.6569% -0.8133% +0.0608%] (p = 0.10 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/simple/8388608
+Benchmarking f62/fft_evaluate_poly/simple/8388608: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/simple/8388608: Collecting 10 samples in estimated 13.267 s (20 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/8388608: Analyzing
+f62/fft_evaluate_poly/simple/8388608
+                        time:   [632.49 ms 637.66 ms 642.18 ms]
+                        change: [-2.1063% -0.9808% +0.1201%] (p = 0.11 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_evaluate_poly/simple/16777216
+Benchmarking f62/fft_evaluate_poly/simple/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 14.4s.
+Benchmarking f62/fft_evaluate_poly/simple/16777216: Collecting 10 samples in estimated 14.417 s (10 iterations)
+Benchmarking f62/fft_evaluate_poly/simple/16777216: Analyzing
+f62/fft_evaluate_poly/simple/16777216
+                        time:   [1.3735 s 1.3785 s 1.3831 s]
+                        change: [-1.7001% -1.0287% -0.4039%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_evaluate_poly/with_offset/2
+Benchmarking f62/fft_evaluate_poly/with_offset/2: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/2: Collecting 10 samples in estimated 10.000 s (18M iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/2: Analyzing
+f62/fft_evaluate_poly/with_offset/2
+                        time:   [473.64 ns 478.88 ns 481.65 ns]
+                        change: [-1.3066% -0.1603% +1.0779%] (p = 0.80 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/4
+Benchmarking f62/fft_evaluate_poly/with_offset/4: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/4: Collecting 10 samples in estimated 10.000 s (11M iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/4: Analyzing
+f62/fft_evaluate_poly/with_offset/4
+                        time:   [855.00 ns 864.24 ns 869.75 ns]
+                        change: [-0.9328% +0.5322% +1.9838%] (p = 0.50 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/8
+Benchmarking f62/fft_evaluate_poly/with_offset/8: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/8: Collecting 10 samples in estimated 10.000 s (5.5M iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/8: Analyzing
+f62/fft_evaluate_poly/with_offset/8
+                        time:   [1.6884 µs 1.7025 µs 1.7089 µs]
+                        change: [-1.4399% -0.2077% +1.0984%] (p = 0.76 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/16
+Benchmarking f62/fft_evaluate_poly/with_offset/16: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/16: Collecting 10 samples in estimated 10.000 s (2.8M iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/16: Analyzing
+f62/fft_evaluate_poly/with_offset/16
+                        time:   [3.4700 µs 3.4785 µs 3.4871 µs]
+                        change: [-0.5270% -0.0816% +0.3605%] (p = 0.74 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/32
+Benchmarking f62/fft_evaluate_poly/with_offset/32: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/32: Collecting 10 samples in estimated 10.000 s (1.2M iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/32: Analyzing
+f62/fft_evaluate_poly/with_offset/32
+                        time:   [7.6443 µs 7.6690 µs 7.6999 µs]
+                        change: [-0.5641% -0.1184% +0.3056%] (p = 0.62 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/64
+Benchmarking f62/fft_evaluate_poly/with_offset/64: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/64: Collecting 10 samples in estimated 10.000 s (597k iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/64: Analyzing
+f62/fft_evaluate_poly/with_offset/64
+                        time:   [15.820 µs 15.875 µs 15.934 µs]
+                        change: [-0.5704% -0.0762% +0.3707%] (p = 0.78 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low severe
+Benchmarking f62/fft_evaluate_poly/with_offset/128
+Benchmarking f62/fft_evaluate_poly/with_offset/128: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/128: Collecting 10 samples in estimated 10.001 s (280k iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/128: Analyzing
+f62/fft_evaluate_poly/with_offset/128
+                        time:   [31.480 µs 31.625 µs 31.757 µs]
+                        change: [-2.1535% -0.7347% +0.5629%] (p = 0.36 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/256
+Benchmarking f62/fft_evaluate_poly/with_offset/256: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/256: Collecting 10 samples in estimated 10.004 s (132k iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/256: Analyzing
+f62/fft_evaluate_poly/with_offset/256
+                        time:   [66.587 µs 66.891 µs 67.163 µs]
+                        change: [-0.9836% -0.2945% +0.3858%] (p = 0.43 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/512
+Benchmarking f62/fft_evaluate_poly/with_offset/512: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/512: Collecting 10 samples in estimated 10.008 s (62k iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/512: Analyzing
+f62/fft_evaluate_poly/with_offset/512
+                        time:   [143.27 µs 143.72 µs 144.02 µs]
+                        change: [-0.4381% +0.1745% +0.7208%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/1024
+Benchmarking f62/fft_evaluate_poly/with_offset/1024: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/1024: Collecting 10 samples in estimated 10.002 s (29k iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/1024: Analyzing
+f62/fft_evaluate_poly/with_offset/1024
+                        time:   [305.65 µs 307.58 µs 309.53 µs]
+                        change: [-1.0895% -0.3094% +0.4420%] (p = 0.48 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f62/fft_evaluate_poly/with_offset/2048
+Benchmarking f62/fft_evaluate_poly/with_offset/2048: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/2048: Collecting 10 samples in estimated 10.005 s (14k iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/2048: Analyzing
+f62/fft_evaluate_poly/with_offset/2048
+                        time:   [663.26 µs 671.07 µs 674.93 µs]
+                        change: [-1.2177% -0.1105% +1.0128%] (p = 0.85 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/4096
+Benchmarking f62/fft_evaluate_poly/with_offset/4096: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/4096: Collecting 10 samples in estimated 10.066 s (6380 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/4096: Analyzing
+f62/fft_evaluate_poly/with_offset/4096
+                        time:   [1.4763 ms 1.4826 ms 1.4909 ms]
+                        change: [+0.6096% +1.4283% +2.3202%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_evaluate_poly/with_offset/8192
+Benchmarking f62/fft_evaluate_poly/with_offset/8192: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/8192: Collecting 10 samples in estimated 10.122 s (2970 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/8192: Analyzing
+f62/fft_evaluate_poly/with_offset/8192
+                        time:   [3.2506 ms 3.2656 ms 3.2760 ms]
+                        change: [-0.7210% +0.0351% +0.7267%] (p = 0.93 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low severe
+Benchmarking f62/fft_evaluate_poly/with_offset/16384
+Benchmarking f62/fft_evaluate_poly/with_offset/16384: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/16384: Collecting 10 samples in estimated 10.229 s (1430 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/16384: Analyzing
+f62/fft_evaluate_poly/with_offset/16384
+                        time:   [6.7366 ms 6.7848 ms 6.8480 ms]
+                        change: [+0.2301% +1.0770% +1.8419%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_evaluate_poly/with_offset/32768
+Benchmarking f62/fft_evaluate_poly/with_offset/32768: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/32768: Collecting 10 samples in estimated 10.586 s (715 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/32768: Analyzing
+f62/fft_evaluate_poly/with_offset/32768
+                        time:   [14.189 ms 14.231 ms 14.278 ms]
+                        change: [-0.2001% +0.3089% +0.8400%] (p = 0.28 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_evaluate_poly/with_offset/65536
+Benchmarking f62/fft_evaluate_poly/with_offset/65536: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/65536: Collecting 10 samples in estimated 10.301 s (330 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/65536: Analyzing
+f62/fft_evaluate_poly/with_offset/65536
+                        time:   [29.879 ms 30.057 ms 30.246 ms]
+                        change: [-0.6491% +0.5252% +1.8191%] (p = 0.47 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f62/fft_evaluate_poly/with_offset/131072
+Benchmarking f62/fft_evaluate_poly/with_offset/131072: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/131072: Collecting 10 samples in estimated 10.845 s (165 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/131072: Analyzing
+f62/fft_evaluate_poly/with_offset/131072
+                        time:   [62.768 ms 63.263 ms 63.882 ms]
+                        change: [+2.2934% +4.1339% +6.1438%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/with_offset/262144
+Benchmarking f62/fft_evaluate_poly/with_offset/262144: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/262144: Collecting 10 samples in estimated 15.347 s (110 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/262144: Analyzing
+f62/fft_evaluate_poly/with_offset/262144
+                        time:   [136.29 ms 137.77 ms 140.58 ms]
+                        change: [+3.0789% +5.2722% +7.4145%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/with_offset/524288
+Benchmarking f62/fft_evaluate_poly/with_offset/524288: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 16.3s or enable flat sampling.
+Benchmarking f62/fft_evaluate_poly/with_offset/524288: Collecting 10 samples in estimated 16.289 s (55 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/524288: Analyzing
+f62/fft_evaluate_poly/with_offset/524288
+                        time:   [305.77 ms 307.71 ms 311.40 ms]
+                        change: [+4.4529% +6.1342% +7.7780%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/with_offset/1048576
+Benchmarking f62/fft_evaluate_poly/with_offset/1048576: Warming up for 3.0000 s
+Benchmarking f62/fft_evaluate_poly/with_offset/1048576: Collecting 10 samples in estimated 12.965 s (20 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/1048576: Analyzing
+f62/fft_evaluate_poly/with_offset/1048576
+                        time:   [656.40 ms 662.86 ms 669.21 ms]
+                        change: [+3.8756% +5.0379% +6.1915%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/with_offset/2097152
+Benchmarking f62/fft_evaluate_poly/with_offset/2097152: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 13.8s.
+Benchmarking f62/fft_evaluate_poly/with_offset/2097152: Collecting 10 samples in estimated 13.841 s (10 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/2097152: Analyzing
+f62/fft_evaluate_poly/with_offset/2097152
+                        time:   [1.4032 s 1.4126 s 1.4223 s]
+                        change: [+3.0986% +3.9209% +4.7159%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/with_offset/4194304
+Benchmarking f62/fft_evaluate_poly/with_offset/4194304: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 28.8s.
+Benchmarking f62/fft_evaluate_poly/with_offset/4194304: Collecting 10 samples in estimated 28.814 s (10 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/4194304: Analyzing
+f62/fft_evaluate_poly/with_offset/4194304
+                        time:   [2.8921 s 2.8993 s 2.9058 s]
+                        change: [+0.5845% +0.8994% +1.2394%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_evaluate_poly/with_offset/8388608
+Benchmarking f62/fft_evaluate_poly/with_offset/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 60.7s.
+Benchmarking f62/fft_evaluate_poly/with_offset/8388608: Collecting 10 samples in estimated 60.666 s (10 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/8388608: Analyzing
+f62/fft_evaluate_poly/with_offset/8388608
+                        time:   [6.0644 s 6.1196 s 6.1777 s]
+                        change: [+1.4155% +2.3358% +3.2969%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_evaluate_poly/with_offset/16777216
+Benchmarking f62/fft_evaluate_poly/with_offset/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 128.2s.
+Benchmarking f62/fft_evaluate_poly/with_offset/16777216: Collecting 10 samples in estimated 128.21 s (10 iterations)
+Benchmarking f62/fft_evaluate_poly/with_offset/16777216: Analyzing
+f62/fft_evaluate_poly/with_offset/16777216
+                        time:   [12.699 s 12.724 s 12.755 s]
+                        change: [-1.5797% -0.3732% +0.3791%] (p = 0.67 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+
+Benchmarking f64/fft_evaluate_poly/simple/2
+Benchmarking f64/fft_evaluate_poly/simple/2: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/2: Collecting 10 samples in estimated 10.000 s (62M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/2: Analyzing
+f64/fft_evaluate_poly/simple/2
+                        time:   [83.485 ns 83.878 ns 84.489 ns]
+                        change: [-1.2177% +0.3344% +2.1027%] (p = 0.72 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/simple/4
+Benchmarking f64/fft_evaluate_poly/simple/4: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/4: Collecting 10 samples in estimated 10.000 s (54M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/4: Analyzing
+f64/fft_evaluate_poly/simple/4
+                        time:   [110.24 ns 110.49 ns 110.69 ns]
+                        change: [-0.5049% +0.1776% +0.7819%] (p = 0.64 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/8
+Benchmarking f64/fft_evaluate_poly/simple/8: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/8: Collecting 10 samples in estimated 10.000 s (42M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/8: Analyzing
+f64/fft_evaluate_poly/simple/8
+                        time:   [153.45 ns 154.91 ns 155.86 ns]
+                        change: [-0.6037% +0.5712% +1.7938%] (p = 0.39 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/16
+Benchmarking f64/fft_evaluate_poly/simple/16: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/16: Collecting 10 samples in estimated 10.000 s (29M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/16: Analyzing
+f64/fft_evaluate_poly/simple/16
+                        time:   [274.11 ns 278.22 ns 282.03 ns]
+                        change: [-1.4699% +0.8970% +3.1957%] (p = 0.47 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/32
+Benchmarking f64/fft_evaluate_poly/simple/32: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/32: Collecting 10 samples in estimated 10.000 s (18M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/32: Analyzing
+f64/fft_evaluate_poly/simple/32
+                        time:   [464.34 ns 472.17 ns 475.69 ns]
+                        change: [-1.8062% +0.7154% +3.2004%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/64
+Benchmarking f64/fft_evaluate_poly/simple/64: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/64: Collecting 10 samples in estimated 10.000 s (8.7M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/64: Analyzing
+f64/fft_evaluate_poly/simple/64
+                        time:   [982.85 ns 993.64 ns 1.0025 µs]
+                        change: [+2.3908% +5.1777% +8.1635%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/simple/128
+Benchmarking f64/fft_evaluate_poly/simple/128: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/128: Collecting 10 samples in estimated 10.000 s (5.1M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/128: Analyzing
+f64/fft_evaluate_poly/simple/128
+                        time:   [1.9751 µs 1.9946 µs 2.0125 µs]
+                        change: [-0.4535% +0.9709% +2.4270%] (p = 0.23 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/simple/256
+Benchmarking f64/fft_evaluate_poly/simple/256: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/256: Collecting 10 samples in estimated 10.000 s (2.6M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/256: Analyzing
+f64/fft_evaluate_poly/simple/256
+                        time:   [3.7853 µs 3.8157 µs 3.8361 µs]
+                        change: [-0.4918% +0.2692% +1.0113%] (p = 0.52 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/512
+Benchmarking f64/fft_evaluate_poly/simple/512: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/512: Collecting 10 samples in estimated 10.000 s (1.2M iterations)
+Benchmarking f64/fft_evaluate_poly/simple/512: Analyzing
+f64/fft_evaluate_poly/simple/512
+                        time:   [7.9164 µs 7.9468 µs 7.9695 µs]
+                        change: [-0.7200% +0.3151% +1.7370%] (p = 0.68 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/1024
+Benchmarking f64/fft_evaluate_poly/simple/1024: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/1024: Collecting 10 samples in estimated 10.001 s (579k iterations)
+Benchmarking f64/fft_evaluate_poly/simple/1024: Analyzing
+f64/fft_evaluate_poly/simple/1024
+                        time:   [17.126 µs 17.219 µs 17.386 µs]
+                        change: [+0.1306% +1.4006% +2.9101%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/simple/2048
+Benchmarking f64/fft_evaluate_poly/simple/2048: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/2048: Collecting 10 samples in estimated 10.001 s (253k iterations)
+Benchmarking f64/fft_evaluate_poly/simple/2048: Analyzing
+f64/fft_evaluate_poly/simple/2048
+                        time:   [38.896 µs 39.316 µs 39.967 µs]
+                        change: [+0.4833% +1.9605% +3.4053%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_evaluate_poly/simple/4096
+Benchmarking f64/fft_evaluate_poly/simple/4096: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/4096: Collecting 10 samples in estimated 10.003 s (108k iterations)
+Benchmarking f64/fft_evaluate_poly/simple/4096: Analyzing
+f64/fft_evaluate_poly/simple/4096
+                        time:   [91.436 µs 91.932 µs 92.517 µs]
+                        change: [+0.9214% +2.0935% +3.6936%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/8192
+Benchmarking f64/fft_evaluate_poly/simple/8192: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/8192: Collecting 10 samples in estimated 10.002 s (46k iterations)
+Benchmarking f64/fft_evaluate_poly/simple/8192: Analyzing
+f64/fft_evaluate_poly/simple/8192
+                        time:   [204.88 µs 207.08 µs 210.07 µs]
+                        change: [+0.1440% +1.3139% +2.5464%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/16384
+Benchmarking f64/fft_evaluate_poly/simple/16384: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/16384: Collecting 10 samples in estimated 10.015 s (22k iterations)
+Benchmarking f64/fft_evaluate_poly/simple/16384: Analyzing
+f64/fft_evaluate_poly/simple/16384
+                        time:   [447.64 µs 450.09 µs 452.23 µs]
+                        change: [+0.0959% +1.0955% +2.3437%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/32768
+Benchmarking f64/fft_evaluate_poly/simple/32768: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/32768: Collecting 10 samples in estimated 10.023 s (10k iterations)
+Benchmarking f64/fft_evaluate_poly/simple/32768: Analyzing
+f64/fft_evaluate_poly/simple/32768
+                        time:   [974.15 µs 975.88 µs 977.84 µs]
+                        change: [-0.6344% +0.1501% +1.0156%] (p = 0.79 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/65536
+Benchmarking f64/fft_evaluate_poly/simple/65536: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/65536: Collecting 10 samples in estimated 10.099 s (4895 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/65536: Analyzing
+f64/fft_evaluate_poly/simple/65536
+                        time:   [2.0532 ms 2.0602 ms 2.0678 ms]
+                        change: [+0.0498% +0.6319% +1.2978%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/simple/131072
+Benchmarking f64/fft_evaluate_poly/simple/131072: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/131072: Collecting 10 samples in estimated 10.108 s (2365 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/131072: Analyzing
+f64/fft_evaluate_poly/simple/131072
+                        time:   [4.2506 ms 4.2604 ms 4.2739 ms]
+                        change: [-0.3573% +0.2207% +0.9086%] (p = 0.54 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/262144
+Benchmarking f64/fft_evaluate_poly/simple/262144: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/262144: Collecting 10 samples in estimated 10.129 s (1155 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/262144: Analyzing
+f64/fft_evaluate_poly/simple/262144
+                        time:   [8.7438 ms 8.7651 ms 8.7954 ms]
+                        change: [-0.0854% +0.4658% +1.1722%] (p = 0.20 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/524288
+Benchmarking f64/fft_evaluate_poly/simple/524288: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/524288: Collecting 10 samples in estimated 10.867 s (605 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/524288: Analyzing
+f64/fft_evaluate_poly/simple/524288
+                        time:   [17.881 ms 17.985 ms 18.110 ms]
+                        change: [-0.4387% +0.0688% +0.7056%] (p = 0.82 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+Benchmarking f64/fft_evaluate_poly/simple/1048576
+Benchmarking f64/fft_evaluate_poly/simple/1048576: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/1048576: Collecting 10 samples in estimated 10.090 s (275 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/1048576: Analyzing
+f64/fft_evaluate_poly/simple/1048576
+                        time:   [36.251 ms 36.869 ms 37.631 ms]
+                        change: [-1.0770% +0.1135% +1.4540%] (p = 0.89 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/simple/2097152
+Benchmarking f64/fft_evaluate_poly/simple/2097152: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/2097152: Collecting 10 samples in estimated 13.821 s (165 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/2097152: Analyzing
+f64/fft_evaluate_poly/simple/2097152
+                        time:   [80.052 ms 80.423 ms 80.841 ms]
+                        change: [-0.5204% +0.1461% +0.8225%] (p = 0.69 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/4194304
+Benchmarking f64/fft_evaluate_poly/simple/4194304: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/4194304: Collecting 10 samples in estimated 19.187 s (110 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/4194304: Analyzing
+f64/fft_evaluate_poly/simple/4194304
+                        time:   [171.29 ms 172.00 ms 172.56 ms]
+                        change: [-0.0212% +0.6614% +1.2627%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/8388608
+Benchmarking f64/fft_evaluate_poly/simple/8388608: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/8388608: Collecting 10 samples in estimated 11.487 s (30 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/8388608: Analyzing
+f64/fft_evaluate_poly/simple/8388608
+                        time:   [373.67 ms 374.97 ms 376.38 ms]
+                        change: [-0.3460% +0.3403% +0.9914%] (p = 0.34 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/simple/16777216
+Benchmarking f64/fft_evaluate_poly/simple/16777216: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/simple/16777216: Collecting 10 samples in estimated 16.662 s (20 iterations)
+Benchmarking f64/fft_evaluate_poly/simple/16777216: Analyzing
+f64/fft_evaluate_poly/simple/16777216
+                        time:   [819.12 ms 821.81 ms 824.74 ms]
+                        change: [-0.0865% +0.3717% +0.8048%] (p = 0.14 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/2
+Benchmarking f64/fft_evaluate_poly/with_offset/2: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/2: Collecting 10 samples in estimated 10.000 s (2.3M iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/2: Analyzing
+f64/fft_evaluate_poly/with_offset/2
+                        time:   [4.2486 µs 4.2677 µs 4.2862 µs]
+                        change: [-0.4684% +0.0682% +0.6875%] (p = 0.83 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/4
+Benchmarking f64/fft_evaluate_poly/with_offset/4: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/4: Collecting 10 samples in estimated 10.000 s (2.1M iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/4: Analyzing
+f64/fft_evaluate_poly/with_offset/4
+                        time:   [4.6129 µs 4.6272 µs 4.6437 µs]
+                        change: [-0.4780% -0.0255% +0.4192%] (p = 0.92 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/8
+Benchmarking f64/fft_evaluate_poly/with_offset/8: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/8: Collecting 10 samples in estimated 10.000 s (1.9M iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/8: Analyzing
+f64/fft_evaluate_poly/with_offset/8
+                        time:   [5.1554 µs 5.1746 µs 5.1935 µs]
+                        change: [-0.3061% +0.1178% +0.5408%] (p = 0.62 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/with_offset/16
+Benchmarking f64/fft_evaluate_poly/with_offset/16: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/16: Collecting 10 samples in estimated 10.000 s (1.5M iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/16: Analyzing
+f64/fft_evaluate_poly/with_offset/16
+                        time:   [6.3266 µs 6.3460 µs 6.3669 µs]
+                        change: [-1.3900% -0.4751% +0.3456%] (p = 0.34 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/with_offset/32
+Benchmarking f64/fft_evaluate_poly/with_offset/32: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/32: Collecting 10 samples in estimated 10.000 s (1.1M iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/32: Analyzing
+f64/fft_evaluate_poly/with_offset/32
+                        time:   [8.8316 µs 8.9640 µs 9.0595 µs]
+                        change: [-0.1859% +0.5757% +1.4593%] (p = 0.23 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/with_offset/64
+Benchmarking f64/fft_evaluate_poly/with_offset/64: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/64: Collecting 10 samples in estimated 10.000 s (770k iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/64: Analyzing
+f64/fft_evaluate_poly/with_offset/64
+                        time:   [13.615 µs 13.659 µs 13.699 µs]
+                        change: [-1.8731% -0.7835% +0.0177%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low severe
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/with_offset/128
+Benchmarking f64/fft_evaluate_poly/with_offset/128: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/128: Collecting 10 samples in estimated 10.000 s (437k iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/128: Analyzing
+f64/fft_evaluate_poly/with_offset/128
+                        time:   [23.041 µs 23.347 µs 23.691 µs]
+                        change: [-1.4547% +0.2500% +1.9358%] (p = 0.79 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/256
+Benchmarking f64/fft_evaluate_poly/with_offset/256: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/256: Collecting 10 samples in estimated 10.001 s (176k iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/256: Analyzing
+f64/fft_evaluate_poly/with_offset/256
+                        time:   [51.294 µs 52.867 µs 54.631 µs]
+                        change: [+1.9280% +6.8919% +11.425%] (p = 0.01 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_evaluate_poly/with_offset/512
+Benchmarking f64/fft_evaluate_poly/with_offset/512: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/512: Collecting 10 samples in estimated 10.002 s (61k iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/512: Analyzing
+f64/fft_evaluate_poly/with_offset/512
+                        time:   [154.61 µs 157.76 µs 162.17 µs]
+                        change: [-4.6242% -1.9761% +0.9723%] (p = 0.22 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/with_offset/1024
+Benchmarking f64/fft_evaluate_poly/with_offset/1024: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/1024: Collecting 10 samples in estimated 10.008 s (25k iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/1024: Analyzing
+f64/fft_evaluate_poly/with_offset/1024
+                        time:   [392.04 µs 394.24 µs 396.35 µs]
+                        change: [-1.1145% +0.3716% +1.9242%] (p = 0.65 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/2048
+Benchmarking f64/fft_evaluate_poly/with_offset/2048: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/2048: Collecting 10 samples in estimated 10.049 s (11k iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/2048: Analyzing
+f64/fft_evaluate_poly/with_offset/2048
+                        time:   [884.44 µs 889.47 µs 893.33 µs]
+                        change: [-0.7868% -0.1461% +0.5824%] (p = 0.69 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/4096
+Benchmarking f64/fft_evaluate_poly/with_offset/4096: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/4096: Collecting 10 samples in estimated 10.075 s (4895 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/4096: Analyzing
+f64/fft_evaluate_poly/with_offset/4096
+                        time:   [2.0039 ms 2.0119 ms 2.0260 ms]
+                        change: [+0.0413% +0.9712% +2.0383%] (p = 0.10 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/8192
+Benchmarking f64/fft_evaluate_poly/with_offset/8192: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/8192: Collecting 10 samples in estimated 10.111 s (2310 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/8192: Analyzing
+f64/fft_evaluate_poly/with_offset/8192
+                        time:   [4.3584 ms 4.3682 ms 4.3789 ms]
+                        change: [-1.7537% -1.0458% -0.1027%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/with_offset/16384
+Benchmarking f64/fft_evaluate_poly/with_offset/16384: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/16384: Collecting 10 samples in estimated 10.361 s (1100 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/16384: Analyzing
+f64/fft_evaluate_poly/with_offset/16384
+                        time:   [9.5359 ms 9.8031 ms 10.119 ms]
+                        change: [+0.0186% +1.9507% +4.5027%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/with_offset/32768
+Benchmarking f64/fft_evaluate_poly/with_offset/32768: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/32768: Collecting 10 samples in estimated 10.162 s (495 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/32768: Analyzing
+f64/fft_evaluate_poly/with_offset/32768
+                        time:   [20.220 ms 20.348 ms 20.583 ms]
+                        change: [-0.0064% +0.6484% +1.4449%] (p = 0.12 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/65536
+Benchmarking f64/fft_evaluate_poly/with_offset/65536: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/65536: Collecting 10 samples in estimated 11.689 s (275 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/65536: Analyzing
+f64/fft_evaluate_poly/with_offset/65536
+                        time:   [42.103 ms 42.436 ms 42.705 ms]
+                        change: [-2.2688% -1.7685% -1.1894%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking f64/fft_evaluate_poly/with_offset/131072
+Benchmarking f64/fft_evaluate_poly/with_offset/131072: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/131072: Collecting 10 samples in estimated 10.011 s (110 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/131072: Analyzing
+f64/fft_evaluate_poly/with_offset/131072
+                        time:   [88.702 ms 89.146 ms 89.449 ms]
+                        change: [-1.9747% -1.3573% -0.7529%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_evaluate_poly/with_offset/262144
+Benchmarking f64/fft_evaluate_poly/with_offset/262144: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 10.7s or enable flat sampling.
+Benchmarking f64/fft_evaluate_poly/with_offset/262144: Collecting 10 samples in estimated 10.651 s (55 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/262144: Analyzing
+f64/fft_evaluate_poly/with_offset/262144
+                        time:   [188.68 ms 189.91 ms 191.29 ms]
+                        change: [-1.7801% -1.1149% -0.4334%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_evaluate_poly/with_offset/524288
+Benchmarking f64/fft_evaluate_poly/with_offset/524288: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/524288: Collecting 10 samples in estimated 12.517 s (30 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/524288: Analyzing
+f64/fft_evaluate_poly/with_offset/524288
+                        time:   [407.51 ms 409.86 ms 412.35 ms]
+                        change: [-0.2832% +0.4497% +1.2148%] (p = 0.29 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_evaluate_poly/with_offset/1048576
+Benchmarking f64/fft_evaluate_poly/with_offset/1048576: Warming up for 3.0000 s
+Benchmarking f64/fft_evaluate_poly/with_offset/1048576: Collecting 10 samples in estimated 17.535 s (20 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/1048576: Analyzing
+f64/fft_evaluate_poly/with_offset/1048576
+                        time:   [864.82 ms 870.40 ms 878.04 ms]
+                        change: [-1.7000% -0.2810% +1.0631%] (p = 0.72 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/with_offset/2097152
+Benchmarking f64/fft_evaluate_poly/with_offset/2097152: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 18.9s.
+Benchmarking f64/fft_evaluate_poly/with_offset/2097152: Collecting 10 samples in estimated 18.905 s (10 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/2097152: Analyzing
+f64/fft_evaluate_poly/with_offset/2097152
+                        time:   [1.8557 s 1.8654 s 1.8748 s]
+                        change: [+0.1297% +0.6985% +1.3126%] (p = 0.04 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_evaluate_poly/with_offset/4194304
+Benchmarking f64/fft_evaluate_poly/with_offset/4194304: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 40.4s.
+Benchmarking f64/fft_evaluate_poly/with_offset/4194304: Collecting 10 samples in estimated 40.395 s (10 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/4194304: Analyzing
+f64/fft_evaluate_poly/with_offset/4194304
+                        time:   [3.9390 s 3.9603 s 3.9897 s]
+                        change: [+0.6618% +1.2523% +2.0209%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f64/fft_evaluate_poly/with_offset/8388608
+Benchmarking f64/fft_evaluate_poly/with_offset/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 83.3s.
+Benchmarking f64/fft_evaluate_poly/with_offset/8388608: Collecting 10 samples in estimated 83.346 s (10 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/8388608: Analyzing
+f64/fft_evaluate_poly/with_offset/8388608
+                        time:   [8.2146 s 8.2593 s 8.3031 s]
+                        change: [+0.5337% +1.0803% +1.6159%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_evaluate_poly/with_offset/16777216
+Benchmarking f64/fft_evaluate_poly/with_offset/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 181.2s.
+Benchmarking f64/fft_evaluate_poly/with_offset/16777216: Collecting 10 samples in estimated 181.22 s (10 iterations)
+Benchmarking f64/fft_evaluate_poly/with_offset/16777216: Analyzing
+f64/fft_evaluate_poly/with_offset/16777216
+                        time:   [17.430 s 17.546 s 17.686 s]
+                        change: [+0.7852% +1.4489% +2.3101%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+
+Benchmarking f128/fft_evaluate_poly/simple/2
+Benchmarking f128/fft_evaluate_poly/simple/2: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/2: Collecting 10 samples in estimated 10.000 s (57M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/2: Analyzing
+f128/fft_evaluate_poly/simple/2
+                        time:   [96.859 ns 97.146 ns 97.563 ns]
+                        change: [+3.9127% +4.7599% +5.5208%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/4
+Benchmarking f128/fft_evaluate_poly/simple/4: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/4: Collecting 10 samples in estimated 10.000 s (46M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/4: Analyzing
+f128/fft_evaluate_poly/simple/4
+                        time:   [134.64 ns 136.60 ns 137.57 ns]
+                        change: [-0.1590% +1.0630% +2.2936%] (p = 0.12 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/simple/8
+Benchmarking f128/fft_evaluate_poly/simple/8: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/8: Collecting 10 samples in estimated 10.000 s (30M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/8: Analyzing
+f128/fft_evaluate_poly/simple/8
+                        time:   [237.95 ns 241.27 ns 242.82 ns]
+                        change: [+0.6634% +2.7754% +4.9055%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_evaluate_poly/simple/16
+Benchmarking f128/fft_evaluate_poly/simple/16: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/16: Collecting 10 samples in estimated 10.000 s (17M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/16: Analyzing
+f128/fft_evaluate_poly/simple/16
+                        time:   [477.75 ns 487.14 ns 491.57 ns]
+                        change: [-1.7632% +0.6712% +3.2493%] (p = 0.61 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/simple/32
+Benchmarking f128/fft_evaluate_poly/simple/32: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/32: Collecting 10 samples in estimated 10.000 s (8.5M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/32: Analyzing
+f128/fft_evaluate_poly/simple/32
+                        time:   [1.0665 µs 1.0825 µs 1.0936 µs]
+                        change: [-0.2332% +1.9767% +4.3306%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/simple/64
+Benchmarking f128/fft_evaluate_poly/simple/64: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/64: Collecting 10 samples in estimated 10.000 s (4.0M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/64: Analyzing
+f128/fft_evaluate_poly/simple/64
+                        time:   [2.4254 µs 2.4301 µs 2.4364 µs]
+                        change: [-0.6295% +0.0227% +0.7994%] (p = 0.96 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/simple/128
+Benchmarking f128/fft_evaluate_poly/simple/128: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/128: Collecting 10 samples in estimated 10.000 s (1.8M iterations)
+Benchmarking f128/fft_evaluate_poly/simple/128: Analyzing
+f128/fft_evaluate_poly/simple/128
+                        time:   [5.3606 µs 5.4245 µs 5.4698 µs]
+                        change: [+0.3023% +0.9241% +1.6582%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/256
+Benchmarking f128/fft_evaluate_poly/simple/256: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/256: Collecting 10 samples in estimated 10.000 s (797k iterations)
+Benchmarking f128/fft_evaluate_poly/simple/256: Analyzing
+f128/fft_evaluate_poly/simple/256
+                        time:   [12.450 µs 12.563 µs 12.707 µs]
+                        change: [+1.2939% +2.6585% +3.8852%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/512
+Benchmarking f128/fft_evaluate_poly/simple/512: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/512: Collecting 10 samples in estimated 10.000 s (366k iterations)
+Benchmarking f128/fft_evaluate_poly/simple/512: Analyzing
+f128/fft_evaluate_poly/simple/512
+                        time:   [26.953 µs 27.012 µs 27.091 µs]
+                        change: [-0.3231% +0.2348% +0.8393%] (p = 0.46 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/1024
+Benchmarking f128/fft_evaluate_poly/simple/1024: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/1024: Collecting 10 samples in estimated 10.003 s (169k iterations)
+Benchmarking f128/fft_evaluate_poly/simple/1024: Analyzing
+f128/fft_evaluate_poly/simple/1024
+                        time:   [59.020 µs 59.171 µs 59.354 µs]
+                        change: [-0.2437% +0.2922% +0.8048%] (p = 0.30 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/2048
+Benchmarking f128/fft_evaluate_poly/simple/2048: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/2048: Collecting 10 samples in estimated 10.004 s (77k iterations)
+Benchmarking f128/fft_evaluate_poly/simple/2048: Analyzing
+f128/fft_evaluate_poly/simple/2048
+                        time:   [128.30 µs 128.58 µs 128.97 µs]
+                        change: [-0.7226% -0.1330% +0.4108%] (p = 0.67 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/simple/4096
+Benchmarking f128/fft_evaluate_poly/simple/4096: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/4096: Collecting 10 samples in estimated 10.009 s (35k iterations)
+Benchmarking f128/fft_evaluate_poly/simple/4096: Analyzing
+f128/fft_evaluate_poly/simple/4096
+                        time:   [284.63 µs 286.20 µs 287.18 µs]
+                        change: [+1.9393% +2.7134% +3.4109%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/8192
+Benchmarking f128/fft_evaluate_poly/simple/8192: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/8192: Collecting 10 samples in estimated 10.006 s (16k iterations)
+Benchmarking f128/fft_evaluate_poly/simple/8192: Analyzing
+f128/fft_evaluate_poly/simple/8192
+                        time:   [614.82 µs 618.61 µs 623.86 µs]
+                        change: [+1.5931% +2.6975% +3.9105%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/16384
+Benchmarking f128/fft_evaluate_poly/simple/16384: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/16384: Collecting 10 samples in estimated 10.032 s (7700 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/16384: Analyzing
+f128/fft_evaluate_poly/simple/16384
+                        time:   [1.3140 ms 1.3268 ms 1.3337 ms]
+                        change: [+1.5564% +2.4987% +3.4067%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/32768
+Benchmarking f128/fft_evaluate_poly/simple/32768: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/32768: Collecting 10 samples in estimated 10.033 s (3465 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/32768: Analyzing
+f128/fft_evaluate_poly/simple/32768
+                        time:   [2.7582 ms 2.7799 ms 2.8111 ms]
+                        change: [-0.7432% +0.8345% +2.1590%] (p = 0.31 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/simple/65536
+Benchmarking f128/fft_evaluate_poly/simple/65536: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/65536: Collecting 10 samples in estimated 10.252 s (1705 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/65536: Analyzing
+f128/fft_evaluate_poly/simple/65536
+                        time:   [5.9649 ms 6.0107 ms 6.0439 ms]
+                        change: [+1.6312% +2.4682% +3.3145%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/131072
+Benchmarking f128/fft_evaluate_poly/simple/131072: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/131072: Collecting 10 samples in estimated 10.381 s (825 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/131072: Analyzing
+f128/fft_evaluate_poly/simple/131072
+                        time:   [12.589 ms 12.651 ms 12.722 ms]
+                        change: [+1.3582% +1.9905% +2.8964%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/262144
+Benchmarking f128/fft_evaluate_poly/simple/262144: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/262144: Collecting 10 samples in estimated 10.295 s (385 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/262144: Analyzing
+f128/fft_evaluate_poly/simple/262144
+                        time:   [26.537 ms 26.744 ms 27.035 ms]
+                        change: [+1.6237% +2.3954% +3.3003%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/524288
+Benchmarking f128/fft_evaluate_poly/simple/524288: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/524288: Collecting 10 samples in estimated 12.497 s (220 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/524288: Analyzing
+f128/fft_evaluate_poly/simple/524288
+                        time:   [56.856 ms 58.112 ms 58.681 ms]
+                        change: [+1.9213% +3.3948% +5.0120%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/1048576
+Benchmarking f128/fft_evaluate_poly/simple/1048576: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/1048576: Collecting 10 samples in estimated 13.572 s (110 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/1048576: Analyzing
+f128/fft_evaluate_poly/simple/1048576
+                        time:   [124.91 ms 125.53 ms 126.44 ms]
+                        change: [+5.6171% +6.7498% +8.0523%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/2097152
+Benchmarking f128/fft_evaluate_poly/simple/2097152: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 14.4s or enable flat sampling.
+Benchmarking f128/fft_evaluate_poly/simple/2097152: Collecting 10 samples in estimated 14.413 s (55 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/2097152: Analyzing
+f128/fft_evaluate_poly/simple/2097152
+                        time:   [256.81 ms 258.96 ms 262.22 ms]
+                        change: [+2.3930% +3.4270% +4.5025%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/4194304
+Benchmarking f128/fft_evaluate_poly/simple/4194304: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/simple/4194304: Collecting 10 samples in estimated 11.234 s (20 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/4194304: Analyzing
+f128/fft_evaluate_poly/simple/4194304
+                        time:   [569.10 ms 575.76 ms 583.16 ms]
+                        change: [+4.4137% +5.7144% +7.1510%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/simple/8388608
+Benchmarking f128/fft_evaluate_poly/simple/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 12.3s.
+Benchmarking f128/fft_evaluate_poly/simple/8388608: Collecting 10 samples in estimated 12.336 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/8388608: Analyzing
+f128/fft_evaluate_poly/simple/8388608
+                        time:   [1.1848 s 1.1940 s 1.2043 s]
+                        change: [+2.2552% +3.1408% +4.0614%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/simple/16777216
+Benchmarking f128/fft_evaluate_poly/simple/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 25.0s.
+Benchmarking f128/fft_evaluate_poly/simple/16777216: Collecting 10 samples in estimated 25.036 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/simple/16777216: Analyzing
+f128/fft_evaluate_poly/simple/16777216
+                        time:   [2.4954 s 2.5194 s 2.5505 s]
+                        change: [+2.5361% +3.5138% +4.6815%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/with_offset/2
+Benchmarking f128/fft_evaluate_poly/with_offset/2: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/2: Collecting 10 samples in estimated 10.000 s (9.1M iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/2: Analyzing
+f128/fft_evaluate_poly/with_offset/2
+                        time:   [998.49 ns 1.0079 µs 1.0155 µs]
+                        change: [-0.1285% +0.7856% +1.6973%] (p = 0.12 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/4
+Benchmarking f128/fft_evaluate_poly/with_offset/4: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/4: Collecting 10 samples in estimated 10.000 s (6.0M iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/4: Analyzing
+f128/fft_evaluate_poly/with_offset/4
+                        time:   [1.5668 µs 1.5812 µs 1.5882 µs]
+                        change: [-0.6260% +0.5827% +1.7432%] (p = 0.35 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/8
+Benchmarking f128/fft_evaluate_poly/with_offset/8: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/8: Collecting 10 samples in estimated 10.000 s (3.3M iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/8: Analyzing
+f128/fft_evaluate_poly/with_offset/8
+                        time:   [2.9279 µs 2.9395 µs 2.9481 µs]
+                        change: [-0.6312% +0.0670% +0.6556%] (p = 0.86 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/16
+Benchmarking f128/fft_evaluate_poly/with_offset/16: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/16: Collecting 10 samples in estimated 10.000 s (1.6M iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/16: Analyzing
+f128/fft_evaluate_poly/with_offset/16
+                        time:   [6.0428 µs 6.0895 µs 6.1454 µs]
+                        change: [-0.1385% +0.4686% +1.0763%] (p = 0.21 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/32
+Benchmarking f128/fft_evaluate_poly/with_offset/32: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/32: Collecting 10 samples in estimated 10.001 s (760k iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/32: Analyzing
+f128/fft_evaluate_poly/with_offset/32
+                        time:   [13.108 µs 13.338 µs 13.491 µs]
+                        change: [+0.5956% +1.8854% +3.4265%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_evaluate_poly/with_offset/64
+Benchmarking f128/fft_evaluate_poly/with_offset/64: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/64: Collecting 10 samples in estimated 10.001 s (338k iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/64: Analyzing
+f128/fft_evaluate_poly/with_offset/64
+                        time:   [29.445 µs 29.696 µs 30.146 µs]
+                        change: [+1.8299% +2.9012% +4.2928%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/with_offset/128
+Benchmarking f128/fft_evaluate_poly/with_offset/128: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/128: Collecting 10 samples in estimated 10.001 s (158k iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/128: Analyzing
+f128/fft_evaluate_poly/with_offset/128
+                        time:   [62.896 µs 63.036 µs 63.124 µs]
+                        change: [+0.2922% +0.8579% +1.4508%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/with_offset/256
+Benchmarking f128/fft_evaluate_poly/with_offset/256: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/256: Collecting 10 samples in estimated 10.006 s (71k iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/256: Analyzing
+f128/fft_evaluate_poly/with_offset/256
+                        time:   [139.39 µs 139.88 µs 140.45 µs]
+                        change: [+0.8850% +1.6809% +2.5658%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/with_offset/512
+Benchmarking f128/fft_evaluate_poly/with_offset/512: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/512: Collecting 10 samples in estimated 10.007 s (32k iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/512: Analyzing
+f128/fft_evaluate_poly/with_offset/512
+                        time:   [311.49 µs 312.26 µs 313.33 µs]
+                        change: [+1.8732% +2.5029% +3.1604%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/with_offset/1024
+Benchmarking f128/fft_evaluate_poly/with_offset/1024: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/1024: Collecting 10 samples in estimated 10.023 s (15k iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/1024: Analyzing
+f128/fft_evaluate_poly/with_offset/1024
+                        time:   [679.35 µs 682.35 µs 686.06 µs]
+                        change: [+2.2242% +3.1064% +4.0338%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/with_offset/2048
+Benchmarking f128/fft_evaluate_poly/with_offset/2048: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/2048: Collecting 10 samples in estimated 10.011 s (6655 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/2048: Analyzing
+f128/fft_evaluate_poly/with_offset/2048
+                        time:   [1.4638 ms 1.4704 ms 1.4754 ms]
+                        change: [+1.2426% +2.1116% +2.9526%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/with_offset/4096
+Benchmarking f128/fft_evaluate_poly/with_offset/4096: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/4096: Collecting 10 samples in estimated 10.012 s (3190 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/4096: Analyzing
+f128/fft_evaluate_poly/with_offset/4096
+                        time:   [3.1098 ms 3.1229 ms 3.1320 ms]
+                        change: [-0.1556% +0.4048% +0.9459%] (p = 0.19 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/8192
+Benchmarking f128/fft_evaluate_poly/with_offset/8192: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/8192: Collecting 10 samples in estimated 10.361 s (1540 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/8192: Analyzing
+f128/fft_evaluate_poly/with_offset/8192
+                        time:   [6.6944 ms 6.7651 ms 6.8133 ms]
+                        change: [+0.5015% +1.3572% +2.2067%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_evaluate_poly/with_offset/16384
+Benchmarking f128/fft_evaluate_poly/with_offset/16384: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/16384: Collecting 10 samples in estimated 10.524 s (715 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/16384: Analyzing
+f128/fft_evaluate_poly/with_offset/16384
+                        time:   [14.241 ms 14.370 ms 14.539 ms]
+                        change: [+0.0495% +1.4835% +2.8353%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/32768
+Benchmarking f128/fft_evaluate_poly/with_offset/32768: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/32768: Collecting 10 samples in estimated 10.314 s (330 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/32768: Analyzing
+f128/fft_evaluate_poly/with_offset/32768
+                        time:   [30.880 ms 31.035 ms 31.169 ms]
+                        change: [+2.2504% +3.1557% +4.0632%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f128/fft_evaluate_poly/with_offset/65536
+Benchmarking f128/fft_evaluate_poly/with_offset/65536: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/65536: Collecting 10 samples in estimated 11.030 s (165 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/65536: Analyzing
+f128/fft_evaluate_poly/with_offset/65536
+                        time:   [64.891 ms 65.732 ms 66.814 ms]
+                        change: [+2.6216% +3.8384% +4.9639%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/with_offset/131072
+Benchmarking f128/fft_evaluate_poly/with_offset/131072: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/131072: Collecting 10 samples in estimated 15.261 s (110 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/131072: Analyzing
+f128/fft_evaluate_poly/with_offset/131072
+                        time:   [140.50 ms 142.03 ms 143.33 ms]
+                        change: [+3.4221% +4.0818% +4.7818%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/with_offset/262144
+Benchmarking f128/fft_evaluate_poly/with_offset/262144: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 16.6s or enable flat sampling.
+Benchmarking f128/fft_evaluate_poly/with_offset/262144: Collecting 10 samples in estimated 16.562 s (55 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/262144: Analyzing
+f128/fft_evaluate_poly/with_offset/262144
+                        time:   [294.10 ms 296.82 ms 302.55 ms]
+                        change: [+1.3979% +2.7483% +4.2398%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/with_offset/524288
+Benchmarking f128/fft_evaluate_poly/with_offset/524288: Warming up for 3.0000 s
+Benchmarking f128/fft_evaluate_poly/with_offset/524288: Collecting 10 samples in estimated 12.625 s (20 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/524288: Analyzing
+f128/fft_evaluate_poly/with_offset/524288
+                        time:   [621.39 ms 623.47 ms 625.50 ms]
+                        change: [-2.5283% -0.8175% +0.5792%] (p = 0.40 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/1048576
+Benchmarking f128/fft_evaluate_poly/with_offset/1048576: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 13.5s.
+Benchmarking f128/fft_evaluate_poly/with_offset/1048576: Collecting 10 samples in estimated 13.491 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/1048576: Analyzing
+f128/fft_evaluate_poly/with_offset/1048576
+                        time:   [1.3227 s 1.3269 s 1.3317 s]
+                        change: [-0.3098% +0.1930% +0.7090%] (p = 0.49 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_evaluate_poly/with_offset/2097152
+Benchmarking f128/fft_evaluate_poly/with_offset/2097152: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 28.6s.
+Benchmarking f128/fft_evaluate_poly/with_offset/2097152: Collecting 10 samples in estimated 28.600 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/2097152: Analyzing
+f128/fft_evaluate_poly/with_offset/2097152
+                        time:   [2.7920 s 2.7972 s 2.8030 s]
+                        change: [+0.0991% +0.3322% +0.5837%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_evaluate_poly/with_offset/4194304
+Benchmarking f128/fft_evaluate_poly/with_offset/4194304: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 60.5s.
+Benchmarking f128/fft_evaluate_poly/with_offset/4194304: Collecting 10 samples in estimated 60.475 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/4194304: Analyzing
+f128/fft_evaluate_poly/with_offset/4194304
+                        time:   [5.8577 s 5.9031 s 5.9524 s]
+                        change: [+0.6713% +1.4569% +2.3437%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_evaluate_poly/with_offset/8388608
+Benchmarking f128/fft_evaluate_poly/with_offset/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 132.7s.
+Benchmarking f128/fft_evaluate_poly/with_offset/8388608: Collecting 10 samples in estimated 132.68 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/8388608: Analyzing
+f128/fft_evaluate_poly/with_offset/8388608
+                        time:   [12.713 s 12.849 s 12.970 s]
+                        change: [+2.4934% +3.4925% +4.5113%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_evaluate_poly/with_offset/16777216
+Benchmarking f128/fft_evaluate_poly/with_offset/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 10.0s. You may wish to increase target time to 271.2s.
+Benchmarking f128/fft_evaluate_poly/with_offset/16777216: Collecting 10 samples in estimated 271.18 s (10 iterations)
+Benchmarking f128/fft_evaluate_poly/with_offset/16777216: Analyzing
+f128/fft_evaluate_poly/with_offset/16777216
+                        time:   [26.456 s 26.730 s 27.028 s]
+                        change: [+2.2446% +3.4046% +4.6250%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+
+Benchmarking f62/fft_interpolate_poly/simple/2
+Benchmarking f62/fft_interpolate_poly/simple/2: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/2: Collecting 10 samples in estimated 25.000 s (126M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/2: Analyzing
+f62/fft_interpolate_poly/simple/2
+                        time:   [90.244 ns 90.824 ns 91.529 ns]
+                        change: [-0.8788% -0.1477% +0.5456%] (p = 0.70 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/4
+Benchmarking f62/fft_interpolate_poly/simple/4: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/4: Collecting 10 samples in estimated 25.000 s (106M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/4: Analyzing
+f62/fft_interpolate_poly/simple/4
+                        time:   [123.05 ns 123.16 ns 123.33 ns]
+                        change: [-0.9616% -0.2832% +0.4117%] (p = 0.45 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+Benchmarking f62/fft_interpolate_poly/simple/8
+Benchmarking f62/fft_interpolate_poly/simple/8: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/8: Collecting 10 samples in estimated 25.000 s (81M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/8: Analyzing
+f62/fft_interpolate_poly/simple/8
+                        time:   [200.80 ns 201.04 ns 201.21 ns]
+                        change: [-0.2759% +0.1409% +0.5582%] (p = 0.54 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+Benchmarking f62/fft_interpolate_poly/simple/16
+Benchmarking f62/fft_interpolate_poly/simple/16: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/16: Collecting 10 samples in estimated 25.000 s (51M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/16: Analyzing
+f62/fft_interpolate_poly/simple/16
+                        time:   [378.89 ns 379.50 ns 380.14 ns]
+                        change: [-0.6342% -0.1816% +0.2565%] (p = 0.46 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/32
+Benchmarking f62/fft_interpolate_poly/simple/32: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/32: Collecting 10 samples in estimated 25.000 s (27M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/32: Analyzing
+f62/fft_interpolate_poly/simple/32
+                        time:   [807.11 ns 819.12 ns 827.67 ns]
+                        change: [-0.3697% +0.3485% +1.1205%] (p = 0.46 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high severe
+Benchmarking f62/fft_interpolate_poly/simple/64
+Benchmarking f62/fft_interpolate_poly/simple/64: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/64: Collecting 10 samples in estimated 25.000 s (14M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/64: Analyzing
+f62/fft_interpolate_poly/simple/64
+                        time:   [1.7037 µs 1.7147 µs 1.7316 µs]
+                        change: [+0.2033% +1.1565% +2.0130%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/simple/128
+Benchmarking f62/fft_interpolate_poly/simple/128: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/128: Collecting 10 samples in estimated 25.000 s (7.3M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/128: Analyzing
+f62/fft_interpolate_poly/simple/128
+                        time:   [3.6547 µs 3.6650 µs 3.6722 µs]
+                        change: [-1.3524% -0.7155% -0.1313%] (p = 0.04 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/simple/256
+Benchmarking f62/fft_interpolate_poly/simple/256: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/256: Collecting 10 samples in estimated 25.000 s (3.5M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/256: Analyzing
+f62/fft_interpolate_poly/simple/256
+                        time:   [7.8846 µs 7.8984 µs 7.9146 µs]
+                        change: [-0.4816% +0.0930% +0.6227%] (p = 0.77 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_interpolate_poly/simple/512
+Benchmarking f62/fft_interpolate_poly/simple/512: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/512: Collecting 10 samples in estimated 25.000 s (1.6M iterations)
+Benchmarking f62/fft_interpolate_poly/simple/512: Analyzing
+f62/fft_interpolate_poly/simple/512
+                        time:   [16.896 µs 16.945 µs 16.973 µs]
+                        change: [-0.5888% -0.0138% +0.4862%] (p = 0.96 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/1024
+Benchmarking f62/fft_interpolate_poly/simple/1024: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/1024: Collecting 10 samples in estimated 25.001 s (735k iterations)
+Benchmarking f62/fft_interpolate_poly/simple/1024: Analyzing
+f62/fft_interpolate_poly/simple/1024
+                        time:   [36.477 µs 36.598 µs 36.768 µs]
+                        change: [+0.2645% +0.7218% +1.1557%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/simple/2048
+Benchmarking f62/fft_interpolate_poly/simple/2048: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/2048: Collecting 10 samples in estimated 25.002 s (343k iterations)
+Benchmarking f62/fft_interpolate_poly/simple/2048: Analyzing
+f62/fft_interpolate_poly/simple/2048
+                        time:   [78.292 µs 78.391 µs 78.527 µs]
+                        change: [+0.2395% +0.5236% +0.8085%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+Benchmarking f62/fft_interpolate_poly/simple/4096
+Benchmarking f62/fft_interpolate_poly/simple/4096: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/4096: Collecting 10 samples in estimated 25.002 s (160k iterations)
+Benchmarking f62/fft_interpolate_poly/simple/4096: Analyzing
+f62/fft_interpolate_poly/simple/4096
+                        time:   [166.95 µs 167.20 µs 167.48 µs]
+                        change: [-0.1416% +0.1750% +0.4618%] (p = 0.31 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/8192
+Benchmarking f62/fft_interpolate_poly/simple/8192: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/8192: Collecting 10 samples in estimated 25.003 s (70k iterations)
+Benchmarking f62/fft_interpolate_poly/simple/8192: Analyzing
+f62/fft_interpolate_poly/simple/8192
+                        time:   [356.84 µs 358.27 µs 359.64 µs]
+                        change: [-0.5254% -0.0295% +0.4287%] (p = 0.91 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/simple/16384
+Benchmarking f62/fft_interpolate_poly/simple/16384: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/16384: Collecting 10 samples in estimated 25.030 s (33k iterations)
+Benchmarking f62/fft_interpolate_poly/simple/16384: Analyzing
+f62/fft_interpolate_poly/simple/16384
+                        time:   [768.41 µs 770.58 µs 772.54 µs]
+                        change: [+0.2803% +0.9505% +1.6652%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/simple/32768
+Benchmarking f62/fft_interpolate_poly/simple/32768: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/32768: Collecting 10 samples in estimated 25.085 s (15k iterations)
+Benchmarking f62/fft_interpolate_poly/simple/32768: Analyzing
+f62/fft_interpolate_poly/simple/32768
+                        time:   [1.6553 ms 1.6615 ms 1.6735 ms]
+                        change: [-1.0797% +0.0526% +0.9334%] (p = 0.93 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/65536
+Benchmarking f62/fft_interpolate_poly/simple/65536: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/65536: Collecting 10 samples in estimated 25.082 s (7370 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/65536: Analyzing
+f62/fft_interpolate_poly/simple/65536
+                        time:   [3.4298 ms 3.4823 ms 3.5281 ms]
+                        change: [+1.4713% +2.4687% +3.4474%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/simple/131072
+Benchmarking f62/fft_interpolate_poly/simple/131072: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/131072: Collecting 10 samples in estimated 25.072 s (3520 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/131072: Analyzing
+f62/fft_interpolate_poly/simple/131072
+                        time:   [7.2238 ms 7.2508 ms 7.2807 ms]
+                        change: [-0.5220% +0.6993% +1.7516%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/262144
+Benchmarking f62/fft_interpolate_poly/simple/262144: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/262144: Collecting 10 samples in estimated 25.466 s (1705 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/262144: Analyzing
+f62/fft_interpolate_poly/simple/262144
+                        time:   [15.194 ms 15.231 ms 15.278 ms]
+                        change: [-0.5836% -0.0211% +0.5162%] (p = 0.94 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/524288
+Benchmarking f62/fft_interpolate_poly/simple/524288: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/524288: Collecting 10 samples in estimated 25.821 s (825 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/524288: Analyzing
+f62/fft_interpolate_poly/simple/524288
+                        time:   [31.837 ms 31.889 ms 31.943 ms]
+                        change: [-1.4527% -0.5409% +0.1481%] (p = 0.25 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/1048576
+Benchmarking f62/fft_interpolate_poly/simple/1048576: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/1048576: Collecting 10 samples in estimated 25.340 s (385 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/1048576: Analyzing
+f62/fft_interpolate_poly/simple/1048576
+                        time:   [66.707 ms 66.768 ms 66.833 ms]
+                        change: [-0.9663% +0.0098% +0.9994%] (p = 0.98 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f62/fft_interpolate_poly/simple/2097152
+Benchmarking f62/fft_interpolate_poly/simple/2097152: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/2097152: Collecting 10 samples in estimated 31.134 s (220 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/2097152: Analyzing
+f62/fft_interpolate_poly/simple/2097152
+                        time:   [143.56 ms 143.83 ms 144.05 ms]
+                        change: [-0.9996% -0.4172% +0.1599%] (p = 0.21 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/simple/4194304
+Benchmarking f62/fft_interpolate_poly/simple/4194304: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/4194304: Collecting 10 samples in estimated 33.314 s (110 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/4194304: Analyzing
+f62/fft_interpolate_poly/simple/4194304
+                        time:   [312.97 ms 318.66 ms 321.42 ms]
+                        change: [+0.9339% +2.2175% +3.8040%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/simple/8388608
+Benchmarking f62/fft_interpolate_poly/simple/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 38.8s or enable flat sampling.
+Benchmarking f62/fft_interpolate_poly/simple/8388608: Collecting 10 samples in estimated 38.775 s (55 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/8388608: Analyzing
+f62/fft_interpolate_poly/simple/8388608
+                        time:   [689.14 ms 696.07 ms 703.36 ms]
+                        change: [+4.2984% +5.8582% +7.2971%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/simple/16777216
+Benchmarking f62/fft_interpolate_poly/simple/16777216: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/simple/16777216: Collecting 10 samples in estimated 29.909 s (20 iterations)
+Benchmarking f62/fft_interpolate_poly/simple/16777216: Analyzing
+f62/fft_interpolate_poly/simple/16777216
+                        time:   [1.4383 s 1.4483 s 1.4595 s]
+                        change: [+0.9399% +1.7286% +2.5382%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/with_offset/2
+Benchmarking f62/fft_interpolate_poly/with_offset/2: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/2: Collecting 10 samples in estimated 25.000 s (69M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/2: Analyzing
+f62/fft_interpolate_poly/with_offset/2
+                        time:   [253.94 ns 254.41 ns 254.78 ns]
+                        change: [-0.6632% -0.0653% +0.4904%] (p = 0.84 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/with_offset/4
+Benchmarking f62/fft_interpolate_poly/with_offset/4: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/4: Collecting 10 samples in estimated 25.000 s (60M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/4: Analyzing
+f62/fft_interpolate_poly/with_offset/4
+                        time:   [300.18 ns 300.71 ns 301.31 ns]
+                        change: [-0.4070% +0.0501% +0.5271%] (p = 0.85 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/with_offset/8
+Benchmarking f62/fft_interpolate_poly/with_offset/8: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/8: Collecting 10 samples in estimated 25.000 s (48M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/8: Analyzing
+f62/fft_interpolate_poly/with_offset/8
+                        time:   [414.92 ns 419.09 ns 422.18 ns]
+                        change: [+0.0777% +0.6745% +1.2872%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/with_offset/16
+Benchmarking f62/fft_interpolate_poly/with_offset/16: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/16: Collecting 10 samples in estimated 25.000 s (32M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/16: Analyzing
+f62/fft_interpolate_poly/with_offset/16
+                        time:   [659.73 ns 665.76 ns 670.84 ns]
+                        change: [+1.3082% +1.8782% +2.4638%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/with_offset/32
+Benchmarking f62/fft_interpolate_poly/with_offset/32: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/32: Collecting 10 samples in estimated 25.000 s (19M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/32: Analyzing
+f62/fft_interpolate_poly/with_offset/32
+                        time:   [1.1801 µs 1.1828 µs 1.1895 µs]
+                        change: [+0.7501% +1.5109% +2.3731%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/with_offset/64
+Benchmarking f62/fft_interpolate_poly/with_offset/64: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/64: Collecting 10 samples in estimated 25.000 s (11M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/64: Analyzing
+f62/fft_interpolate_poly/with_offset/64
+                        time:   [2.2545 µs 2.2595 µs 2.2670 µs]
+                        change: [+0.5613% +1.4362% +2.4080%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 10 measurements (40.00%)
+  2 (20.00%) low severe
+  2 (20.00%) high severe
+Benchmarking f62/fft_interpolate_poly/with_offset/128
+Benchmarking f62/fft_interpolate_poly/with_offset/128: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/128: Collecting 10 samples in estimated 25.000 s (5.8M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/128: Analyzing
+f62/fft_interpolate_poly/with_offset/128
+                        time:   [4.5069 µs 4.5142 µs 4.5180 µs]
+                        change: [+0.9485% +1.9736% +3.2255%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_interpolate_poly/with_offset/256
+Benchmarking f62/fft_interpolate_poly/with_offset/256: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/256: Collecting 10 samples in estimated 25.000 s (2.8M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/256: Analyzing
+f62/fft_interpolate_poly/with_offset/256
+                        time:   [9.4199 µs 9.4365 µs 9.4466 µs]
+                        change: [+0.1494% +1.2569% +2.5557%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) low mild
+Benchmarking f62/fft_interpolate_poly/with_offset/512
+Benchmarking f62/fft_interpolate_poly/with_offset/512: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/512: Collecting 10 samples in estimated 25.001 s (1.3M iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/512: Analyzing
+f62/fft_interpolate_poly/with_offset/512
+                        time:   [19.625 µs 19.671 µs 19.698 µs]
+                        change: [+0.1956% +1.3031% +2.3568%] (p = 0.04 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_interpolate_poly/with_offset/1024
+Benchmarking f62/fft_interpolate_poly/with_offset/1024: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/1024: Collecting 10 samples in estimated 25.001 s (633k iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/1024: Analyzing
+f62/fft_interpolate_poly/with_offset/1024
+                        time:   [42.103 µs 42.170 µs 42.245 µs]
+                        change: [-2.7078% -0.8371% +0.4873%] (p = 0.45 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_interpolate_poly/with_offset/2048
+Benchmarking f62/fft_interpolate_poly/with_offset/2048: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/2048: Collecting 10 samples in estimated 25.001 s (299k iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/2048: Analyzing
+f62/fft_interpolate_poly/with_offset/2048
+                        time:   [88.557 µs 88.764 µs 88.899 µs]
+                        change: [+0.0768% +0.4025% +0.7053%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f62/fft_interpolate_poly/with_offset/4096
+Benchmarking f62/fft_interpolate_poly/with_offset/4096: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/4096: Collecting 10 samples in estimated 25.004 s (139k iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/4096: Analyzing
+f62/fft_interpolate_poly/with_offset/4096
+                        time:   [189.16 µs 189.47 µs 189.71 µs]
+                        change: [-0.2599% +0.1171% +0.4587%] (p = 0.56 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/with_offset/8192
+Benchmarking f62/fft_interpolate_poly/with_offset/8192: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/8192: Collecting 10 samples in estimated 25.018 s (64k iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/8192: Analyzing
+f62/fft_interpolate_poly/with_offset/8192
+                        time:   [399.64 µs 400.50 µs 401.63 µs]
+                        change: [-0.6255% -0.2384% +0.1039%] (p = 0.24 > 0.05)
+                        No change in performance detected.
+Benchmarking f62/fft_interpolate_poly/with_offset/16384
+Benchmarking f62/fft_interpolate_poly/with_offset/16384: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/16384: Collecting 10 samples in estimated 25.047 s (29k iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/16384: Analyzing
+f62/fft_interpolate_poly/with_offset/16384
+                        time:   [851.69 µs 858.23 µs 866.66 µs]
+                        change: [+0.1553% +0.7219% +1.4881%] (p = 0.05 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/with_offset/32768
+Benchmarking f62/fft_interpolate_poly/with_offset/32768: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/32768: Collecting 10 samples in estimated 25.079 s (14k iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/32768: Analyzing
+f62/fft_interpolate_poly/with_offset/32768
+                        time:   [1.8530 ms 1.8571 ms 1.8620 ms]
+                        change: [+1.5974% +2.0484% +2.4410%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/with_offset/65536
+Benchmarking f62/fft_interpolate_poly/with_offset/65536: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/65536: Collecting 10 samples in estimated 25.136 s (6710 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/65536: Analyzing
+f62/fft_interpolate_poly/with_offset/65536
+                        time:   [3.7910 ms 3.8329 ms 3.8637 ms]
+                        change: [+1.7903% +2.6903% +3.6190%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/with_offset/131072
+Benchmarking f62/fft_interpolate_poly/with_offset/131072: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/131072: Collecting 10 samples in estimated 25.201 s (3135 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/131072: Analyzing
+f62/fft_interpolate_poly/with_offset/131072
+                        time:   [8.0876 ms 8.1330 ms 8.1879 ms]
+                        change: [+2.7993% +3.5893% +4.4357%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/with_offset/262144
+Benchmarking f62/fft_interpolate_poly/with_offset/262144: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/262144: Collecting 10 samples in estimated 25.635 s (1540 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/262144: Analyzing
+f62/fft_interpolate_poly/with_offset/262144
+                        time:   [16.823 ms 16.868 ms 16.960 ms]
+                        change: [+2.4056% +3.0757% +3.8775%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f62/fft_interpolate_poly/with_offset/524288
+Benchmarking f62/fft_interpolate_poly/with_offset/524288: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/524288: Collecting 10 samples in estimated 26.600 s (770 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/524288: Analyzing
+f62/fft_interpolate_poly/with_offset/524288
+                        time:   [34.789 ms 34.988 ms 35.188 ms]
+                        change: [+1.1432% +1.6631% +2.1943%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/with_offset/1048576
+Benchmarking f62/fft_interpolate_poly/with_offset/1048576: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/1048576: Collecting 10 samples in estimated 27.536 s (385 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/1048576: Analyzing
+f62/fft_interpolate_poly/with_offset/1048576
+                        time:   [72.270 ms 72.674 ms 73.310 ms]
+                        change: [+1.1530% +1.9057% +2.7055%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f62/fft_interpolate_poly/with_offset/2097152
+Benchmarking f62/fft_interpolate_poly/with_offset/2097152: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/2097152: Collecting 10 samples in estimated 25.706 s (165 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/2097152: Analyzing
+f62/fft_interpolate_poly/with_offset/2097152
+                        time:   [155.16 ms 156.14 ms 157.05 ms]
+                        change: [+1.1569% +1.7500% +2.2971%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f62/fft_interpolate_poly/with_offset/4194304
+Benchmarking f62/fft_interpolate_poly/with_offset/4194304: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/4194304: Collecting 10 samples in estimated 37.014 s (110 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/4194304: Analyzing
+f62/fft_interpolate_poly/with_offset/4194304
+                        time:   [340.50 ms 342.55 ms 344.38 ms]
+                        change: [+2.1957% +3.2945% +4.3156%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/with_offset/8388608
+Benchmarking f62/fft_interpolate_poly/with_offset/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 40.4s or enable flat sampling.
+Benchmarking f62/fft_interpolate_poly/with_offset/8388608: Collecting 10 samples in estimated 40.369 s (55 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/8388608: Analyzing
+f62/fft_interpolate_poly/with_offset/8388608
+                        time:   [709.20 ms 713.30 ms 722.09 ms]
+                        change: [+1.0391% +2.3562% +3.9457%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f62/fft_interpolate_poly/with_offset/16777216
+Benchmarking f62/fft_interpolate_poly/with_offset/16777216: Warming up for 3.0000 s
+Benchmarking f62/fft_interpolate_poly/with_offset/16777216: Collecting 10 samples in estimated 30.723 s (20 iterations)
+Benchmarking f62/fft_interpolate_poly/with_offset/16777216: Analyzing
+f62/fft_interpolate_poly/with_offset/16777216
+                        time:   [1.5105 s 1.5178 s 1.5258 s]
+                        change: [-1.5333% -0.3700% +0.7024%] (p = 0.56 > 0.05)
+                        No change in performance detected.
+
+Benchmarking f64/fft_interpolate_poly/simple/2
+Benchmarking f64/fft_interpolate_poly/simple/2: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/2: Collecting 10 samples in estimated 25.000 s (68M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/2: Analyzing
+f64/fft_interpolate_poly/simple/2
+                        time:   [252.94 ns 253.52 ns 254.19 ns]
+                        change: [-0.5341% -0.1246% +0.2810%] (p = 0.59 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/4
+Benchmarking f64/fft_interpolate_poly/simple/4: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/4: Collecting 10 samples in estimated 25.000 s (63M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/4: Analyzing
+f64/fft_interpolate_poly/simple/4
+                        time:   [280.34 ns 280.73 ns 281.05 ns]
+                        change: [-0.6730% -0.1044% +0.3685%] (p = 0.73 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/8
+Benchmarking f64/fft_interpolate_poly/simple/8: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/8: Collecting 10 samples in estimated 25.000 s (56M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/8: Analyzing
+f64/fft_interpolate_poly/simple/8
+                        time:   [334.80 ns 335.98 ns 337.06 ns]
+                        change: [-0.3355% +0.1328% +0.5610%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/16
+Benchmarking f64/fft_interpolate_poly/simple/16: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/16: Collecting 10 samples in estimated 25.000 s (43M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/16: Analyzing
+f64/fft_interpolate_poly/simple/16
+                        time:   [460.98 ns 465.01 ns 467.64 ns]
+                        change: [+2.3222% +3.1125% +3.9483%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_interpolate_poly/simple/32
+Benchmarking f64/fft_interpolate_poly/simple/32: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/32: Collecting 10 samples in estimated 25.000 s (29M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/32: Analyzing
+f64/fft_interpolate_poly/simple/32
+                        time:   [723.87 ns 728.25 ns 737.69 ns]
+                        change: [+0.8492% +1.9158% +2.9697%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/simple/64
+Benchmarking f64/fft_interpolate_poly/simple/64: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/64: Collecting 10 samples in estimated 25.000 s (18M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/64: Analyzing
+f64/fft_interpolate_poly/simple/64
+                        time:   [1.2063 µs 1.2123 µs 1.2236 µs]
+                        change: [-0.4942% +0.4736% +1.4750%] (p = 0.39 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/128
+Benchmarking f64/fft_interpolate_poly/simple/128: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/128: Collecting 10 samples in estimated 25.000 s (11M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/128: Analyzing
+f64/fft_interpolate_poly/simple/128
+                        time:   [2.2963 µs 2.3017 µs 2.3080 µs]
+                        change: [+1.7152% +2.2985% +2.9289%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/simple/256
+Benchmarking f64/fft_interpolate_poly/simple/256: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/256: Collecting 10 samples in estimated 25.000 s (5.8M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/256: Analyzing
+f64/fft_interpolate_poly/simple/256
+                        time:   [4.4196 µs 4.4516 µs 4.4914 µs]
+                        change: [-1.2677% -0.0259% +1.1746%] (p = 0.97 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/512
+Benchmarking f64/fft_interpolate_poly/simple/512: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/512: Collecting 10 samples in estimated 25.000 s (2.9M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/512: Analyzing
+f64/fft_interpolate_poly/simple/512
+                        time:   [8.5085 µs 8.5262 µs 8.5480 µs]
+                        change: [-0.5047% +0.1796% +0.7580%] (p = 0.61 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_interpolate_poly/simple/1024
+Benchmarking f64/fft_interpolate_poly/simple/1024: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/1024: Collecting 10 samples in estimated 25.000 s (1.4M iterations)
+Benchmarking f64/fft_interpolate_poly/simple/1024: Analyzing
+f64/fft_interpolate_poly/simple/1024
+                        time:   [18.032 µs 18.086 µs 18.190 µs]
+                        change: [-0.3488% +0.5886% +1.3762%] (p = 0.23 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/2048
+Benchmarking f64/fft_interpolate_poly/simple/2048: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/2048: Collecting 10 samples in estimated 25.001 s (601k iterations)
+Benchmarking f64/fft_interpolate_poly/simple/2048: Analyzing
+f64/fft_interpolate_poly/simple/2048
+                        time:   [40.850 µs 41.145 µs 41.502 µs]
+                        change: [-0.9048% +0.1119% +1.1452%] (p = 0.84 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/4096
+Benchmarking f64/fft_interpolate_poly/simple/4096: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/4096: Collecting 10 samples in estimated 25.003 s (260k iterations)
+Benchmarking f64/fft_interpolate_poly/simple/4096: Analyzing
+f64/fft_interpolate_poly/simple/4096
+                        time:   [93.922 µs 94.230 µs 94.502 µs]
+                        change: [-1.0468% -0.2859% +0.6300%] (p = 0.52 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_interpolate_poly/simple/8192
+Benchmarking f64/fft_interpolate_poly/simple/8192: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/8192: Collecting 10 samples in estimated 25.009 s (117k iterations)
+Benchmarking f64/fft_interpolate_poly/simple/8192: Analyzing
+f64/fft_interpolate_poly/simple/8192
+                        time:   [209.60 µs 210.41 µs 211.02 µs]
+                        change: [-0.6014% -0.0690% +0.4409%] (p = 0.82 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/16384
+Benchmarking f64/fft_interpolate_poly/simple/16384: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/16384: Collecting 10 samples in estimated 25.013 s (54k iterations)
+Benchmarking f64/fft_interpolate_poly/simple/16384: Analyzing
+f64/fft_interpolate_poly/simple/16384
+                        time:   [454.70 µs 455.44 µs 456.09 µs]
+                        change: [-0.3085% +0.0845% +0.4831%] (p = 0.69 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f64/fft_interpolate_poly/simple/32768
+Benchmarking f64/fft_interpolate_poly/simple/32768: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/32768: Collecting 10 samples in estimated 25.033 s (25k iterations)
+Benchmarking f64/fft_interpolate_poly/simple/32768: Analyzing
+f64/fft_interpolate_poly/simple/32768
+                        time:   [999.88 µs 1.0017 ms 1.0036 ms]
+                        change: [-0.2033% +0.2261% +0.6473%] (p = 0.34 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/65536
+Benchmarking f64/fft_interpolate_poly/simple/65536: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/65536: Collecting 10 samples in estimated 25.047 s (12k iterations)
+Benchmarking f64/fft_interpolate_poly/simple/65536: Analyzing
+f64/fft_interpolate_poly/simple/65536
+                        time:   [2.1033 ms 2.1058 ms 2.1080 ms]
+                        change: [+0.0954% +0.5504% +0.9432%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/simple/131072
+Benchmarking f64/fft_interpolate_poly/simple/131072: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/131072: Collecting 10 samples in estimated 25.140 s (5665 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/131072: Analyzing
+f64/fft_interpolate_poly/simple/131072
+                        time:   [4.3411 ms 4.3552 ms 4.3703 ms]
+                        change: [+0.0542% +0.4157% +0.7811%] (p = 0.05 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/simple/262144
+Benchmarking f64/fft_interpolate_poly/simple/262144: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/262144: Collecting 10 samples in estimated 25.392 s (2805 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/262144: Analyzing
+f64/fft_interpolate_poly/simple/262144
+                        time:   [8.8972 ms 8.9052 ms 8.9146 ms]
+                        change: [+0.0173% +0.2464% +0.4693%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/524288
+Benchmarking f64/fft_interpolate_poly/simple/524288: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/524288: Collecting 10 samples in estimated 25.579 s (1375 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/524288: Analyzing
+f64/fft_interpolate_poly/simple/524288
+                        time:   [18.215 ms 18.235 ms 18.250 ms]
+                        change: [-0.2987% +0.0010% +0.2958%] (p = 1.00 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/1048576
+Benchmarking f64/fft_interpolate_poly/simple/1048576: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/1048576: Collecting 10 samples in estimated 26.879 s (715 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/1048576: Analyzing
+f64/fft_interpolate_poly/simple/1048576
+                        time:   [36.894 ms 36.948 ms 36.991 ms]
+                        change: [-1.2489% -0.7104% -0.2052%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/simple/2097152
+Benchmarking f64/fft_interpolate_poly/simple/2097152: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/2097152: Collecting 10 samples in estimated 27.164 s (330 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/2097152: Analyzing
+f64/fft_interpolate_poly/simple/2097152
+                        time:   [81.443 ms 83.218 ms 85.081 ms]
+                        change: [-0.1680% +1.4651% +3.0789%] (p = 0.15 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/4194304
+Benchmarking f64/fft_interpolate_poly/simple/4194304: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/4194304: Collecting 10 samples in estimated 29.129 s (165 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/4194304: Analyzing
+f64/fft_interpolate_poly/simple/4194304
+                        time:   [172.24 ms 172.51 ms 172.82 ms]
+                        change: [-0.6613% -0.2553% +0.1535%] (p = 0.25 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/8388608
+Benchmarking f64/fft_interpolate_poly/simple/8388608: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/simple/8388608: Collecting 10 samples in estimated 42.756 s (110 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/8388608: Analyzing
+f64/fft_interpolate_poly/simple/8388608
+                        time:   [377.46 ms 379.66 ms 381.14 ms]
+                        change: [-0.7512% -0.0941% +0.5505%] (p = 0.79 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/simple/16777216
+Benchmarking f64/fft_interpolate_poly/simple/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 46.8s or enable flat sampling.
+Benchmarking f64/fft_interpolate_poly/simple/16777216: Collecting 10 samples in estimated 46.829 s (55 iterations)
+Benchmarking f64/fft_interpolate_poly/simple/16777216: Analyzing
+f64/fft_interpolate_poly/simple/16777216
+                        time:   [828.30 ms 828.98 ms 829.58 ms]
+                        change: [+0.0704% +0.4149% +0.7468%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f64/fft_interpolate_poly/with_offset/2
+Benchmarking f64/fft_interpolate_poly/with_offset/2: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/2: Collecting 10 samples in estimated 25.000 s (42M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/2: Analyzing
+f64/fft_interpolate_poly/with_offset/2
+                        time:   [489.63 ns 491.96 ns 493.56 ns]
+                        change: [+0.1665% +0.7432% +1.2887%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/with_offset/4
+Benchmarking f64/fft_interpolate_poly/with_offset/4: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/4: Collecting 10 samples in estimated 25.000 s (39M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/4: Analyzing
+f64/fft_interpolate_poly/with_offset/4
+                        time:   [533.58 ns 535.02 ns 536.98 ns]
+                        change: [+2.4752% +2.9754% +3.5678%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/8
+Benchmarking f64/fft_interpolate_poly/with_offset/8: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/8: Collecting 10 samples in estimated 25.000 s (35M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/8: Analyzing
+f64/fft_interpolate_poly/with_offset/8
+                        time:   [596.08 ns 600.17 ns 604.54 ns]
+                        change: [+1.7302% +2.4666% +3.1108%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/16
+Benchmarking f64/fft_interpolate_poly/with_offset/16: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/16: Collecting 10 samples in estimated 25.000 s (29M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/16: Analyzing
+f64/fft_interpolate_poly/with_offset/16
+                        time:   [743.26 ns 746.20 ns 747.93 ns]
+                        change: [+2.2340% +2.7673% +3.2193%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/32
+Benchmarking f64/fft_interpolate_poly/with_offset/32: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/32: Collecting 10 samples in estimated 25.000 s (21M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/32: Analyzing
+f64/fft_interpolate_poly/with_offset/32
+                        time:   [1.0675 µs 1.0722 µs 1.0771 µs]
+                        change: [+2.8055% +3.3068% +3.8161%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/64
+Benchmarking f64/fft_interpolate_poly/with_offset/64: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/64: Collecting 10 samples in estimated 25.000 s (14M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/64: Analyzing
+f64/fft_interpolate_poly/with_offset/64
+                        time:   [1.6750 µs 1.6870 µs 1.7010 µs]
+                        change: [+2.2340% +2.8566% +3.4344%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/128
+Benchmarking f64/fft_interpolate_poly/with_offset/128: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/128: Collecting 10 samples in estimated 25.000 s (8.5M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/128: Analyzing
+f64/fft_interpolate_poly/with_offset/128
+                        time:   [2.8762 µs 2.8965 µs 2.9114 µs]
+                        change: [+1.6437% +2.6673% +3.5850%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) low mild
+Benchmarking f64/fft_interpolate_poly/with_offset/256
+Benchmarking f64/fft_interpolate_poly/with_offset/256: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/256: Collecting 10 samples in estimated 25.000 s (4.6M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/256: Analyzing
+f64/fft_interpolate_poly/with_offset/256
+                        time:   [5.4104 µs 5.4384 µs 5.4791 µs]
+                        change: [-0.9461% +1.1195% +2.6409%] (p = 0.28 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/with_offset/512
+Benchmarking f64/fft_interpolate_poly/with_offset/512: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/512: Collecting 10 samples in estimated 25.001 s (2.4M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/512: Analyzing
+f64/fft_interpolate_poly/with_offset/512
+                        time:   [10.457 µs 10.553 µs 10.612 µs]
+                        change: [+0.4660% +1.9356% +3.2327%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/with_offset/1024
+Benchmarking f64/fft_interpolate_poly/with_offset/1024: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/1024: Collecting 10 samples in estimated 25.001 s (1.1M iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/1024: Analyzing
+f64/fft_interpolate_poly/with_offset/1024
+                        time:   [21.718 µs 21.821 µs 21.958 µs]
+                        change: [+1.9242% +2.9061% +3.9614%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/2048
+Benchmarking f64/fft_interpolate_poly/with_offset/2048: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/2048: Collecting 10 samples in estimated 25.000 s (508k iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/2048: Analyzing
+f64/fft_interpolate_poly/with_offset/2048
+                        time:   [48.371 µs 48.944 µs 49.321 µs]
+                        change: [+1.6816% +2.9112% +4.0311%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/4096
+Benchmarking f64/fft_interpolate_poly/with_offset/4096: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/4096: Collecting 10 samples in estimated 25.000 s (224k iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/4096: Analyzing
+f64/fft_interpolate_poly/with_offset/4096
+                        time:   [107.06 µs 108.34 µs 109.18 µs]
+                        change: [+0.1620% +1.3007% +2.3612%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/with_offset/8192
+Benchmarking f64/fft_interpolate_poly/with_offset/8192: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/8192: Collecting 10 samples in estimated 25.006 s (103k iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/8192: Analyzing
+f64/fft_interpolate_poly/with_offset/8192
+                        time:   [241.16 µs 242.07 µs 242.89 µs]
+                        change: [+2.6022% +3.2358% +3.8087%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/16384
+Benchmarking f64/fft_interpolate_poly/with_offset/16384: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/16384: Collecting 10 samples in estimated 25.006 s (48k iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/16384: Analyzing
+f64/fft_interpolate_poly/with_offset/16384
+                        time:   [508.65 µs 514.31 µs 520.23 µs]
+                        change: [+1.8474% +2.7222% +3.5084%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking f64/fft_interpolate_poly/with_offset/32768
+Benchmarking f64/fft_interpolate_poly/with_offset/32768: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/32768: Collecting 10 samples in estimated 25.058 s (22k iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/32768: Analyzing
+f64/fft_interpolate_poly/with_offset/32768
+                        time:   [1.0937 ms 1.0953 ms 1.0970 ms]
+                        change: [-0.1781% +0.1690% +0.4720%] (p = 0.36 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/with_offset/65536
+Benchmarking f64/fft_interpolate_poly/with_offset/65536: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/65536: Collecting 10 samples in estimated 25.110 s (11k iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/65536: Analyzing
+f64/fft_interpolate_poly/with_offset/65536
+                        time:   [2.3374 ms 2.3440 ms 2.3516 ms]
+                        change: [+1.5782% +2.3426% +2.9627%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f64/fft_interpolate_poly/with_offset/131072
+Benchmarking f64/fft_interpolate_poly/with_offset/131072: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/131072: Collecting 10 samples in estimated 25.020 s (5060 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/131072: Analyzing
+f64/fft_interpolate_poly/with_offset/131072
+                        time:   [4.8640 ms 4.8774 ms 4.8971 ms]
+                        change: [+2.8785% +3.1984% +3.5018%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/262144
+Benchmarking f64/fft_interpolate_poly/with_offset/262144: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/262144: Collecting 10 samples in estimated 25.131 s (2475 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/262144: Analyzing
+f64/fft_interpolate_poly/with_offset/262144
+                        time:   [9.8914 ms 9.9588 ms 10.021 ms]
+                        change: [+2.2468% +2.8948% +3.5175%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/524288
+Benchmarking f64/fft_interpolate_poly/with_offset/524288: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/524288: Collecting 10 samples in estimated 25.215 s (1210 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/524288: Analyzing
+f64/fft_interpolate_poly/with_offset/524288
+                        time:   [20.307 ms 20.470 ms 20.628 ms]
+                        change: [+2.8853% +3.4552% +4.0083%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking f64/fft_interpolate_poly/with_offset/1048576
+Benchmarking f64/fft_interpolate_poly/with_offset/1048576: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/1048576: Collecting 10 samples in estimated 26.211 s (605 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/1048576: Analyzing
+f64/fft_interpolate_poly/with_offset/1048576
+                        time:   [40.893 ms 41.341 ms 42.283 ms]
+                        change: [+4.0747% +6.1114% +8.2814%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f64/fft_interpolate_poly/with_offset/2097152
+Benchmarking f64/fft_interpolate_poly/with_offset/2097152: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/2097152: Collecting 10 samples in estimated 29.728 s (330 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/2097152: Analyzing
+f64/fft_interpolate_poly/with_offset/2097152
+                        time:   [87.503 ms 87.767 ms 88.245 ms]
+                        change: [+0.2224% +0.9871% +1.7700%] (p = 0.04 < 0.05)
+                        Change within noise threshold.
+Benchmarking f64/fft_interpolate_poly/with_offset/4194304
+Benchmarking f64/fft_interpolate_poly/with_offset/4194304: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/4194304: Collecting 10 samples in estimated 31.255 s (165 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/4194304: Analyzing
+f64/fft_interpolate_poly/with_offset/4194304
+                        time:   [187.30 ms 191.64 ms 194.14 ms]
+                        change: [-0.3206% +1.1968% +2.8470%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Benchmarking f64/fft_interpolate_poly/with_offset/8388608
+Benchmarking f64/fft_interpolate_poly/with_offset/8388608: Warming up for 3.0000 s
+Benchmarking f64/fft_interpolate_poly/with_offset/8388608: Collecting 10 samples in estimated 45.978 s (110 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/8388608: Analyzing
+f64/fft_interpolate_poly/with_offset/8388608
+                        time:   [401.50 ms 402.39 ms 404.60 ms]
+                        change: [-0.3509% +1.3278% +3.5727%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f64/fft_interpolate_poly/with_offset/16777216
+Benchmarking f64/fft_interpolate_poly/with_offset/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 48.5s or enable flat sampling.
+Benchmarking f64/fft_interpolate_poly/with_offset/16777216: Collecting 10 samples in estimated 48.548 s (55 iterations)
+Benchmarking f64/fft_interpolate_poly/with_offset/16777216: Analyzing
+f64/fft_interpolate_poly/with_offset/16777216
+                        time:   [877.93 ms 880.74 ms 884.05 ms]
+                        change: [+0.0651% +0.7090% +1.4638%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+
+Benchmarking f128/fft_interpolate_poly/simple/2
+Benchmarking f128/fft_interpolate_poly/simple/2: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/2: Collecting 10 samples in estimated 25.000 s (62M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/2: Analyzing
+f128/fft_interpolate_poly/simple/2
+                        time:   [287.52 ns 288.56 ns 290.04 ns]
+                        change: [-0.2184% +0.3067% +0.8673%] (p = 0.31 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_interpolate_poly/simple/4
+Benchmarking f128/fft_interpolate_poly/simple/4: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/4: Collecting 10 samples in estimated 25.000 s (56M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/4: Analyzing
+f128/fft_interpolate_poly/simple/4
+                        time:   [334.61 ns 335.26 ns 336.22 ns]
+                        change: [-0.1769% +0.7488% +1.7215%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f128/fft_interpolate_poly/simple/8
+Benchmarking f128/fft_interpolate_poly/simple/8: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/8: Collecting 10 samples in estimated 25.000 s (44M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/8: Analyzing
+f128/fft_interpolate_poly/simple/8
+                        time:   [470.74 ns 472.03 ns 473.87 ns]
+                        change: [+3.5177% +4.5185% +5.4053%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/simple/16
+Benchmarking f128/fft_interpolate_poly/simple/16: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/16: Collecting 10 samples in estimated 25.000 s (29M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/16: Analyzing
+f128/fft_interpolate_poly/simple/16
+                        time:   [747.13 ns 749.40 ns 752.27 ns]
+                        change: [+2.3452% +2.8318% +3.2385%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/simple/32
+Benchmarking f128/fft_interpolate_poly/simple/32: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/32: Collecting 10 samples in estimated 25.000 s (16M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/32: Analyzing
+f128/fft_interpolate_poly/simple/32
+                        time:   [1.3936 µs 1.4018 µs 1.4152 µs]
+                        change: [+1.6966% +2.3547% +3.0094%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/simple/64
+Benchmarking f128/fft_interpolate_poly/simple/64: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/64: Collecting 10 samples in estimated 25.000 s (8.0M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/64: Analyzing
+f128/fft_interpolate_poly/simple/64
+                        time:   [2.9032 µs 2.9161 µs 2.9420 µs]
+                        change: [+0.2014% +1.4466% +2.5584%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_interpolate_poly/simple/128
+Benchmarking f128/fft_interpolate_poly/simple/128: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/128: Collecting 10 samples in estimated 25.000 s (3.8M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/128: Analyzing
+f128/fft_interpolate_poly/simple/128
+                        time:   [6.2821 µs 6.2917 µs 6.2996 µs]
+                        change: [-0.1764% +0.3727% +0.8323%] (p = 0.19 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/256
+Benchmarking f128/fft_interpolate_poly/simple/256: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/256: Collecting 10 samples in estimated 25.000 s (1.7M iterations)
+Benchmarking f128/fft_interpolate_poly/simple/256: Analyzing
+f128/fft_interpolate_poly/simple/256
+                        time:   [13.919 µs 13.937 µs 13.949 µs]
+                        change: [-0.2373% +0.1536% +0.5347%] (p = 0.47 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/512
+Benchmarking f128/fft_interpolate_poly/simple/512: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/512: Collecting 10 samples in estimated 25.001 s (814k iterations)
+Benchmarking f128/fft_interpolate_poly/simple/512: Analyzing
+f128/fft_interpolate_poly/simple/512
+                        time:   [30.287 µs 30.326 µs 30.365 µs]
+                        change: [-0.1664% +0.2454% +0.6903%] (p = 0.31 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f128/fft_interpolate_poly/simple/1024
+Benchmarking f128/fft_interpolate_poly/simple/1024: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/1024: Collecting 10 samples in estimated 25.000 s (377k iterations)
+Benchmarking f128/fft_interpolate_poly/simple/1024: Analyzing
+f128/fft_interpolate_poly/simple/1024
+                        time:   [65.349 µs 65.404 µs 65.467 µs]
+                        change: [-0.1480% +0.2190% +0.5892%] (p = 0.28 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_interpolate_poly/simple/2048
+Benchmarking f128/fft_interpolate_poly/simple/2048: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/2048: Collecting 10 samples in estimated 25.005 s (171k iterations)
+Benchmarking f128/fft_interpolate_poly/simple/2048: Analyzing
+f128/fft_interpolate_poly/simple/2048
+                        time:   [143.06 µs 143.37 µs 143.70 µs]
+                        change: [-0.1365% +0.4151% +0.8756%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+Benchmarking f128/fft_interpolate_poly/simple/4096
+Benchmarking f128/fft_interpolate_poly/simple/4096: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/4096: Collecting 10 samples in estimated 25.013 s (80k iterations)
+Benchmarking f128/fft_interpolate_poly/simple/4096: Analyzing
+f128/fft_interpolate_poly/simple/4096
+                        time:   [317.34 µs 319.13 µs 320.83 µs]
+                        change: [-0.7845% +1.5111% +3.0188%] (p = 0.19 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+Benchmarking f128/fft_interpolate_poly/simple/8192
+Benchmarking f128/fft_interpolate_poly/simple/8192: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/8192: Collecting 10 samples in estimated 25.008 s (36k iterations)
+Benchmarking f128/fft_interpolate_poly/simple/8192: Analyzing
+f128/fft_interpolate_poly/simple/8192
+                        time:   [687.99 µs 691.71 µs 696.55 µs]
+                        change: [-1.5937% +1.7641% +5.1669%] (p = 0.37 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking f128/fft_interpolate_poly/simple/16384
+Benchmarking f128/fft_interpolate_poly/simple/16384: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/16384: Collecting 10 samples in estimated 25.077 s (17k iterations)
+Benchmarking f128/fft_interpolate_poly/simple/16384: Analyzing
+f128/fft_interpolate_poly/simple/16384
+                        time:   [1.4826 ms 1.4908 ms 1.5062 ms]
+                        change: [-4.4620% -1.0058% +2.6907%] (p = 0.61 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/32768
+Benchmarking f128/fft_interpolate_poly/simple/32768: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/32768: Collecting 10 samples in estimated 25.085 s (7865 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/32768: Analyzing
+f128/fft_interpolate_poly/simple/32768
+                        time:   [3.1704 ms 3.2356 ms 3.3663 ms]
+                        change: [-2.7124% -0.1954% +2.1438%] (p = 0.89 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/65536
+Benchmarking f128/fft_interpolate_poly/simple/65536: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/65536: Collecting 10 samples in estimated 25.288 s (3795 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/65536: Analyzing
+f128/fft_interpolate_poly/simple/65536
+                        time:   [7.0836 ms 7.0965 ms 7.1167 ms]
+                        change: [-0.6662% +0.1968% +0.9623%] (p = 0.67 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/131072
+Benchmarking f128/fft_interpolate_poly/simple/131072: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/131072: Collecting 10 samples in estimated 25.400 s (1815 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/131072: Analyzing
+f128/fft_interpolate_poly/simple/131072
+                        time:   [14.790 ms 14.813 ms 14.840 ms]
+                        change: [-0.1655% +0.2265% +0.5757%] (p = 0.28 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/262144
+Benchmarking f128/fft_interpolate_poly/simple/262144: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/262144: Collecting 10 samples in estimated 26.361 s (880 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/262144: Analyzing
+f128/fft_interpolate_poly/simple/262144
+                        time:   [31.641 ms 31.987 ms 32.420 ms]
+                        change: [+0.6143% +1.9638% +3.4145%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/simple/524288
+Benchmarking f128/fft_interpolate_poly/simple/524288: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/524288: Collecting 10 samples in estimated 28.278 s (440 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/524288: Analyzing
+f128/fft_interpolate_poly/simple/524288
+                        time:   [66.684 ms 67.430 ms 67.848 ms]
+                        change: [+1.2993% +2.8234% +4.1784%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/simple/1048576
+Benchmarking f128/fft_interpolate_poly/simple/1048576: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/1048576: Collecting 10 samples in estimated 29.994 s (220 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/1048576: Analyzing
+f128/fft_interpolate_poly/simple/1048576
+                        time:   [138.84 ms 139.83 ms 141.73 ms]
+                        change: [+1.6176% +2.8329% +3.9448%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/simple/2097152
+Benchmarking f128/fft_interpolate_poly/simple/2097152: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/2097152: Collecting 10 samples in estimated 30.679 s (110 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/2097152: Analyzing
+f128/fft_interpolate_poly/simple/2097152
+                        time:   [294.21 ms 300.95 ms 307.51 ms]
+                        change: [-0.4249% +1.6070% +3.6335%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+Benchmarking f128/fft_interpolate_poly/simple/4194304
+Benchmarking f128/fft_interpolate_poly/simple/4194304: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 33.4s or enable flat sampling.
+Benchmarking f128/fft_interpolate_poly/simple/4194304: Collecting 10 samples in estimated 33.377 s (55 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/4194304: Analyzing
+f128/fft_interpolate_poly/simple/4194304
+                        time:   [631.13 ms 635.88 ms 644.44 ms]
+                        change: [+2.0792% +3.5551% +5.1297%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/simple/8388608
+Benchmarking f128/fft_interpolate_poly/simple/8388608: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/simple/8388608: Collecting 10 samples in estimated 25.923 s (20 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/8388608: Analyzing
+f128/fft_interpolate_poly/simple/8388608
+                        time:   [1.3131 s 1.3284 s 1.3458 s]
+                        change: [-0.0586% +0.9811% +2.2372%] (p = 0.18 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/simple/16777216
+Benchmarking f128/fft_interpolate_poly/simple/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 26.7s.
+Benchmarking f128/fft_interpolate_poly/simple/16777216: Collecting 10 samples in estimated 26.679 s (10 iterations)
+Benchmarking f128/fft_interpolate_poly/simple/16777216: Analyzing
+f128/fft_interpolate_poly/simple/16777216
+                        time:   [2.7325 s 2.7398 s 2.7472 s]
+                        change: [-0.5841% -0.1481% +0.2599%] (p = 0.51 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/2
+Benchmarking f128/fft_interpolate_poly/with_offset/2: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/2: Collecting 10 samples in estimated 25.000 s (41M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/2: Analyzing
+f128/fft_interpolate_poly/with_offset/2
+                        time:   [496.48 ns 497.47 ns 498.30 ns]
+                        change: [-0.6100% -0.2235% +0.1525%] (p = 0.29 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/4
+Benchmarking f128/fft_interpolate_poly/with_offset/4: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/4: Collecting 10 samples in estimated 25.000 s (37M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/4: Analyzing
+f128/fft_interpolate_poly/with_offset/4
+                        time:   [567.98 ns 568.63 ns 569.27 ns]
+                        change: [-0.5270% -0.1239% +0.2098%] (p = 0.57 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/8
+Benchmarking f128/fft_interpolate_poly/with_offset/8: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/8: Collecting 10 samples in estimated 25.000 s (30M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/8: Analyzing
+f128/fft_interpolate_poly/with_offset/8
+                        time:   [723.51 ns 724.61 ns 726.17 ns]
+                        change: [+0.2961% +0.8557% +1.4793%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_interpolate_poly/with_offset/16
+Benchmarking f128/fft_interpolate_poly/with_offset/16: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/16: Collecting 10 samples in estimated 25.000 s (21M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/16: Analyzing
+f128/fft_interpolate_poly/with_offset/16
+                        time:   [1.0765 µs 1.0813 µs 1.0843 µs]
+                        change: [-0.0951% +0.3335% +0.7244%] (p = 0.15 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/32
+Benchmarking f128/fft_interpolate_poly/with_offset/32: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/32: Collecting 10 samples in estimated 25.000 s (12M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/32: Analyzing
+f128/fft_interpolate_poly/with_offset/32
+                        time:   [1.8644 µs 1.8725 µs 1.8843 µs]
+                        change: [+0.2906% +0.8708% +1.4338%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/64
+Benchmarking f128/fft_interpolate_poly/with_offset/64: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/64: Collecting 10 samples in estimated 25.000 s (6.3M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/64: Analyzing
+f128/fft_interpolate_poly/with_offset/64
+                        time:   [3.8311 µs 3.8703 µs 3.8880 µs]
+                        change: [+1.0800% +1.8822% +2.6699%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/with_offset/128
+Benchmarking f128/fft_interpolate_poly/with_offset/128: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/128: Collecting 10 samples in estimated 25.000 s (3.0M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/128: Analyzing
+f128/fft_interpolate_poly/with_offset/128
+                        time:   [7.9779 µs 8.0346 µs 8.0877 µs]
+                        change: [+2.3842% +3.1938% +4.1425%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/with_offset/256
+Benchmarking f128/fft_interpolate_poly/with_offset/256: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/256: Collecting 10 samples in estimated 25.001 s (1.4M iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/256: Analyzing
+f128/fft_interpolate_poly/with_offset/256
+                        time:   [17.256 µs 17.366 µs 17.431 µs]
+                        change: [+3.2077% +3.9682% +4.6428%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/with_offset/512
+Benchmarking f128/fft_interpolate_poly/with_offset/512: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/512: Collecting 10 samples in estimated 25.000 s (668k iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/512: Analyzing
+f128/fft_interpolate_poly/with_offset/512
+                        time:   [36.700 µs 36.960 µs 37.399 µs]
+                        change: [+1.8864% +2.6457% +3.3694%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/with_offset/1024
+Benchmarking f128/fft_interpolate_poly/with_offset/1024: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/1024: Collecting 10 samples in estimated 25.004 s (314k iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/1024: Analyzing
+f128/fft_interpolate_poly/with_offset/1024
+                        time:   [78.795 µs 78.950 µs 79.158 µs]
+                        change: [-3.9205% +0.3847% +3.2900%] (p = 0.89 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/2048
+Benchmarking f128/fft_interpolate_poly/with_offset/2048: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/2048: Collecting 10 samples in estimated 25.003 s (148k iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/2048: Analyzing
+f128/fft_interpolate_poly/with_offset/2048
+                        time:   [166.67 µs 167.06 µs 167.53 µs]
+                        change: [-3.4494% -2.0102% -0.8225%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/4096
+Benchmarking f128/fft_interpolate_poly/with_offset/4096: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/4096: Collecting 10 samples in estimated 25.015 s (69k iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/4096: Analyzing
+f128/fft_interpolate_poly/with_offset/4096
+                        time:   [353.24 µs 356.27 µs 359.88 µs]
+                        change: [+0.6651% +1.4835% +2.2801%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/8192
+Benchmarking f128/fft_interpolate_poly/with_offset/8192: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/8192: Collecting 10 samples in estimated 25.005 s (32k iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/8192: Analyzing
+f128/fft_interpolate_poly/with_offset/8192
+                        time:   [747.62 µs 750.37 µs 755.47 µs]
+                        change: [-1.1447% -0.0435% +0.9135%] (p = 0.94 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/16384
+Benchmarking f128/fft_interpolate_poly/with_offset/16384: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/16384: Collecting 10 samples in estimated 25.045 s (16k iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/16384: Analyzing
+f128/fft_interpolate_poly/with_offset/16384
+                        time:   [1.5856 ms 1.5904 ms 1.5960 ms]
+                        change: [-1.2386% -0.7056% -0.1559%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/32768
+Benchmarking f128/fft_interpolate_poly/with_offset/32768: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/32768: Collecting 10 samples in estimated 25.126 s (7315 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/32768: Analyzing
+f128/fft_interpolate_poly/with_offset/32768
+                        time:   [3.3533 ms 3.3584 ms 3.3643 ms]
+                        change: [-2.4171% -1.8067% -1.2608%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking f128/fft_interpolate_poly/with_offset/65536
+Benchmarking f128/fft_interpolate_poly/with_offset/65536: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/65536: Collecting 10 samples in estimated 25.256 s (3520 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/65536: Analyzing
+f128/fft_interpolate_poly/with_offset/65536
+                        time:   [7.0663 ms 7.0770 ms 7.0900 ms]
+                        change: [-1.3294% -0.7402% -0.2054%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking f128/fft_interpolate_poly/with_offset/131072
+Benchmarking f128/fft_interpolate_poly/with_offset/131072: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/131072: Collecting 10 samples in estimated 25.078 s (1650 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/131072: Analyzing
+f128/fft_interpolate_poly/with_offset/131072
+                        time:   [14.832 ms 14.849 ms 14.868 ms]
+                        change: [-1.6845% -1.0196% -0.4291%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/262144
+Benchmarking f128/fft_interpolate_poly/with_offset/262144: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/262144: Collecting 10 samples in estimated 26.036 s (825 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/262144: Analyzing
+f128/fft_interpolate_poly/with_offset/262144
+                        time:   [31.040 ms 31.082 ms 31.124 ms]
+                        change: [-1.5157% -1.2544% -0.9527%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/524288
+Benchmarking f128/fft_interpolate_poly/with_offset/524288: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/524288: Collecting 10 samples in estimated 25.262 s (385 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/524288: Analyzing
+f128/fft_interpolate_poly/with_offset/524288
+                        time:   [65.321 ms 66.314 ms 66.810 ms]
+                        change: [-1.3540% -0.4830% +0.5691%] (p = 0.36 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/1048576
+Benchmarking f128/fft_interpolate_poly/with_offset/1048576: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/1048576: Collecting 10 samples in estimated 32.115 s (220 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/1048576: Analyzing
+f128/fft_interpolate_poly/with_offset/1048576
+                        time:   [141.60 ms 142.12 ms 142.88 ms]
+                        change: [+0.5474% +1.5162% +2.4797%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking f128/fft_interpolate_poly/with_offset/2097152
+Benchmarking f128/fft_interpolate_poly/with_offset/2097152: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/2097152: Collecting 10 samples in estimated 33.486 s (110 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/2097152: Analyzing
+f128/fft_interpolate_poly/with_offset/2097152
+                        time:   [294.86 ms 299.26 ms 302.59 ms]
+                        change: [-1.9820% -0.3387% +1.3413%] (p = 0.71 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/4194304
+Benchmarking f128/fft_interpolate_poly/with_offset/4194304: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 35.8s or enable flat sampling.
+Benchmarking f128/fft_interpolate_poly/with_offset/4194304: Collecting 10 samples in estimated 35.755 s (55 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/4194304: Analyzing
+f128/fft_interpolate_poly/with_offset/4194304
+                        time:   [637.47 ms 644.11 ms 649.39 ms]
+                        change: [+1.7809% +2.5414% +3.4447%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking f128/fft_interpolate_poly/with_offset/8388608
+Benchmarking f128/fft_interpolate_poly/with_offset/8388608: Warming up for 3.0000 s
+Benchmarking f128/fft_interpolate_poly/with_offset/8388608: Collecting 10 samples in estimated 27.438 s (20 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/8388608: Analyzing
+f128/fft_interpolate_poly/with_offset/8388608
+                        time:   [1.3251 s 1.3354 s 1.3457 s]
+                        change: [-1.2491% +0.0261% +1.2781%] (p = 0.97 > 0.05)
+                        No change in performance detected.
+Benchmarking f128/fft_interpolate_poly/with_offset/16777216
+Benchmarking f128/fft_interpolate_poly/with_offset/16777216: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 25.0s. You may wish to increase target time to 28.4s.
+Benchmarking f128/fft_interpolate_poly/with_offset/16777216: Collecting 10 samples in estimated 28.352 s (10 iterations)
+Benchmarking f128/fft_interpolate_poly/with_offset/16777216: Analyzing
+f128/fft_interpolate_poly/with_offset/16777216
+                        time:   [2.8158 s 2.8368 s 2.8563 s]
+                        change: [+2.6055% +3.3541% +4.0627%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+
+Benchmarking fft_get_twiddles/2
+Benchmarking fft_get_twiddles/2: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/2: Collecting 10 samples in estimated 5.0000 s (12M iterations)
+Benchmarking fft_get_twiddles/2: Analyzing
+fft_get_twiddles/2      time:   [428.35 ns 430.03 ns 431.49 ns]
+                        change: [+2.0573% +3.5719% +4.8726%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) low severe
+Benchmarking fft_get_twiddles/4
+Benchmarking fft_get_twiddles/4: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/4: Collecting 10 samples in estimated 5.0000 s (12M iterations)
+Benchmarking fft_get_twiddles/4: Analyzing
+fft_get_twiddles/4      time:   [424.36 ns 435.10 ns 459.46 ns]
+                        change: [+1.4816% +5.3550% +12.718%] (p = 0.05 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking fft_get_twiddles/8
+Benchmarking fft_get_twiddles/8: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/8: Collecting 10 samples in estimated 5.0000 s (11M iterations)
+Benchmarking fft_get_twiddles/8: Analyzing
+fft_get_twiddles/8      time:   [426.41 ns 429.55 ns 432.12 ns]
+                        change: [+0.8746% +2.0871% +3.4905%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking fft_get_twiddles/16
+Benchmarking fft_get_twiddles/16: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/16: Collecting 10 samples in estimated 5.0000 s (11M iterations)
+Benchmarking fft_get_twiddles/16: Analyzing
+fft_get_twiddles/16     time:   [463.81 ns 466.21 ns 470.14 ns]
+                        change: [+2.7412% +3.4310% +4.1937%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/32
+Benchmarking fft_get_twiddles/32: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/32: Collecting 10 samples in estimated 5.0000 s (8.3M iterations)
+Benchmarking fft_get_twiddles/32: Analyzing
+fft_get_twiddles/32     time:   [601.24 ns 605.00 ns 608.91 ns]
+                        change: [+1.8075% +2.9026% +4.0787%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/64
+Benchmarking fft_get_twiddles/64: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/64: Collecting 10 samples in estimated 5.0000 s (6.4M iterations)
+Benchmarking fft_get_twiddles/64: Analyzing
+fft_get_twiddles/64     time:   [789.83 ns 794.18 ns 797.39 ns]
+                        change: [+1.9399% +3.0089% +4.0120%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/128
+Benchmarking fft_get_twiddles/128: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/128: Collecting 10 samples in estimated 5.0001 s (4.5M iterations)
+Benchmarking fft_get_twiddles/128: Analyzing
+fft_get_twiddles/128    time:   [1.1073 µs 1.1151 µs 1.1225 µs]
+                        change: [+2.1835% +3.0099% +3.8038%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
+Benchmarking fft_get_twiddles/256
+Benchmarking fft_get_twiddles/256: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/256: Collecting 10 samples in estimated 5.0000 s (2.6M iterations)
+Benchmarking fft_get_twiddles/256: Analyzing
+fft_get_twiddles/256    time:   [1.9141 µs 1.9303 µs 1.9480 µs]
+                        change: [+2.8932% +3.8600% +4.8387%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/512
+Benchmarking fft_get_twiddles/512: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/512: Collecting 10 samples in estimated 5.0001 s (1.4M iterations)
+Benchmarking fft_get_twiddles/512: Analyzing
+fft_get_twiddles/512    time:   [3.5605 µs 3.5802 µs 3.5990 µs]
+                        change: [+1.8508% +2.7381% +3.5485%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/1024
+Benchmarking fft_get_twiddles/1024: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/1024: Collecting 10 samples in estimated 5.0003 s (731k iterations)
+Benchmarking fft_get_twiddles/1024: Analyzing
+fft_get_twiddles/1024   time:   [6.7788 µs 6.8201 µs 6.8536 µs]
+                        change: [+1.4669% +2.2669% +2.9742%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+Benchmarking fft_get_twiddles/2048
+Benchmarking fft_get_twiddles/2048: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/2048: Collecting 10 samples in estimated 5.0005 s (374k iterations)
+Benchmarking fft_get_twiddles/2048: Analyzing
+fft_get_twiddles/2048   time:   [13.328 µs 13.412 µs 13.502 µs]
+                        change: [+1.7718% +2.7262% +3.4571%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/4096
+Benchmarking fft_get_twiddles/4096: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/4096: Collecting 10 samples in estimated 5.0008 s (195k iterations)
+Benchmarking fft_get_twiddles/4096: Analyzing
+fft_get_twiddles/4096   time:   [25.362 µs 25.470 µs 25.632 µs]
+                        change: [+2.3573% +2.9649% +3.5792%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/8192
+Benchmarking fft_get_twiddles/8192: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/8192: Collecting 10 samples in estimated 5.0020 s (89k iterations)
+Benchmarking fft_get_twiddles/8192: Analyzing
+fft_get_twiddles/8192   time:   [55.986 µs 56.251 µs 56.549 µs]
+                        change: [+1.8454% +2.7792% +3.7274%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/16384
+Benchmarking fft_get_twiddles/16384: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/16384: Collecting 10 samples in estimated 5.0009 s (43k iterations)
+Benchmarking fft_get_twiddles/16384: Analyzing
+fft_get_twiddles/16384  time:   [115.58 µs 116.47 µs 117.57 µs]
+                        change: [+1.1350% +2.3456% +3.3794%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/32768
+Benchmarking fft_get_twiddles/32768: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/32768: Collecting 10 samples in estimated 5.0113 s (24k iterations)
+Benchmarking fft_get_twiddles/32768: Analyzing
+fft_get_twiddles/32768  time:   [209.25 µs 210.46 µs 211.15 µs]
+                        change: [+1.0951% +1.6269% +2.1726%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/65536
+Benchmarking fft_get_twiddles/65536: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/65536: Collecting 10 samples in estimated 5.0149 s (11k iterations)
+Benchmarking fft_get_twiddles/65536: Analyzing
+fft_get_twiddles/65536  time:   [444.48 µs 448.33 µs 451.85 µs]
+                        change: [+2.1764% +3.0883% +3.9970%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/131072
+Benchmarking fft_get_twiddles/131072: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/131072: Collecting 10 samples in estimated 5.0013 s (4785 iterations)
+Benchmarking fft_get_twiddles/131072: Analyzing
+fft_get_twiddles/131072 time:   [1.0345 ms 1.0441 ms 1.0493 ms]
+                        change: [+2.0746% +2.9920% +3.8239%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/262144
+Benchmarking fft_get_twiddles/262144: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/262144: Collecting 10 samples in estimated 5.0729 s (2530 iterations)
+Benchmarking fft_get_twiddles/262144: Analyzing
+fft_get_twiddles/262144 time:   [1.9951 ms 2.0128 ms 2.0334 ms]
+                        change: [+1.4573% +2.3790% +3.2727%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/524288
+Benchmarking fft_get_twiddles/524288: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/524288: Collecting 10 samples in estimated 5.0439 s (1265 iterations)
+Benchmarking fft_get_twiddles/524288: Analyzing
+fft_get_twiddles/524288 time:   [3.9283 ms 3.9349 ms 3.9491 ms]
+                        change: [+0.0132% +0.7330% +1.6116%] (p = 0.10 > 0.05)
+                        No change in performance detected.
+Benchmarking fft_get_twiddles/1048576
+Benchmarking fft_get_twiddles/1048576: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/1048576: Collecting 10 samples in estimated 5.2294 s (660 iterations)
+Benchmarking fft_get_twiddles/1048576: Analyzing
+fft_get_twiddles/1048576
+                        time:   [7.8888 ms 7.9193 ms 7.9852 ms]
+                        change: [-3.1250% -1.0689% +0.9934%] (p = 0.37 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+Benchmarking fft_get_twiddles/2097152
+Benchmarking fft_get_twiddles/2097152: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/2097152: Collecting 10 samples in estimated 5.7218 s (330 iterations)
+Benchmarking fft_get_twiddles/2097152: Analyzing
+fft_get_twiddles/2097152
+                        time:   [17.273 ms 17.822 ms 18.888 ms]
+                        change: [+9.6339% +15.243% +21.136%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/4194304
+Benchmarking fft_get_twiddles/4194304: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/4194304: Collecting 10 samples in estimated 5.0823 s (110 iterations)
+Benchmarking fft_get_twiddles/4194304: Analyzing
+fft_get_twiddles/4194304
+                        time:   [44.750 ms 45.723 ms 47.401 ms]
+                        change: [+11.609% +15.201% +19.027%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/8388608
+Benchmarking fft_get_twiddles/8388608: Warming up for 3.0000 s
+
+Warning: Unable to complete 10 samples in 5.0s. You may wish to increase target time to 5.7s or enable flat sampling.
+Benchmarking fft_get_twiddles/8388608: Collecting 10 samples in estimated 5.6905 s (55 iterations)
+Benchmarking fft_get_twiddles/8388608: Analyzing
+fft_get_twiddles/8388608
+                        time:   [106.60 ms 107.65 ms 109.84 ms]
+                        change: [+14.329% +16.504% +18.724%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking fft_get_twiddles/16777216
+Benchmarking fft_get_twiddles/16777216: Warming up for 3.0000 s
+Benchmarking fft_get_twiddles/16777216: Collecting 10 samples in estimated 6.1894 s (30 iterations)
+Benchmarking fft_get_twiddles/16777216: Analyzing
+fft_get_twiddles/16777216
+                        time:   [214.32 ms 218.49 ms 223.12 ms]
+                        change: [+6.5079% +8.8051% +11.318%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+

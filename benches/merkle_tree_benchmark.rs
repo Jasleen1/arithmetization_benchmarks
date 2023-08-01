@@ -16,12 +16,13 @@ pub fn merkle_tree_construction(c: &mut Criterion) {
     let mut merkle_group = c.benchmark_group("merkle tree construction");
 
     // static BATCH_SIZES: [usize; 3] = [65536, 131072, 262144];
-    static BATCH_SIZES: [usize; 2] = [16 * 64, 2048 * 4 * 2];
+    // static BATCH_SIZES: [usize; 2] = [16 * 64, 2048 * 4 * 2];
+    let BATCH_SIZES = (1..25).map(|x| 1 << x);
 
-    for size in &BATCH_SIZES {
+    for size in BATCH_SIZES {
         let data: Vec<Blake3Digest> = {
-            let mut res = unsafe { uninit_vector(*size) };
-            for i in 0..*size {
+            let mut res = unsafe { uninit_vector(size) };
+            for i in 0..size {
                 res[i] = Blake3::hash(&rand_value::<u128>().to_le_bytes());
             }
             res
