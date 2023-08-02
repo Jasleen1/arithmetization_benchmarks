@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Statistics collator. Mines Criterion benchmark data in json files.
+# Kind of brittle, ad hoc, mvp.
+
+# top level dir; assume we run inside BASE/scripts
+BASE=..
+
+# suffix for the data file, descended from the 'new' dir;, always the same
+EST=new/estimates.json
+
+
+# Collates statistics from a criterion benchmark run.
+function getstats() {
+    local PREF=$1
+    local INST=$2
+    local SUFF=$3
+    local OUTPUT=$4
+    local INPUT=$PREF/$INST/$SUFF
+    echo -n $INST, >> $OUTPUT
+    jq -j .mean.point_estimate < $INPUT >> $OUTPUT
+    echo -n , >> $OUTPUT
+    jq -j .mean.standard_error < $INPUT >> $OUTPUT
+    echo -n , >> $OUTPUT
+    jq -j .mean.confidence_interval.lower_bound < $INPUT >> $OUTPUT
+    echo -n , >> $OUTPUT
+    jq -j .mean.confidence_interval.upper_bound < $INPUT >> $OUTPUT
+    echo "" >> $OUTPUT
+}
+
+# The various deployments.
+
+function get-prover-fft-r1cs() {
+    # prover path down
+    PRV=$BASE/target/criterion/Provertime/FFT-R1CS/
+
+    # file to store
+    OUT=prv-fft-r1cs.csv
+
+    # echo -n "" > $OUT
+    echo 'mean,std,confmin,confmax' > $OUT
+    getstats $PRV 5 $EST $OUT
+    getstats $PRV 7 $EST $OUT
+    getstats $PRV 8 $EST $OUT
+    getstats $PRV 9 $EST $OUT
+    getstats $PRV 10 $EST $OUT
+    getstats $PRV 11 $EST $OUT
+
+    echo $OUT
+    cat $OUT
+}
+
+
+
+
+
+
+get-prover-fft-r1cs
