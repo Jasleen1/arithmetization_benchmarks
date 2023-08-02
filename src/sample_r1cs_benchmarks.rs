@@ -4,11 +4,11 @@
 // LICENSE file in the root directory of this source tree.
 
 use core::num;
+use nohash_hasher::NoHashHasher;
 use std::cmp::max;
-use std::time::Instant;
 use std::collections::HashMap;
 use std::hash::BuildHasherDefault;
-use nohash_hasher::NoHashHasher;
+use std::time::Instant;
 
 // use fractal_indexer::index::get_max_degree;
 use fractal_proofs::{fft, FractalProverOptions, Serializable};
@@ -27,10 +27,10 @@ use fractal_indexer::{
     snark_keys::*,
 };
 
+use reports::reporter::generate_flame_report;
 use winter_models::jsnark_arith_parser::JsnarkArithReaderParser;
 use winter_models::jsnark_wire_parser::JsnarkWireReaderParser;
 use winter_models::utils::{print_vec, print_vec_bits};
-use reports::reporter::generate_flame_report;
 
 use winter_crypto::hashers::{Blake3_256, Rp64_256};
 use winter_crypto::ElementHasher;
@@ -63,16 +63,20 @@ fn main() {
         "fft" | "fftexample" => "fftexample",
         "fib" | "fibonacciexample" => "fibonacciexample",
         "" | "default" | "sample" => "sample",
-        other => panic!("Unsupported program: {}", other)
+        other => panic!("Unsupported program: {}", other),
     };
 
     let supported_sizes = match program_name {
         "fftexample" => 5u64..15u64,
         "fibonacciexample" => 5u64..21u64,
         "sample" => 1u64..2u64,
-        other => panic!("Unsupported program: {}", other)
+        other => panic!("Unsupported program: {}", other),
     };
-    assert!(supported_sizes.contains(&options.size), "Unsupported program size: {}", &options.size);
+    assert!(
+        supported_sizes.contains(&options.size),
+        "Unsupported program size: {}",
+        &options.size
+    );
 
     let program_path = format!("src/jsnark_outputs/{program_name}_{}", options.size);
 
@@ -108,14 +112,26 @@ pub(crate) fn orchestrate_r1cs_example<
     wire_file: &str,
     verbose: bool,
 ) {
-    println_if!(verbose, "============================================================");
+    println_if!(
+        verbose,
+        "============================================================"
+    );
     println_if!(verbose, "Getting setup");
-    println_if!(verbose, "Step 1: Parse jsnark files {}, {}", arith_file, wire_file);
+    println_if!(
+        verbose,
+        "Step 1: Parse jsnark files {}, {}",
+        arith_file,
+        wire_file
+    );
 
     let now = Instant::now();
     let mut arith_parser = JsnarkArithReaderParser::<B>::new().unwrap();
     arith_parser.parse_arith_file(&arith_file, false /* verbose */);
-    println_if!(verbose, "Parsed arith file in {} ms", now.elapsed().as_millis());
+    println_if!(
+        verbose,
+        "Parsed arith file in {} ms",
+        now.elapsed().as_millis()
+    );
     let mut r1cs = arith_parser.r1cs_instance;
 
     // if (verbose) {
@@ -262,8 +278,10 @@ pub(crate) fn orchestrate_r1cs_example<
     println_if!(verbose, "Proof size: {}", proof_bytes.len());
 
     let now = Instant::now();
-    verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options).unwrap();
-    println_if!(verbose,
+    verify_layered_fractal_proof_from_top(&verifier_key, &proof, &pub_inputs_bytes, &options)
+        .unwrap();
+    println_if!(
+        verbose,
         "---------------------\nProof verified in {} ms",
         now.elapsed().as_millis()
     );

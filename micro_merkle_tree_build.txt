@@ -1,257 +1,124 @@
-WARNING: HTML report generation will become a non-default optional feature in Criterion.rs 0.4.0.
-This feature is being moved to cargo-criterion (https://github.com/bheisler/cargo-criterion) and will be optional in a future version of Criterion.rs. To silence this warning, either switch to cargo-criterion or enable the 'html_reports' feature in your Cargo.toml.
-
-Gnuplot not found, using plotters backend
-Benchmarking merkle tree construction/sequential/2
-Benchmarking merkle tree construction/sequential/2: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/2: Collecting 100 samples in estimated 5.0008 s (26M iterations)
-Benchmarking merkle tree construction/sequential/2: Analyzing
 merkle tree construction/sequential/2
-                        time:   [189.76 ns 190.49 ns 191.27 ns]
-                        change: [+1.7331% +2.1417% +2.5371%] (p = 0.00 < 0.05)
-                        Performance has regressed.
-Benchmarking merkle tree construction/sequential/4
-Benchmarking merkle tree construction/sequential/4: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/4: Collecting 100 samples in estimated 5.0001 s (10M iterations)
-Benchmarking merkle tree construction/sequential/4: Analyzing
+                        time:   [191.14 ns 191.99 ns 192.78 ns]
+                        change: [-4.7081% -2.5784% -0.8717%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
 merkle tree construction/sequential/4
-                        time:   [481.74 ns 483.57 ns 485.47 ns]
-                        change: [-0.2630% +0.2111% +0.7137%] (p = 0.40 > 0.05)
+                        time:   [487.23 ns 488.36 ns 489.19 ns]
+                        change: [-6.5710% -2.4875% +0.1142%] (p = 0.26 > 0.05)
                         No change in performance detected.
-Found 4 outliers among 100 measurements (4.00%)
-  4 (4.00%) high mild
-Benchmarking merkle tree construction/sequential/8
-Benchmarking merkle tree construction/sequential/8: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/8: Collecting 100 samples in estimated 5.0021 s (4.5M iterations)
-Benchmarking merkle tree construction/sequential/8: Analyzing
 merkle tree construction/sequential/8
-                        time:   [1.0877 µs 1.0898 µs 1.0922 µs]
-                        change: [-3.8629% -3.1241% -2.4386%] (p = 0.00 < 0.05)
-                        Performance has improved.
-Found 7 outliers among 100 measurements (7.00%)
-  2 (2.00%) high mild
-  5 (5.00%) high severe
-Benchmarking merkle tree construction/sequential/16
-Benchmarking merkle tree construction/sequential/16: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/16: Collecting 100 samples in estimated 5.0073 s (2.2M iterations)
-Benchmarking merkle tree construction/sequential/16: Analyzing
+                        time:   [1.1149 µs 1.1212 µs 1.1323 µs]
+                        change: [-0.6266% +0.4574% +1.5585%] (p = 0.47 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
 merkle tree construction/sequential/16
-                        time:   [2.2428 µs 2.2474 µs 2.2534 µs]
-                        change: [+0.1582% +0.5896% +0.9843%] (p = 0.01 < 0.05)
-                        Change within noise threshold.
-Found 11 outliers among 100 measurements (11.00%)
-  7 (7.00%) high mild
-  4 (4.00%) high severe
-Benchmarking merkle tree construction/sequential/32
-Benchmarking merkle tree construction/sequential/32: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/32: Collecting 100 samples in estimated 5.0055 s (1.1M iterations)
-Benchmarking merkle tree construction/sequential/32: Analyzing
+                        time:   [2.2803 µs 2.2976 µs 2.3131 µs]
+                        change: [-3.9089% -1.0210% +0.9914%] (p = 0.59 > 0.05)
+                        No change in performance detected.
 merkle tree construction/sequential/32
-                        time:   [4.5091 µs 4.5265 µs 4.5467 µs]
-                        change: [-2.3138% -1.7896% -1.2692%] (p = 0.00 < 0.05)
-                        Performance has improved.
-Found 9 outliers among 100 measurements (9.00%)
-  3 (3.00%) high mild
-  6 (6.00%) high severe
-Benchmarking merkle tree construction/sequential/64
-Benchmarking merkle tree construction/sequential/64: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/64: Collecting 100 samples in estimated 5.0030 s (545k iterations)
-Benchmarking merkle tree construction/sequential/64: Analyzing
+                        time:   [4.6206 µs 4.6410 µs 4.6703 µs]
+                        change: [+0.3275% +0.9338% +1.5009%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
 merkle tree construction/sequential/64
-                        time:   [9.1461 µs 9.1836 µs 9.2259 µs]
-                        change: [-0.1859% +0.1746% +0.5098%] (p = 0.34 > 0.05)
+                        time:   [9.3331 µs 9.3894 µs 9.4186 µs]
+                        change: [-3.4642% -1.6640% -0.2519%] (p = 0.06 > 0.05)
                         No change in performance detected.
-Found 13 outliers among 100 measurements (13.00%)
-  5 (5.00%) high mild
-  8 (8.00%) high severe
-Benchmarking merkle tree construction/sequential/128
-Benchmarking merkle tree construction/sequential/128: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/128: Collecting 100 samples in estimated 5.1085 s (222k iterations)
-Benchmarking merkle tree construction/sequential/128: Analyzing
 merkle tree construction/sequential/128
-                        time:   [18.502 µs 18.603 µs 18.732 µs]
-                        change: [+1.9170% +2.8786% +3.9243%] (p = 0.00 < 0.05)
-                        Performance has regressed.
-Found 3 outliers among 100 measurements (3.00%)
-  2 (2.00%) high mild
-  1 (1.00%) high severe
-Benchmarking merkle tree construction/sequential/256
-Benchmarking merkle tree construction/sequential/256: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/256: Collecting 100 samples in estimated 5.0961 s (136k iterations)
-Benchmarking merkle tree construction/sequential/256: Analyzing
+                        time:   [18.729 µs 18.865 µs 18.951 µs]
+                        change: [-2.6641% -1.3362% -0.4030%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
 merkle tree construction/sequential/256
-                        time:   [36.811 µs 36.904 µs 37.018 µs]
-                        change: [-0.0184% +0.3073% +0.6362%] (p = 0.07 > 0.05)
-                        No change in performance detected.
-Found 8 outliers among 100 measurements (8.00%)
-  5 (5.00%) high mild
-  3 (3.00%) high severe
-Benchmarking merkle tree construction/sequential/512
-Benchmarking merkle tree construction/sequential/512: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/512: Collecting 100 samples in estimated 5.2469 s (71k iterations)
-Benchmarking merkle tree construction/sequential/512: Analyzing
+                        time:   [37.566 µs 37.826 µs 38.152 µs]
+                        change: [-14.910% -7.9947% -1.7606%] (p = 0.03 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
 merkle tree construction/sequential/512
-                        time:   [73.624 µs 73.846 µs 74.116 µs]
-                        change: [-0.5119% -0.1092% +0.2769%] (p = 0.59 > 0.05)
-                        No change in performance detected.
-Found 11 outliers among 100 measurements (11.00%)
-  3 (3.00%) high mild
-  8 (8.00%) high severe
-Benchmarking merkle tree construction/sequential/1024
-Benchmarking merkle tree construction/sequential/1024: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/1024: Collecting 100 samples in estimated 5.2419 s (35k iterations)
-Benchmarking merkle tree construction/sequential/1024: Analyzing
+                        time:   [75.249 µs 75.547 µs 75.814 µs]
+                        change: [-5.8784% -3.8371% -2.2864%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low severe
+  1 (10.00%) high mild
 merkle tree construction/sequential/1024
-                        time:   [147.50 µs 148.54 µs 150.02 µs]
-                        change: [-0.9640% -0.3654% +0.2960%] (p = 0.28 > 0.05)
-                        No change in performance detected.
-Found 20 outliers among 100 measurements (20.00%)
-  3 (3.00%) high mild
-  17 (17.00%) high severe
-Benchmarking merkle tree construction/sequential/2048
-Benchmarking merkle tree construction/sequential/2048: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/2048: Collecting 100 samples in estimated 5.9975 s (20k iterations)
-Benchmarking merkle tree construction/sequential/2048: Analyzing
+                        time:   [150.02 µs 150.64 µs 151.26 µs]
+                        change: [-1.8840% -1.3777% -0.9189%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
 merkle tree construction/sequential/2048
-                        time:   [294.61 µs 295.45 µs 296.51 µs]
-                        change: [+0.0711% +0.4630% +0.8915%] (p = 0.02 < 0.05)
+                        time:   [301.52 µs 302.07 µs 302.92 µs]
+                        change: [-1.8496% -1.2302% -0.6194%] (p = 0.00 < 0.05)
                         Change within noise threshold.
-Found 9 outliers among 100 measurements (9.00%)
-  9 (9.00%) high mild
-Benchmarking merkle tree construction/sequential/4096
-Benchmarking merkle tree construction/sequential/4096: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/4096: Collecting 100 samples in estimated 6.0333 s (10k iterations)
-Benchmarking merkle tree construction/sequential/4096: Analyzing
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) low mild
 merkle tree construction/sequential/4096
-                        time:   [594.54 µs 596.90 µs 599.32 µs]
-                        change: [+0.0585% +0.4062% +0.7785%] (p = 0.03 < 0.05)
-                        Change within noise threshold.
-Found 1 outliers among 100 measurements (1.00%)
-  1 (1.00%) high mild
-Benchmarking merkle tree construction/sequential/8192
-Benchmarking merkle tree construction/sequential/8192: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 6.0s, enable flat sampling, or reduce sample count to 60.
-Benchmarking merkle tree construction/sequential/8192: Collecting 100 samples in estimated 6.0201 s (5050 iterations)
-Benchmarking merkle tree construction/sequential/8192: Analyzing
-merkle tree construction/sequential/8192
-                        time:   [1.1916 ms 1.1963 ms 1.2017 ms]
-                        change: [+0.7485% +1.1453% +1.6036%] (p = 0.00 < 0.05)
-                        Change within noise threshold.
-Found 6 outliers among 100 measurements (6.00%)
-  5 (5.00%) high mild
-  1 (1.00%) high severe
-Benchmarking merkle tree construction/sequential/16384
-Benchmarking merkle tree construction/sequential/16384: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/16384: Collecting 100 samples in estimated 5.0835 s (2100 iterations)
-Benchmarking merkle tree construction/sequential/16384: Analyzing
-merkle tree construction/sequential/16384
-                        time:   [2.4127 ms 2.4176 ms 2.4225 ms]
-                        change: [-1.1274% -0.7250% -0.3125%] (p = 0.00 < 0.05)
-                        Change within noise threshold.
-Found 8 outliers among 100 measurements (8.00%)
-  5 (5.00%) low mild
-  3 (3.00%) high mild
-Benchmarking merkle tree construction/sequential/32768
-Benchmarking merkle tree construction/sequential/32768: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/32768: Collecting 100 samples in estimated 5.3671 s (1100 iterations)
-Benchmarking merkle tree construction/sequential/32768: Analyzing
-merkle tree construction/sequential/32768
-                        time:   [4.8277 ms 4.8397 ms 4.8519 ms]
-                        change: [-1.6232% -1.1760% -0.7175%] (p = 0.00 < 0.05)
-                        Change within noise threshold.
-Found 15 outliers among 100 measurements (15.00%)
-  8 (8.00%) low mild
-  5 (5.00%) high mild
-  2 (2.00%) high severe
-Benchmarking merkle tree construction/sequential/65536
-Benchmarking merkle tree construction/sequential/65536: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/65536: Collecting 100 samples in estimated 5.8005 s (600 iterations)
-Benchmarking merkle tree construction/sequential/65536: Analyzing
-merkle tree construction/sequential/65536
-                        time:   [9.6328 ms 9.6560 ms 9.6789 ms]
-                        change: [+1.2564% +1.6943% +2.1163%] (p = 0.00 < 0.05)
-                        Performance has regressed.
-Found 11 outliers among 100 measurements (11.00%)
-  8 (8.00%) low mild
-  3 (3.00%) high mild
-Benchmarking merkle tree construction/sequential/131072
-Benchmarking merkle tree construction/sequential/131072: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/131072: Collecting 100 samples in estimated 5.7427 s (300 iterations)
-Benchmarking merkle tree construction/sequential/131072: Analyzing
-merkle tree construction/sequential/131072
-                        time:   [19.092 ms 19.156 ms 19.225 ms]
-                        change: [-1.2028% -0.7344% -0.2757%] (p = 0.00 < 0.05)
-                        Change within noise threshold.
-Found 1 outliers among 100 measurements (1.00%)
-  1 (1.00%) high mild
-Benchmarking merkle tree construction/sequential/262144
-Benchmarking merkle tree construction/sequential/262144: Warming up for 3.0000 s
-Benchmarking merkle tree construction/sequential/262144: Collecting 100 samples in estimated 7.7806 s (200 iterations)
-Benchmarking merkle tree construction/sequential/262144: Analyzing
-merkle tree construction/sequential/262144
-                        time:   [38.299 ms 38.400 ms 38.504 ms]
-                        change: [-0.7207% -0.3254% +0.0711%] (p = 0.12 > 0.05)
+                        time:   [601.45 µs 603.38 µs 605.63 µs]
+                        change: [-0.9743% -0.3780% +0.1883%] (p = 0.26 > 0.05)
                         No change in performance detected.
-Benchmarking merkle tree construction/sequential/524288
-Benchmarking merkle tree construction/sequential/524288: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.7s, or reduce sample count to 60.
-Benchmarking merkle tree construction/sequential/524288: Collecting 100 samples in estimated 7.7008 s (100 iterations)
-Benchmarking merkle tree construction/sequential/524288: Analyzing
-merkle tree construction/sequential/524288
-                        time:   [76.773 ms 77.003 ms 77.238 ms]
-                        change: [+1.4216% +1.8422% +2.1935%] (p = 0.00 < 0.05)
-                        Performance has regressed.
-Found 3 outliers among 100 measurements (3.00%)
-  3 (3.00%) high mild
-Benchmarking merkle tree construction/sequential/1048576
-Benchmarking merkle tree construction/sequential/1048576: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 15.4s, or reduce sample count to 30.
-Benchmarking merkle tree construction/sequential/1048576: Collecting 100 samples in estimated 15.372 s (100 iterations)
-Benchmarking merkle tree construction/sequential/1048576: Analyzing
-merkle tree construction/sequential/1048576
-                        time:   [152.65 ms 153.08 ms 153.51 ms]
-                        change: [+0.7360% +1.1057% +1.4992%] (p = 0.00 < 0.05)
+merkle tree construction/sequential/8192
+                        time:   [1.1868 ms 1.2022 ms 1.2126 ms]
+                        change: [-4.4734% -2.1135% +0.0109%] (p = 0.10 > 0.05)
+                        No change in performance detected.
+merkle tree construction/sequential/16384
+                        time:   [2.4005 ms 2.4161 ms 2.4330 ms]
+                        change: [-0.0235% +1.0831% +2.2103%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+merkle tree construction/sequential/32768
+                        time:   [4.7619 ms 4.8537 ms 4.9829 ms]
+                        change: [-7.1175% -3.6005% -0.1729%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+merkle tree construction/sequential/65536
+                        time:   [9.8066 ms 10.207 ms 10.846 ms]
+                        change: [-2.9894% +1.9915% +7.1239%] (p = 0.49 > 0.05)
+                        No change in performance detected.
+merkle tree construction/sequential/131072
+                        time:   [19.396 ms 19.635 ms 20.140 ms]
+                        change: [-3.9795% -1.9833% +0.6234%] (p = 0.12 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+merkle tree construction/sequential/262144
+                        time:   [38.750 ms 38.817 ms 38.943 ms]
+                        change: [-1.7043% -0.9847% -0.3266%] (p = 0.01 < 0.05)
                         Change within noise threshold.
-Benchmarking merkle tree construction/sequential/2097152
-Benchmarking merkle tree construction/sequential/2097152: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 30.9s, or reduce sample count to 10.
-Benchmarking merkle tree construction/sequential/2097152: Collecting 100 samples in estimated 30.939 s (100 iterations)
-Benchmarking merkle tree construction/sequential/2097152: Analyzing
+merkle tree construction/sequential/524288
+                        time:   [77.399 ms 77.641 ms 77.845 ms]
+                        change: [-0.2216% +0.1789% +0.5618%] (p = 0.43 > 0.05)
+                        No change in performance detected.
+merkle tree construction/sequential/1048576
+                        time:   [154.06 ms 154.51 ms 154.95 ms]
+                        change: [-6.7570% -5.4964% -4.3440%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low mild
+  2 (20.00%) high mild
 merkle tree construction/sequential/2097152
-                        time:   [309.10 ms 309.58 ms 310.09 ms]
-Found 10 outliers among 100 measurements (10.00%)
-  1 (1.00%) low severe
-  4 (4.00%) low mild
-  1 (1.00%) high mild
-  4 (4.00%) high severe
-Benchmarking merkle tree construction/sequential/4194304
-Benchmarking merkle tree construction/sequential/4194304: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 62.6s, or reduce sample count to 10.
-Benchmarking merkle tree construction/sequential/4194304: Collecting 100 samples in estimated 62.632 s (100 iterations)
-Benchmarking merkle tree construction/sequential/4194304: Analyzing
+                        time:   [309.50 ms 310.09 ms 310.76 ms]
+                        change: [-1.8196% -1.2147% -0.6992%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
 merkle tree construction/sequential/4194304
-                        time:   [609.86 ms 611.52 ms 613.20 ms]
-Benchmarking merkle tree construction/sequential/8388608
-Benchmarking merkle tree construction/sequential/8388608: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 127.2s, or reduce sample count to 10.
-Benchmarking merkle tree construction/sequential/8388608: Collecting 100 samples in estimated 127.16 s (100 iterations)
-Benchmarking merkle tree construction/sequential/8388608: Analyzing
+                        time:   [619.66 ms 620.87 ms 622.37 ms]
+                        change: [-5.1220% -2.3943% -0.5662%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) low mild
+  1 (10.00%) high mild
 merkle tree construction/sequential/8388608
-                        time:   [1.2201 s 1.2231 s 1.2262 s]
-Benchmarking merkle tree construction/sequential/16777216
-Benchmarking merkle tree construction/sequential/16777216: Warming up for 3.0000 s
-
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 251.8s, or reduce sample count to 10.
-Benchmarking merkle tree construction/sequential/16777216: Collecting 100 samples in estimated 251.78 s (100 iterations)
-Benchmarking merkle tree construction/sequential/16777216: Analyzing
+                        time:   [1.2307 s 1.2371 s 1.2451 s]
+                        change: [-0.4865% +0.1242% +0.8157%] (p = 0.74 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
 merkle tree construction/sequential/16777216
-                        time:   [2.4333 s 2.4369 s 2.4418 s]
-Found 1 outliers among 100 measurements (1.00%)
-  1 (1.00%) high severe
+                        time:   [2.4572 s 2.4657 s 2.4741 s]
+                        change: [-0.5299% -0.1428% +0.2267%] (p = 0.47 > 0.05)
+                        No change in performance detected.
 

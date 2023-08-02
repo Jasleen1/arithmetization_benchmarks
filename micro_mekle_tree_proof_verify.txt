@@ -1,0 +1,256 @@
+merkle tree batch proving/Proving batch for/Tree of size 8, queries 2
+                        time:   [880.96 ns 882.40 ns 883.96 ns]
+                        change: [-3.9568% -3.3425% -2.8749%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 16, queries 2
+                        time:   [925.55 ns 934.23 ns 940.03 ns]
+                        change: [-9.9149% -7.5993% -5.4904%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) low mild
+merkle tree batch proving/Proving batch for/Tree of size 16, queries 4
+                        time:   [1.0291 µs 1.0376 µs 1.0463 µs]
+                        change: [-13.676% -13.073% -12.492%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 32, queries 2
+                        time:   [1.0102 µs 1.0178 µs 1.0249 µs]
+                        change: [-5.1927% -4.2407% -3.0757%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 32, queries 4
+                        time:   [1.1113 µs 1.1179 µs 1.1225 µs]
+                        change: [-13.069% -12.526% -12.014%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 32, queries 8
+                        time:   [1.7714 µs 1.7828 µs 1.7930 µs]
+                        change: [-6.2737% -5.6057% -4.9434%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 64, queries 2
+                        time:   [1.4346 µs 1.4425 µs 1.4519 µs]
+                        change: [-5.2027% -4.8697% -4.4773%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 64, queries 4
+                        time:   [1.3546 µs 1.3574 µs 1.3613 µs]
+                        change: [+0.4887% +1.3535% +2.3742%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+merkle tree batch proving/Proving batch for/Tree of size 64, queries 8
+                        time:   [1.9990 µs 2.0066 µs 2.0122 µs]
+                        change: [-6.1980% -5.7866% -5.3420%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 64, queries 16
+                        time:   [3.2714 µs 3.2861 µs 3.3041 µs]
+                        change: [-6.0681% -5.5265% -4.9004%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 128, queries 2
+                        time:   [1.5091 µs 1.5158 µs 1.5228 µs]
+                        change: [-5.6690% -5.1100% -4.5964%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 128, queries 4
+                        time:   [1.4248 µs 1.4326 µs 1.4388 µs]
+                        change: [-11.534% -11.043% -10.554%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 128, queries 8
+                        time:   [2.0944 µs 2.1041 µs 2.1184 µs]
+                        change: [-6.5596% -5.4514% -4.2898%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+merkle tree batch proving/Proving batch for/Tree of size 128, queries 16
+                        time:   [3.5426 µs 3.5632 µs 3.5965 µs]
+                        change: [-8.1856% -7.5308% -6.7659%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 128, queries 32
+                        time:   [5.8085 µs 5.8331 µs 5.8588 µs]
+                        change: [-8.0845% -7.7301% -7.3659%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 256, queries 2
+                        time:   [1.5837 µs 1.5918 µs 1.6033 µs]
+                        change: [-5.3535% -4.6988% -3.8875%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 256, queries 4
+                        time:   [1.7571 µs 1.7647 µs 1.7740 µs]
+                        change: [+4.1989% +4.5751% +5.0160%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 256, queries 8
+                        time:   [2.9815 µs 2.9990 µs 3.0131 µs]
+                        change: [+18.177% +19.237% +20.562%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+merkle tree batch proving/Proving batch for/Tree of size 256, queries 16
+                        time:   [3.9148 µs 3.9418 µs 3.9777 µs]
+                        change: [-11.136% -10.267% -9.4585%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 256, queries 32
+                        time:   [6.0137 µs 6.0487 µs 6.1011 µs]
+                        change: [-15.448% -13.803% -12.349%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 256, queries 64
+                        time:   [10.730 µs 10.796 µs 10.887 µs]
+                        change: [-7.7545% -3.7989% -0.0507%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 2
+                        time:   [1.6544 µs 1.6635 µs 1.6763 µs]
+                        change: [-2.9629% -1.7712% -0.5203%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 4
+                        time:   [1.8388 µs 1.8458 µs 1.8516 µs]
+                        change: [-15.945% -14.787% -13.811%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 8
+                        time:   [3.3564 µs 3.5641 µs 4.1460 µs]
+                        change: [+24.717% +68.101% +118.20%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 16
+                        time:   [4.6771 µs 4.7248 µs 4.7632 µs]
+                        change: [-16.730% -15.562% -14.469%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 32
+                        time:   [7.0817 µs 7.1444 µs 7.2641 µs]
+                        change: [-4.4165% -2.9957% -1.5208%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 64
+                        time:   [11.750 µs 11.833 µs 11.907 µs]
+                        change: [-5.0938% -4.0661% -3.0940%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 512, queries 128
+                        time:   [22.178 µs 22.340 µs 22.642 µs]
+                        change: [+4.4785% +5.9099% +7.4248%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 2
+                        time:   [2.0621 µs 2.0809 µs 2.1030 µs]
+                        change: [-3.0513% -2.3345% -1.5514%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 4
+                        time:   [2.2813 µs 2.2868 µs 2.2977 µs]
+                        change: [-4.0205% -3.1356% -2.3806%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 8
+                        time:   [3.6521 µs 3.6658 µs 3.6828 µs]
+                        change: [+5.0572% +5.8084% +6.6851%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 16
+                        time:   [5.9265 µs 5.9550 µs 5.9909 µs]
+                        change: [+1.2868% +2.2488% +3.2400%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 32
+                        time:   [10.152 µs 10.204 µs 10.260 µs]
+                        change: [+8.3036% +9.7966% +11.290%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 64
+                        time:   [13.054 µs 13.107 µs 13.214 µs]
+                        change: [+0.3421% +1.5648% +2.8049%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 128
+                        time:   [23.729 µs 23.890 µs 24.111 µs]
+                        change: [-2.4313% -0.2071% +1.6669%] (p = 0.87 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 10 measurements (30.00%)
+  1 (10.00%) low mild
+  2 (20.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 1024, queries 256
+                        time:   [4.5947 ns 4.6736 ns 4.7275 ns]
+                        change: [-3.4900% -1.7916% -0.1585%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 2
+                        time:   [2.1721 µs 2.1850 µs 2.1932 µs]
+                        change: [-1.3663% -0.3781% +0.6135%] (p = 0.49 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 4
+                        time:   [2.6196 µs 2.6386 µs 2.6689 µs]
+                        change: [-1.2232% +0.2632% +1.7195%] (p = 0.74 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 8
+                        time:   [3.8470 µs 3.8738 µs 3.8937 µs]
+                        change: [-3.1506% -1.3889% +0.0857%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 16
+                        time:   [6.5913 µs 6.6149 µs 6.6613 µs]
+                        change: [-3.8255% -2.4140% -1.1328%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 32
+                        time:   [10.934 µs 10.994 µs 11.110 µs]
+                        change: [-0.6682% +0.3364% +1.3720%] (p = 0.55 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  2 (20.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 64
+                        time:   [16.434 µs 16.513 µs 16.658 µs]
+                        change: [-5.8176% -4.0479% -2.1890%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 128
+                        time:   [26.293 µs 26.410 µs 26.608 µs]
+                        change: [-9.4589% -7.5056% -5.5841%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high severe
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 256
+                        time:   [4.5531 ns 4.6408 ns 4.7189 ns]
+                        change: [-5.4253% -3.7360% -2.0208%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 2048, queries 512
+                        time:   [4.5180 ns 4.7072 ns 4.8661 ns]
+                        change: [-6.3304% -3.3438% -0.0345%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 2
+                        time:   [2.2064 µs 2.2241 µs 2.2350 µs]
+                        change: [-3.7657% -2.3405% -0.8226%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 4
+                        time:   [3.1433 µs 3.1737 µs 3.2031 µs]
+                        change: [+16.059% +17.494% +18.810%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 8
+                        time:   [4.5802 µs 4.6152 µs 4.6664 µs]
+                        change: [+7.3880% +9.0284% +10.735%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 16
+                        time:   [6.9214 µs 6.9617 µs 6.9918 µs]
+                        change: [-2.8656% -2.1690% -1.5134%] (p = 0.00 < 0.05)
+                        Performance has improved.
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 32
+                        time:   [12.258 µs 12.313 µs 12.363 µs]
+                        change: [+3.0735% +3.7326% +4.4602%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 64
+                        time:   [21.106 µs 21.190 µs 21.360 µs]
+                        change: [-3.0432% -1.3307% +0.2509%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 128
+                        time:   [34.265 µs 34.482 µs 34.734 µs]
+                        change: [-3.3605% -2.7792% -2.1751%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 10 measurements (10.00%)
+  1 (10.00%) high mild
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 256
+                        time:   [4.5177 ns 4.6038 ns 4.6697 ns]
+                        change: [-4.3729% -2.5849% -0.6263%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+merkle tree batch proving/Proving batch for/Tree of size 4096, queries 512
+                        time:   [5.5240 ns 151.34 ns 408.14 ns]
+                        change: [+3.6470% +1477.3% +4431.3%] (p = 0.28 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 10 measurements (20.00%)
+  1 (10.00%) high mild
+  1 (10.00%) high severe
+

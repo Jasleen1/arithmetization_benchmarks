@@ -4,13 +4,13 @@
 // LICENSE file in the root directory of this source tree.
 
 use criterion::{criterion_group, criterion_main, BatchSize, BenchmarkId, Criterion};
-use winter_rand_utils::rand_vector;
 use std::time::Duration;
 use winter_math::{
     fft,
     fields::{f128, f62, f64, CubeExtension, QuadExtension},
     FieldElement, StarkField,
 };
+use winter_rand_utils::rand_vector;
 
 const SIZES: [usize; 3] = [262_144, 524_288, 1_048_576];
 

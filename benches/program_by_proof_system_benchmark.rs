@@ -8,7 +8,7 @@ use std::cmp::max;
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
 
 // Winterfell AIR
-use examples::{fast_fourier_transform, fibonacci, ExampleOptions, ExampleType, Example};
+use examples::{fast_fourier_transform, fibonacci, Example, ExampleOptions, ExampleType};
 
 // WinterFractal R1CS
 use fractal_examples::r1cs_orchestrator::ProofSystemOrchestrator;
@@ -47,7 +47,7 @@ enum ProgramTag {
     FFT,
     Fibonacci,
     PtrChase,
-    Sample
+    Sample,
 }
 
 // Proof systems to choose from.
@@ -64,7 +64,7 @@ fn get_program_tag(provided_name: &str) -> ProgramTag {
         "fib" | "fibonacciexample" => ProgramTag::Fibonacci,
         "ptrchase" | "ptrchaseexample" => ProgramTag::PtrChase,
         "" | "default" | "sample" => ProgramTag::Sample,
-        other => panic!("Unsupported program: {}", other)
+        other => panic!("Unsupported program: {}", other),
     }
 }
 
@@ -73,7 +73,7 @@ fn get_system_tag(provided_name: &str) -> SystemTag {
         "air" => SystemTag::AIR,
         "r1cs" | "r1" | "r" => SystemTag::R1CS,
         "r1cs-batched" => SystemTag::R1CSPolyBatched,
-        other => panic!("Unsupported proof system: {}", other)
+        other => panic!("Unsupported proof system: {}", other),
     }
 }
 
@@ -87,7 +87,6 @@ fn get_program_path(program_tag: ProgramTag, instance_size: u64) -> String {
 }
 
 fn extract_setop_options() -> (bool, String, String, String) {
-
     // let options = ProgramOptions::from_args();
     //(options.verbose, options.program_list, options.system_list, options.instance_list)
 
@@ -95,21 +94,30 @@ fn extract_setop_options() -> (bool, String, String, String) {
         true,
         "fft,fib".to_string(),
         "r1cs,air".to_string(),
-        "5,6".to_string()
+        "5, 6, 7, 8, 9, 10".to_string(),
     );
     (verbose, program_list, system_list, instance_list)
 }
 
-fn setup(verbose: bool, program_list: String, system_list: String, instance_list: String)
-    -> (Vec<ProgramTag>, Vec<SystemTag>, Vec<u64>) {
-
+fn setup(
+    verbose: bool,
+    program_list: String,
+    system_list: String,
+    instance_list: String,
+) -> (Vec<ProgramTag>, Vec<SystemTag>, Vec<u64>) {
     println_if!(verbose, "Programs {}", program_list);
     println_if!(verbose, "Systems {}", system_list);
     println_if!(verbose, "Sizes {}", instance_list);
 
-    let program_tags: Vec<ProgramTag> = program_list.split(",").map(|x| get_program_tag(x)).collect();
+    let program_tags: Vec<ProgramTag> = program_list
+        .split(",")
+        .map(|x| get_program_tag(x))
+        .collect();
     let system_tags = system_list.split(",").map(|x| get_system_tag(x)).collect();
-    let instance_sizes: Vec<u64> = instance_list.split(",").map(|x| x.parse::<u64>().unwrap()).collect();
+    let instance_sizes: Vec<u64> = instance_list
+        .split(",")
+        .map(|x| x.parse::<u64>().unwrap())
+        .collect();
 
     for program_tag in program_tags.iter() {
         let supported_sizes = match program_tag {
@@ -117,10 +125,15 @@ fn setup(verbose: bool, program_list: String, system_list: String, instance_list
             ProgramTag::Fibonacci => 5u64..21u64,
             ProgramTag::PtrChase => 5u64..10u64,
             ProgramTag::Sample => 1u64..2u64,
-            other => panic!("Unsupported program: {:?}", other)
+            other => panic!("Unsupported program: {:?}", other),
         };
         for instance_size in instance_sizes.iter() {
-            assert!(supported_sizes.contains(instance_size), "Unsupported program size: {:?}@{}", program_tag, instance_size);
+            assert!(
+                supported_sizes.contains(instance_size),
+                "Unsupported program size: {:?}@{}",
+                program_tag,
+                instance_size
+            );
         }
     }
 
@@ -128,10 +141,13 @@ fn setup(verbose: bool, program_list: String, system_list: String, instance_list
 }
 
 fn get_air_example(program_tag: &ProgramTag, instance_size: usize) -> Box<dyn Example> {
-
     let program = match program_tag {
-        ProgramTag::FFT => ExampleType::FFT { degree: 2 << instance_size },
-        ProgramTag::Fibonacci => ExampleType::Fib { sequence_length:  2 << instance_size },
+        ProgramTag::FFT => ExampleType::FFT {
+            degree: 2 << instance_size,
+        },
+        ProgramTag::Fibonacci => ExampleType::Fib {
+            sequence_length: 2 << instance_size,
+        },
         other => panic!("Unsupported program type {:?}", program_tag),
     };
 
@@ -153,7 +169,7 @@ fn get_air_example(program_tag: &ProgramTag, instance_size: usize) -> Box<dyn Ex
             let b = max(degree, 64);
             airExampleOptions.blowup_factor = Some(b);
             fast_fourier_transform::get_example(&airExampleOptions, degree).unwrap()
-        },
+        }
         other => {
             panic!("Example type {other:?} not supported");
         }
@@ -165,20 +181,26 @@ fn program_by_proof_systems(crit: &mut Criterion) {
     let (verbose, program_list, system_list, instance_list) = extract_setop_options();
 
     println_if!(verbose, "ProgramByProofSystems");
-    let (program_tags, system_tags, instance_sizes) = setup(verbose, program_list, system_list, instance_list);
+    let (program_tags, system_tags, instance_sizes) =
+        setup(verbose, program_list, system_list, instance_list);
 
     println_if!(verbose, "ProgramByProofSystems: iterate");
     for program_tag in program_tags.iter() {
         for system_tag in system_tags.iter() {
             for instance_size in instance_sizes.iter() {
-
                 let prover_group_title = format!("{:?}-{:?}", program_tag, system_tag);
                 let prover_bench_id = BenchmarkId::new(prover_group_title, instance_size);
 
                 let verifier_group_title = format!("{:?}-{:?}", program_tag, system_tag);
                 let verifier_bench_id = BenchmarkId::new(verifier_group_title, instance_size);
 
-                println_if!(verbose, "Benching  {:?} x {:?} @ {}", program_tag, system_tag, instance_size);
+                println_if!(
+                    verbose,
+                    "Benching  {:?} x {:?} @ {}",
+                    program_tag,
+                    system_tag,
+                    instance_size
+                );
 
                 match system_tag {
                     SystemTag::AIR => {
@@ -193,18 +215,15 @@ fn program_by_proof_systems(crit: &mut Criterion) {
                         let proof = example.prove();
                         // CHECK THIS
                         let mut verifier_group = crit.benchmark_group("VerifierTime");
-                        verifier_group.bench_with_input(verifier_bench_id, &instance_size, |b, _| {
-                            b.iter(|| example.verify(proof.clone()))
-                        });
+                        verifier_group.bench_with_input(
+                            verifier_bench_id,
+                            &instance_size,
+                            |b, _| b.iter(|| example.verify(proof.clone())),
+                        );
                         verifier_group.finish();
-
-                    },
-                    SystemTag::R1CS => {
-
-                    },
-                    SystemTag::R1CSPolyBatched => {
-
-                    },
+                    }
+                    SystemTag::R1CS => {}
+                    SystemTag::R1CSPolyBatched => {}
                     other => {
                         panic!("Unsupported proof system: {:?}", other);
                     }

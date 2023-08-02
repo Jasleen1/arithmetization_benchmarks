@@ -26,7 +26,7 @@ fn run_benchmarks(crit: &mut Criterion, program: ExampleType) {
             let b = max(degree, 64);
             options.blowup_factor = Some(b);
             fast_fourier_transform::get_example(&options, degree).unwrap()
-        },
+        }
         other => {
             println!("Example type {other:?} not supported");
             return;
@@ -35,7 +35,7 @@ fn run_benchmarks(crit: &mut Criterion, program: ExampleType) {
 
     // Build and run the prover benchmarks.
     let mut prover_bench = crit.benchmark_group("prover");
-    prover_bench.sample_size(10);  // Proofs are expensive so let's use the min possible sample size.
+    prover_bench.sample_size(10); // Proofs are expensive so let's use the min possible sample size.
     prover_bench.bench_function(&format!("Air prover for {testname}"), |b| {
         b.iter(|| example.prove())
     });

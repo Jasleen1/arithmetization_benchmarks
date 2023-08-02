@@ -3,6 +3,8 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 
+use std::time::Duration;
+
 use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion};
 use winter_crypto::{build_merkle_nodes, hashers::Blake3_256, Hasher};
 use winter_math::fields::f128::BaseElement;
@@ -14,7 +16,8 @@ type Blake3Digest = <Blake3 as Hasher>::Digest;
 
 pub fn merkle_tree_construction(c: &mut Criterion) {
     let mut merkle_group = c.benchmark_group("merkle tree construction");
-
+    merkle_group.sample_size(10);
+    merkle_group.measurement_time(Duration::from_secs(35));
     // static BATCH_SIZES: [usize; 3] = [65536, 131072, 262144];
     // static BATCH_SIZES: [usize; 2] = [16 * 64, 2048 * 4 * 2];
     let BATCH_SIZES = (1..25).map(|x| 1 << x);
