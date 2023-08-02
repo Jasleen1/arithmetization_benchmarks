@@ -12,6 +12,10 @@ use examples::{fast_fourier_transform, fibonacci, Example, ExampleOptions, Examp
 
 // WinterFractal R1CS
 use fractal_examples::r1cs_orchestrator::ProofSystemOrchestrator;
+use winter_crypto::hashers::Blake3_256;
+use winter_math::fields::f64::BaseElement;
+use winter_math::FieldElement;
+use winter_math::StarkField;
 
 //use criterion_benchmarking::{euler1_par, euler1_series, euler1_simple};
 
@@ -68,6 +72,16 @@ fn get_program_tag(provided_name: &str) -> ProgramTag {
     }
 }
 
+fn get_r1cs_source_stem(program_tag: &ProgramTag) -> String {
+    match program_tag {
+        ProgramTag::FFT => "fftexample".to_string(),
+        ProgramTag::Fibonacci => "fibonacciexample".to_string(),
+        ProgramTag::PtrChase => "ptrchaseexample".to_string(),
+        ProgramTag::Sample => "sample".to_string(),
+        other => panic!("Unsupported program: {:?}", other)
+    }
+}
+
 fn get_system_tag(provided_name: &str) -> SystemTag {
     match provided_name {
         "air" => SystemTag::AIR,
@@ -91,10 +105,10 @@ fn extract_setop_options() -> (bool, String, String, String) {
     //(options.verbose, options.program_list, options.system_list, options.instance_list)
 
     let (verbose, program_list, system_list, instance_list) = (
-        true,
-        "fft,fib".to_string(),
-        "r1cs,air".to_string(),
-        "5, 6, 7, 8, 9, 10".to_string(),
+        false,
+        "fft".to_string(),
+        "r1cs".to_string(),
+        "5,7,8,9,10,11,12".to_string()
     );
     (verbose, program_list, system_list, instance_list)
 }
@@ -151,7 +165,7 @@ fn get_air_example(program_tag: &ProgramTag, instance_size: usize) -> Box<dyn Ex
         other => panic!("Unsupported program type {:?}", program_tag),
     };
 
-    let mut airExampleOptions = ExampleOptions {
+    let mut air_example_options = ExampleOptions {
         example: program,
         hash_fn: "blake3_256".to_string(),
         num_queries: Some(16),
@@ -161,19 +175,27 @@ fn get_air_example(program_tag: &ProgramTag, instance_size: usize) -> Box<dyn Ex
         folding_factor: 8,
     };
 
-    match airExampleOptions.example {
+    match air_example_options.example {
         ExampleType::Fib { sequence_length } => {
-            fibonacci::mulfib2::get_example(&airExampleOptions, sequence_length).unwrap()
+            fibonacci::mulfib2::get_example(&air_example_options, sequence_length).unwrap()
         }
         ExampleType::FFT { degree } => {
             let b = max(degree, 64);
-            airExampleOptions.blowup_factor = Some(b);
-            fast_fourier_transform::get_example(&airExampleOptions, degree).unwrap()
-        }
+            air_example_options.blowup_factor = Some(b);
+            fast_fourier_transform::get_example(&air_example_options, degree).unwrap()
+        },
         other => {
             panic!("Example type {other:?} not supported");
         }
     }
+}
+
+fn get_r1cs_arith(program_tag: &ProgramTag, instance_size: u64) -> String {
+    format!("src/jsnark_outputs/{}_{}.arith", get_r1cs_source_stem(program_tag), instance_size)
+}
+
+fn get_r1cs_wires(program_tag: &ProgramTag, instance_size: u64) -> String {
+    format!("src/jsnark_outputs/{}_{}.wires", get_r1cs_source_stem(program_tag), instance_size)
 }
 
 // The benchmark runner.
@@ -207,7 +229,7 @@ fn program_by_proof_systems(crit: &mut Criterion) {
                         // Build and run the prover benchmarks.
                         let example = get_air_example(program_tag, *instance_size as usize);
                         let mut prover_group = crit.benchmark_group("ProverTime");
-                        prover_group.bench_with_input(prover_bench_id, &instance_size, |b, _| {
+                        prover_group.bench_with_input(prover_bench_id, instance_size, |b, _| {
                             b.iter(|| example.prove())
                         });
                         prover_group.finish();
@@ -215,15 +237,60 @@ fn program_by_proof_systems(crit: &mut Criterion) {
                         let proof = example.prove();
                         // CHECK THIS
                         let mut verifier_group = crit.benchmark_group("VerifierTime");
-                        verifier_group.bench_with_input(
-                            verifier_bench_id,
-                            &instance_size,
-                            |b, _| b.iter(|| example.verify(proof.clone())),
-                        );
+                        verifier_group.bench_with_input(verifier_bench_id, instance_size, |b, _| {
+                            b.iter(|| example.verify(proof.clone()))
+                        });
                         verifier_group.finish();
-                    }
-                    SystemTag::R1CS => {}
-                    SystemTag::R1CSPolyBatched => {}
+                    },
+
+                    SystemTag::R1CS => {
+                        // Build and run the prover benchmarks.
+                        let batched = false;
+                        let orchestrator = ProofSystemOrchestrator::<BaseElement, BaseElement, Blake3_256<BaseElement>, 1>::new(
+                            get_r1cs_arith(program_tag, *instance_size),
+                            get_r1cs_wires(program_tag, *instance_size),
+                            batched,
+                            verbose);
+                        let (prover_key, verifier_key, fractal_options, wires, prover_options) = orchestrator.prepare();
+                        let pub_inputs_bytes = vec![0u8, 1u8, 2u8];
+                        let mut prover_group = crit.benchmark_group("ProverTime");
+                        prover_group.bench_with_input(prover_bench_id, &instance_size, |b, _| {
+                            b.iter(|| orchestrator.prove(&pub_inputs_bytes, prover_key.clone(), &wires, &prover_options))
+                        });
+                        prover_group.finish();
+                        // Build and run the verifier benchmarks on a single proof.
+                        let proof = orchestrator.prove(&pub_inputs_bytes, prover_key.clone(), &wires, &prover_options);
+                        let mut verifier_group = crit.benchmark_group("VerifierTime");
+                        verifier_group.bench_with_input(verifier_bench_id, &instance_size, |b, _| {
+                            b.iter(|| orchestrator.verify(&proof, &pub_inputs_bytes, &verifier_key, &fractal_options));
+                        });
+                        verifier_group.finish();
+                    },
+
+                    SystemTag::R1CSPolyBatched => {
+                        // Build and run the prover benchmarks.
+                        let batched = true;
+                        let orchestrator = ProofSystemOrchestrator::<BaseElement, BaseElement, Blake3_256<BaseElement>, 1>::new(
+                            get_r1cs_arith(program_tag, *instance_size),
+                            get_r1cs_wires(program_tag, *instance_size),
+                            batched,
+                            verbose);
+                        let (prover_key, verifier_key, fractal_options, wires, prover_options) = orchestrator.prepare();
+                        let pub_inputs_bytes = vec![0u8, 1u8, 2u8];
+                        let mut prover_group = crit.benchmark_group("ProverTime");
+                        prover_group.bench_with_input(prover_bench_id, &instance_size, |b, _| {
+                            b.iter(|| orchestrator.prove(&pub_inputs_bytes, prover_key.clone(), &wires, &prover_options))
+                        });
+                        prover_group.finish();
+                        // Build and run the verifier benchmarks on a single proof.
+                        let proof = orchestrator.prove(&pub_inputs_bytes, prover_key.clone(), &wires, &prover_options);
+                        let mut verifier_group = crit.benchmark_group("VerifierTime");
+                        verifier_group.bench_with_input(verifier_bench_id, &instance_size, |b, _| {
+                            b.iter(|| orchestrator.verify(&proof, &pub_inputs_bytes, &verifier_key, &fractal_options));
+                        });
+                        verifier_group.finish();
+                    },
+
                     other => {
                         panic!("Unsupported proof system: {:?}", other);
                     }
